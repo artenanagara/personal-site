@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Urbanist', system-ui, sans-serif;
+}
+
+body,
+a,
+button,
+[role="button"] {
+  cursor: none !important;
+  font-family: var(--font-sans);
+}

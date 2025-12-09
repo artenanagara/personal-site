@@ -1,0 +1,115 @@
+{
+    "id": "exmood",
+    "title": "Exmood",
+    "category": "Mobile App",
+    "subtitle": "Crafting a Safe Space for Self-Expression",
+    "description": "Exmood is a mental health application concept designed to be a personal companion for young people navigating their emotional well-being. Amidst the stigma and limited access to professional help, Exmood serves as a digital safe space, providing practical tools for mood tracking, guided meditation, and self-development programs. This project aimed to translate the user's need for accessible and non-intimidating mental health support into an intuitive and calming interface experience.",
+    "metadata": [
+        {
+            "label": "Role",
+            "value": "UI Designer, Interaction Designer"
+        },
+        {
+            "label": "Client",
+            "value": "UI/UX Competition"
+        },
+        {
+            "label": "Timeline",
+            "value": "2 Weeks"
+        },
+        {
+            "label": "Year",
+            "value": "2022"
+        }
+    ],
+    "content": [
+        {
+            "type": "full-width-image",
+            "src": "#d9d9d9",
+            "aspectRatio": "aspect-[16/9]"
+        },
+        {
+            "type": "text-block",
+            "label": "The Problem",
+            "align": "left",
+            "content": "Modern life puts immense pressure on students and young professionals, often leading to significant mental burdens. However, many of them suffer in silence. The negative social stigma, high cost of consultation, and not knowing where to start are major barriers for them to seek help."
+        },
+        {
+            "type": "text-block",
+            "label": "Challenge",
+            "align": "right",
+            "content": "There is a real gap between being aware of a mental health issue and having the courage to seek a solution. Our main challenge was: How can we design a digital bridge that is safe, accessible, and user-friendly to cross that gap? We needed to create a platform that is not only functional but also capable of breaking down the emotional and practical barriers faced by our target users."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "The Solution",
+            "align": "left",
+            "content": "We designed Exmood as a holistic ecosystem for mental wellness. By combining mood tracking with actionable insights, Exmood empowers users to understand their emotional patterns. The interface was crafted to be calming and non-intrusive, utilizing soft colors and gentle typography to create a sense of safety and acceptance from the moment the app is opened."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Summary",
+            "align": "right",
+            "content": "Exmood represents a step forward in accessible mental health care. Through user-centric design and a focus on removing barriers, the project demonstrates how digital tools can effectively support emotional well-being. The result is a concept that feels less like a medical tool and more like a supportive friend."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                }
+            ]
+        }
+    ]
+}
