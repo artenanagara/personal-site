@@ -44,15 +44,15 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/greenprobolinggo/laptop-mockup.webp",
+                    "src": "/images/works/greenprobolinggo/login.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/greenprobolinggo/laptop-mockup.webp",
+                    "src": "/images/works/greenprobolinggo/card.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/greenprobolinggo/laptop-mockup.webp",
+                    "src": "/images/works/greenprobolinggo/dashboard-half.jpg",
                     "span": "col-span-4"
                 }
             ]
@@ -67,19 +67,19 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/greenprobolinggo/history.jpg",
                     "span": "col-span-4"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/greenprobolinggo/form.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/greenprobolinggo/table.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/greenprobolinggo/new.jpg",
                     "span": "col-span-4"
                 }
             ]
@@ -94,19 +94,15 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/greenprobolinggo/pie.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/greenprobolinggo/sidebar.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
-                    "span": "col-span-4"
-                },
-                {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/greenprobolinggo/mockup.jpg",
                     "span": "col-span-4"
                 }
             ]

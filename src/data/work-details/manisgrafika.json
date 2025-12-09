@@ -1,0 +1,116 @@
+{
+    "id": "manisgrafika",
+    "title": "Manis Grafika",
+    "category": "Website Design",
+    "subtitle": "Elevating Premium Print Craftsmanship Into a Digital Experience",
+    "url": "https://manisgrafika.id",
+    "description": "Manis Grafika is a distinguished printing and publishing service specializing in premium religious books such as Yasin, Tahlil, and Majmu Syarif. Known for its refined craftsmanship, quality materials, and elegant aesthetics, the brand required a modern digital presence that could mirror the beauty and detail of their physical products.",
+    "metadata": [
+        {
+            "label": "Role",
+            "value": "UI Designer, Website Designer"
+        },
+        {
+            "label": "Client",
+            "value": "Manis Grafika Solo"
+        },
+        {
+            "label": "Timeline",
+            "value": "3 Weeks"
+        },
+        {
+            "label": "Year",
+            "value": "2024"
+        }
+    ],
+    "content": [
+        {
+            "type": "full-width-image",
+            "src": "/images/works/manisgrafika/cover.webp",
+            "aspectRatio": "aspect-[16/9]"
+        },
+        {
+            "type": "text-block",
+            "label": "The Problem",
+            "align": "left",
+            "content": "Manis Grafika’s high-quality products could only be appreciated in person. Customers lacked a way to explore cover materials, print details, or sample pages online, causing a disconnect between the brand’s premium craftsmanship and its digital representation."
+        },
+        {
+            "type": "text-block",
+            "label": "Challenge",
+            "align": "right",
+            "content": "The main challenge was transforming tactile, material-focused products into a digital format without losing the sense of quality and elegance. The website needed to feel premium, clean, and trustworthy, while presenting detailed product information in a way that remained visually minimal."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/manisgrafika/hero.png",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/manisgrafika/collection.png",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/manisgrafika/yasin-open.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "The Solution",
+            "align": "left",
+            "content": "The website was designed with a minimalist layout that prioritizes clarity, elegance, and focus on product photography. Clean typography, generous white space, and structured content allow each product to stand out. Each book includes its own detail page with a curated gallery, material specifications, and simple call-to-action flow guiding users toward consultation-based ordering. This digital transformation brings the brand’s premium feel into an accessible and modern online experience."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/manisgrafika/detail.png",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/manisgrafika/text.png",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/manisgrafika/variant.png",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/manisgrafika/list.png",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Summary",
+            "align": "left",
+            "content": "The Manis Grafika website successfully bridges the gap between physical craftsmanship and digital presentation. Through a clean and modern design approach, customers can now explore product details, view high-quality visuals, and begin ordering with confidence."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/manisgrafika/typo.png",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/manisgrafika/color.jpg",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/manisgrafika/branding.jpg",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/manisgrafika/mockup.jpg",
+                    "span": "col-span-4"
+                }
+            ]
+        }
+    ]
+}

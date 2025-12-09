@@ -4,11 +4,13 @@ import { useRoute } from 'vue-router';
 import FooterSection from '../components/layout/FooterSection.vue';
 import WorkCard from '../components/ui/WorkCard.vue';
 import worksData from '../data/works.json';
+import { useCursor } from '../composables/useCursor';
 
 const route = useRoute();
 const project = ref(null);
 const loading = ref(true);
 const nextProjects = ref([]);
+const { setCursor, resetCursor } = useCursor();
 
 const transitionMain = { duration: 1200, ease: [0.22, 1, 0.36, 1] };
 
@@ -67,7 +69,7 @@ watch(() => route.params.id, () => {
       </div>
 
       <!-- Title & Subtitle -->
-      <div class="mb-16 lg:mb-24">
+      <div class="mb-16 lg:mb-8">
         <h1 
           v-motion
           :initial="{ opacity: 0, y: 40 }"
@@ -76,6 +78,33 @@ watch(() => route.params.id, () => {
         >
           {{ project.subtitle }}
         </h1>
+
+        <a
+          v-if="project.url"
+          :href="project.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 550 } }"
+          class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium transition-transform hover:scale-105"
+        >
+          Visit Site
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"
+          >
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
       </div>
 
       <!-- Metadata Grid -->

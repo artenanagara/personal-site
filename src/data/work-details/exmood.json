@@ -3,6 +3,7 @@
     "title": "Exmood",
     "category": "Mobile App",
     "subtitle": "Improving Mental Wellness Through Intuitive Mobile Experience",
+    "url": "https://exmood.com",
     "description": "EXMOOD is a mobile application designed to help users manage and improve their mental well-being. It offers mood tracking, meditation guidance, professional counseling, and a personal journey feature that supports emotional regulation. The app focuses on delivering a calm, intuitive experience that can be used by teens and adults facing mental health challenges.",
     "metadata": [
         {
@@ -15,7 +16,7 @@
         },
         {
             "label": "Timeline",
-            "value": "2 Weeks"
+            "value": "3 Weeks"
         },
         {
             "label": "Year",
@@ -25,7 +26,7 @@
     "content": [
         {
             "type": "full-width-image",
-            "src": "#d9d9d9",
+            "src": "/images/works/exmood/cover.jpg",
             "aspectRatio": "aspect-[16/9]"
         },
         {
@@ -44,15 +45,15 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/onboard.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/happy.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/styleguide.jpg",
                     "span": "col-span-4"
                 }
             ]
@@ -67,19 +68,19 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/motivation.jpg",
                     "span": "col-span-4"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/home.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/music.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/todo.jpg",
                     "span": "col-span-4"
                 }
             ]
@@ -94,19 +95,15 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/card.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/modal.jpg",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "#d9d9d9",
-                    "span": "col-span-4"
-                },
-                {
-                    "src": "#d9d9d9",
+                    "src": "/images/works/exmood/mockup.jpg",
                     "span": "col-span-4"
                 }
             ]

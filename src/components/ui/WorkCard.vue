@@ -10,15 +10,36 @@ const props = defineProps({
 const isHovering = ref(false);
 const { setCursor, resetCursor } = useCursor();
 
+const projectType = computed(() => props.project.type?.toLowerCase() || 'open');
+
 const isClickable = computed(() => {
-  const type = props.project.type?.toLowerCase() || '';
-  return !type.includes('soon') && !type.includes('confidential') && !type.includes('confident');
+  const type = projectType.value;
+  return type !== 'soon' && type !== 'confident' && type !== 'confidential';
+});
+
+const linkComponent = computed(() => {
+  if (projectType.value === 'visit') return 'a';
+  if (!isClickable.value) return 'div';
+  return 'RouterLink';
+});
+
+const linkBindings = computed(() => {
+  if (projectType.value === 'visit') {
+    return { 
+      href: props.project.url, 
+      target: '_blank', 
+      rel: 'noopener noreferrer' 
+    };
+  }
+  if (!isClickable.value) return {};
+  return { to: `/work/${props.project.id}` };
 });
 
 const cursorText = computed(() => {
-  const type = props.project.type?.toLowerCase() || '';
-  if (type.includes('soon')) return 'SOON';
-  if (type.includes('confidential') || type.includes('confident')) return 'CONFIDENTIAL';
+  const type = projectType.value;
+  if (type === 'visit') return 'VISIT';
+  if (type === 'soon') return 'SOON';
+  if (type === 'confident' || type === 'confidential') return 'CONFIDENTIAL';
   return 'VIEW PROJECT';
 });
 
@@ -42,8 +63,8 @@ onUnmounted(() => {
 
 <template>
   <component
-    :is="isClickable ? 'RouterLink' : 'div'"
-    v-bind="isClickable ? { to: `/work/${project.id}` } : {}"
+    :is="linkComponent"
+    v-bind="linkBindings"
     @mouseenter="onMouseEnter" 
     @mouseleave="onMouseLeave"
     v-motion
@@ -57,15 +78,49 @@ onUnmounted(() => {
     <div 
       class="w-full relative mb-3 overflow-hidden bg-gray-200 aspect-[4/3]"
     >
+      <!-- Default Cover -->
       <img 
-        :src="project.cover.hover" 
-        :alt="project.title + ' Hover'"
-        class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        v-if="project.cover.default && project.cover.default.startsWith('/')"
+        :src="project.cover.default" 
+        :alt="project.title"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
         :class="{
-          'translate-x-0 opacity-100': isHovering,
-          'translate-x-full opacity-0': !isHovering,
+          '-translate-x-[20%] opacity-0': isHovering && project.cover.hover,
+          'translate-x-0 opacity-100': !isHovering || !project.cover.hover
         }"
       />
+      <div 
+        v-else-if="project.cover.default"
+        class="absolute inset-0 w-full h-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        :style="{ backgroundColor: project.cover.default }"
+        :class="{
+           '-translate-x-[20%] opacity-0': isHovering && project.cover.hover,
+           'translate-x-0 opacity-100': !isHovering || !project.cover.hover
+        }"
+      ></div>
+
+      <!-- Hover Cover -->
+      <template v-if="project.cover.hover">
+        <img 
+          v-if="project.cover.hover.startsWith('/')"
+          :src="project.cover.hover" 
+          :alt="project.title + ' Hover'"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          :class="{
+            'translate-x-0 opacity-100': isHovering,
+            'translate-x-full opacity-0': !isHovering,
+          }"
+        />
+        <div 
+          v-else
+          class="absolute inset-0 w-full h-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          :style="{ backgroundColor: project.cover.hover }"
+          :class="{
+            'translate-x-0 opacity-100': isHovering,
+            'translate-x-full opacity-0': !isHovering,
+          }"
+        ></div>
+      </template>
 
       <div
         class="absolute inset-0 bg-black/0 transition-colors duration-400"

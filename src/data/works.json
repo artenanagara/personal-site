@@ -1,123 +1,55 @@
 [
     {
-        "id": "exmood",
-        "title": "Exmood",
-        "category": "Mobile App, Mental Health",
-        "type": "project",
-        "cover": {
-            "default": "#f0f0f0",
-            "hover": "#000000"
-        }
-    },
-    {
         "id": "greenprobolinggo",
         "title": "Greenprobolinggo",
         "category": "Dashboard, Waste Bank",
-        "type": "project",
+        "type": "open",
         "cover": {
-            "default": "#f0f0f0",
-            "hover": "#000000"
+            "default": "/images/works/greenprobolinggo/waste.jpg",
+            "hover": "/images/works/greenprobolinggo/mockup.jpg"
         }
     },
     {
         "id": "theinvestor",
         "title": "The Investor",
-        "category": "Waste Bank",
-        "type": "soon",
+        "category": "Company Profile, Stock Learning",
+        "type": "visit",
+        "url": "https://theinvestor.id",
         "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
+            "default": "/images/works/theinvestor/building.jpeg",
+            "hover": "/images/works/theinvestor/mockup.jpg"
         }
     },
     {
         "id": "manisgrafika",
         "title": "Manis Grafika",
-        "category": "Waste Bank",
+        "category": "Website Design, Print Service",
+        "type": "open",
+        "url": "https://manisgrafika.id",
         "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
+            "default": "/images/works/manisgrafika/yasin.jpg",
+            "hover": "/images/works/manisgrafika/mockup.jpg"
         }
     },
     {
-        "id": "mtmdashboard",
-        "title": "MTM Dashboard",
-        "category": "Waste Bank",
+        "id": "exmood",
+        "title": "Exmood",
+        "category": "Mobile App, Mental Health",
+        "type": "open",
         "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
+            "default": "/images/works/exmood/hand.webp",
+            "hover": "/images/works/exmood/mockup.jpg"
         }
     },
     {
-        "id": "gtsc",
-        "title": "GTSC",
-        "category": "Waste Bank",
+        "id": "",
+        "title": "",
+        "category": "",
+        "type": "",
         "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
-        }
-    },
-    {
-        "id": "pwmp",
-        "title": "PWMP Link",
-        "category": "Waste Bank",
-        "type": "soon",
-        "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
-        }
-    },
-    {
-        "id": 8,
-        "title": "GTSC",
-        "category": "Waste Bank",
-        "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
-        }
-    },
-    {
-        "id": 9,
-        "title": "Bank Jago",
-        "category": "Waste Bank",
-        "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
-        }
-    },
-    {
-        "id": 10,
-        "title": "Fumakilla",
-        "category": "Waste Bank",
-        "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
-        }
-    },
-    {
-        "id": 11,
-        "title": "AMD Academy",
-        "category": "Waste Bank",
-        "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
-        }
-    },
-    {
-        "id": 12,
-        "title": "Arkatama Multi Solusindo",
-        "category": "Waste Bank",
-        "cover": {
-            "default": "#f0f0f0",
-            "hover": ""
-        }
-    },
-    {
-        "id": 13,
-        "title": "Agnet",
-        "category": "Waste Bank",
-        "cover": {
-            "default": "#f0f0f0",
+            "default": "",
             "hover": ""
         }
     }
 ]
+
