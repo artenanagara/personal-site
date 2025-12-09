@@ -40,16 +40,6 @@
             "default": "/images/works/exmood/hand.webp",
             "hover": "/images/works/exmood/mockup.jpg"
         }
-    },
-    {
-        "id": "",
-        "title": "",
-        "category": "",
-        "type": "",
-        "cover": {
-            "default": "",
-            "hover": ""
-        }
     }
 ]
 
