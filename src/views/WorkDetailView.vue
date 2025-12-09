@@ -18,6 +18,11 @@ const loadProjectData = async () => {
     const data = await import(`../data/work-details/${route.params.id}.json`);
     project.value = data.default;
     
+    // Update document title for SEO
+    if (project.value && project.value.title) {
+      document.title = `${project.value.title} | Artena Nagara`;
+    }
+    
     // Get next 2 projects
     const currentId = route.params.id;
     nextProjects.value = worksData
@@ -197,8 +202,34 @@ watch(() => route.params.id, () => {
 
     </div>
     
-    <div v-else class="h-screen flex items-center justify-center">
-        <p class="text-gray-500">Project not found.</p>
+    <div v-else class="min-h-screen  flex-grow flex flex-col items-center justify-center px-6 mb-20">
+      <div class="max-w-4xl w-full">
+        <h1 class="text-5xl md:text-7xl font-light leading-tight tracking-tight mb-12">
+          Oops. It looks like the project you're trying to reach
+          <span class="text-gray-400">doesn't exist</span> or has been moved.
+        </h1>
+        
+        <RouterLink 
+          to="/work" 
+          class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium transition-transform hover:scale-105"
+        >
+          Back to works
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"
+          >
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </RouterLink>
+      </div>
     </div>
 
     <FooterSection />
