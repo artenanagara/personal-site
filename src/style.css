@@ -4,10 +4,23 @@
   --font-sans: 'Urbanist', system-ui, sans-serif;
 }
 
+html,
 body,
 a,
 button,
-[role="button"] {
+[role="button"],
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+*,
+*::before,
+*::after {
   cursor: none !important;
   font-family: var(--font-sans);
 }

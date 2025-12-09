@@ -1,0 +1,115 @@
+{
+    "id": "greenprobolinggo",
+    "title": "Greenprobolinggo",
+    "category": "Dashboard",
+    "subtitle": "Transforming Waste Bank Operations Through a Modern Dashboard System",
+    "description": "GreenProbolinggo is a web dashboard built to support waste bank management across Probolinggo City. The platform connects Admins and Customers in one unified system, making data tracking, waste management, and financial processes more organized, transparent, and efficient.",
+    "metadata": [
+        {
+            "label": "Role",
+            "value": "UI/UX Designer"
+        },
+        {
+            "label": "Client",
+            "value": "Greenprobolinggo"
+        },
+        {
+            "label": "Timeline",
+            "value": "1 Month"
+        },
+        {
+            "label": "Year",
+            "value": "2025"
+        }
+    ],
+    "content": [
+        {
+            "type": "full-width-image",
+            "src": "/images/works/greenprobolinggo/cover.webp",
+            "aspectRatio": "aspect-[16/9]"
+        },
+        {
+            "type": "text-block",
+            "label": "The Problem",
+            "align": "left",
+            "content": "Existing waste bank operations relied on manual processes, resulting in slow updates, scattered data, and limited access to transaction information. Admins struggled to manage records smoothly, while Customers had no simple way to track their savings or understand their earning potential."
+        },
+        {
+            "type": "text-block",
+            "label": "Challenge",
+            "align": "right",
+            "content": "The challenge was to design a dual-role platform that remained clean and intuitive while organizing detailed waste, customer, and financial data. The interface needed to be modern and easy to understand for users with different levels of digital experience, without overwhelming them with complexity."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/greenprobolinggo/laptop-mockup.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/greenprobolinggo/laptop-mockup.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/greenprobolinggo/laptop-mockup.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "The Solution",
+            "align": "left",
+            "content": "TI designed a streamlined dashboard that presents information clearly and supports smooth workflows. Admins receive an organized space to manage customer data, waste entries, categories, withdrawals, and transaction history. Customers get a simple, modern interface to view their activity, request withdrawals, and use a clean income simulation tool. The minimalist design ensures clarity, easy navigation, and a consistent user experience across roles."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Summary",
+            "align": "right",
+            "content": "GreenProbolinggo delivers a modern digital system that improves transparency and efficiency in waste bank operations. The interface supports both Admins and Customers with a clean, structured, and user-friendly experience that simplifies daily tasks and enhances decision-making."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "#d9d9d9",
+                    "span": "col-span-4"
+                }
+            ]
+        }
+    ]
+}

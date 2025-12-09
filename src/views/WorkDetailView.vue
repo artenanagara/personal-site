@@ -23,10 +23,11 @@ const loadProjectData = async () => {
       document.title = `${project.value.title} | Artena Nagara`;
     }
     
-    // Get next 2 projects
+    // Get random next projects
     const currentId = route.params.id;
     nextProjects.value = worksData
       .filter(w => String(w.id) !== String(currentId))
+      .sort(() => 0.5 - Math.random())
       .slice(0, 2);
       
   } catch (error) {
@@ -53,7 +54,7 @@ watch(() => route.params.id, () => {
       <div class="animate-pulse bg-gray-200 h-8 w-32 rounded"></div>
     </div>
 
-    <div v-else-if="project" class="flex-grow pt-32 lg:pt-40 px-4 md:px-10 max-w-screen-2xl mx-auto w-full">
+    <div v-else-if="project" class="flex-grow pt-32 lg:pt-40 px-4 md:px-20 max-w-screen-2xl mx-auto w-full">
       <!-- Breadcrumb -->
       <div 
         v-motion
@@ -71,7 +72,7 @@ watch(() => route.params.id, () => {
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 450 } }"
-          class="text-5xl md:text-7xl max-w-3xl mb-8 leading-normal"
+          class="text-5xl md:text-7xl max-w-8xl mb-8 leading-normal"
         >
           {{ project.subtitle }}
         </h1>
@@ -173,7 +174,14 @@ watch(() => route.params.id, () => {
               :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: idx * 100 } }"
               class="bg-[#d9d9d9] h-[50vh] lg:h-[80vh]"
               :class="item.span || 'col-span-1'"
-            ></div>
+            >
+              <img 
+                v-if="item.src && item.src !== '#d9d9d9'" 
+                :src="item.src" 
+                class="w-full h-full object-cover"
+                alt="Gallery image"
+              >
+            </div>
           </div>
 
         </template>
@@ -199,7 +207,6 @@ watch(() => route.params.id, () => {
             />
           </div>
       </div>
-
     </div>
     
     <div v-else class="min-h-screen  flex-grow flex flex-col items-center justify-center px-6 mb-20">
@@ -235,3 +242,9 @@ watch(() => route.params.id, () => {
     <FooterSection />
   </div>
 </template>
+
+<style scoped>
+*, *::before, *::after {
+  cursor: none !important;
+}
+</style>

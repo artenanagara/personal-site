@@ -1,13 +1,58 @@
+<script setup>
+import { ref, computed } from 'vue';
+import { useCursor } from '../../composables/useCursor';
+
+const props = defineProps({
+  project: Object,
+  delay: Number,
+});
+
+const isHovering = ref(false);
+const { setCursor, resetCursor } = useCursor();
+
+const isClickable = computed(() => {
+  const type = props.project.type?.toLowerCase() || '';
+  return !type.includes('soon') && !type.includes('confidential') && !type.includes('confident');
+});
+
+const cursorText = computed(() => {
+  const type = props.project.type?.toLowerCase() || '';
+  if (type.includes('soon')) return 'SOON';
+  if (type.includes('confidential') || type.includes('confident')) return 'CONFIDENTIAL';
+  return 'VIEW PROJECT';
+});
+
+const onMouseEnter = () => {
+  if (isClickable.value) {
+      isHovering.value = true;
+  }
+  setCursor({ text: cursorText.value, variant: 'button' });
+};
+
+const onMouseLeave = () => {
+  isHovering.value = false;
+  resetCursor();
+};
+
+import { onUnmounted } from 'vue';
+onUnmounted(() => {
+  resetCursor();
+});
+</script>
+
 <template>
-  <RouterLink 
-    :to="`/work/${project.id}`"
-    @mouseenter="isHovering = true" 
-    @mouseleave="isHovering = false"
+  <component
+    :is="isClickable ? 'RouterLink' : 'div'"
+    v-bind="isClickable ? { to: `/work/${project.id}` } : {}"
+    @mouseenter="onMouseEnter" 
+    @mouseleave="onMouseLeave"
     v-motion
     :initial="{ opacity: 0, y: 40 }"
     :visible="{ opacity: 1, y: 0, transition: { duration: 800, delay: delay * 1000, ease: [0.22, 1, 0.36, 1] } }"
     :delay="delay * 1000"
-    class="block group cursor-pointer"
+    class="block group"
+    :style="{ cursor: 'none' }"
+    :class="{ 'opacity-50': !isClickable }"
   >
     <div 
       class="w-full relative mb-3 overflow-hidden bg-gray-200 aspect-[4/3]"
@@ -32,16 +77,5 @@
       <p class="font-normal text-base text-black md:text-lg">{{ project.title }}</p>
       <p class="font-normal text-sm text-gray-500">{{ project.category }}</p>
     </div>
-  </RouterLink>
+  </component>
 </template>
-
-<script setup>
-import { ref } from 'vue';
-
-const props = defineProps({
-  project: Object,
-  delay: Number,
-});
-
-const isHovering = ref(false);
-</script>

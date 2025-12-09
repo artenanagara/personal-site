@@ -2,7 +2,8 @@
     {
         "id": "exmood",
         "title": "Exmood",
-        "category": "Waste Bank",
+        "category": "Mobile App, Mental Health",
+        "type": "project",
         "cover": {
             "default": "#f0f0f0",
             "hover": "#000000"
@@ -11,7 +12,8 @@
     {
         "id": "greenprobolinggo",
         "title": "Greenprobolinggo",
-        "category": "Waste Bank",
+        "category": "Dashboard, Waste Bank",
+        "type": "project",
         "cover": {
             "default": "#f0f0f0",
             "hover": "#000000"
@@ -21,6 +23,7 @@
         "id": "theinvestor",
         "title": "The Investor",
         "category": "Waste Bank",
+        "type": "soon",
         "cover": {
             "default": "#f0f0f0",
             "hover": ""
@@ -57,6 +60,7 @@
         "id": "pwmp",
         "title": "PWMP Link",
         "category": "Waste Bank",
+        "type": "soon",
         "cover": {
             "default": "#f0f0f0",
             "hover": ""

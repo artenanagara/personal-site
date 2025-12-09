@@ -3,9 +3,11 @@ import NavigationBar from './components/layout/NavigationBar.vue';
 import CustomCursor from './components/ui/CustomCursor.vue';
 import { RouterView, useRoute } from 'vue-router'
 import Lenis from 'lenis'
-import { onMounted } from 'vue';
+import { onMounted, watch } from 'vue';
+import { useCursor } from './composables/useCursor';
 
 const route = useRoute();
+const { resetCursor } = useCursor();
 
 onMounted(() => {
   const lenis = new Lenis()
@@ -17,6 +19,10 @@ onMounted(() => {
 
   requestAnimationFrame(raf)
 })
+
+watch(route, () => {
+  resetCursor();
+});
 </script>
 
 <template>
