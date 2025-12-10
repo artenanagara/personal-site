@@ -47,6 +47,18 @@ onMounted(() => {
 watch(() => route.params.id, () => {
   loadProjectData();
 });
+const getGalleryItemClass = (span) => {
+  if (!span) return 'w-full md:w-[calc(25%-0.75rem)]'; // Default to 1/4 width (grid-cols-4 equivalent)
+  
+  if (span.includes('col-span-4')) {
+    return 'w-full';
+  } else if (span.includes('col-span-2')) {
+    return 'w-full md:w-[calc(50%-0.5rem)]';
+  } else {
+    // col-span-1 or other
+    return 'w-full md:w-[calc(25%-0.75rem)]';
+  }
+};
 </script>
 
 <template>
@@ -190,7 +202,7 @@ watch(() => route.params.id, () => {
            <!-- Gallery Grid -->
            <div 
             v-else-if="section.type === 'gallery-grid'"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+            class="flex flex-wrap gap-4"
           >
             <div 
               v-for="(item, idx) in section.items"
@@ -199,7 +211,7 @@ watch(() => route.params.id, () => {
               :initial="{ opacity: 0, y: 40 }"
               :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: idx * 100 } }"
               class="bg-[#d9d9d9] h-auto md:h-[50vh] lg:h-[80vh]"
-              :class="item.span || 'col-span-1'"
+              :class="getGalleryItemClass(item.span)"
             >
               <img 
                 v-if="item.src && item.src !== '#d9d9d9'" 
