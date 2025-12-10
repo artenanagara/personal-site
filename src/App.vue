@@ -31,8 +31,8 @@ watch(route, () => {
       <component :is="Component" />
     </transition>
   </RouterView>
-  <NavigationBar />
-  <CustomCursor />
+  <NavigationBar v-if="!route.meta.hideNavigation" />
+  <CustomCursor v-if="!route.meta.hideCursor" />
 </template>
 
 <style>

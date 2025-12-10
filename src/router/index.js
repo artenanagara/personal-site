@@ -39,6 +39,16 @@ const router = createRouter({
             }
         },
         {
+            path: '/cv',
+            name: 'cv',
+            component: () => import('../cv/CvView.vue'),
+            meta: {
+                title: 'CV | Artena Nagara',
+                hideNavigation: true,
+                hideFooter: true
+            }
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'not-found',
             component: () => import('../views/NotFoundView.vue'),
