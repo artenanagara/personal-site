@@ -5,7 +5,7 @@ import { RouterView, useRoute } from 'vue-router'
 import Lenis from 'lenis'
 import { onMounted, watch } from 'vue';
 import { useCursor } from './composables/useCursor';
-
+import { SpeedInsights } from "@vercel/speed-insights/vue";
 const route = useRoute();
 const { resetCursor } = useCursor();
 
