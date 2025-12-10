@@ -26,13 +26,13 @@ watch(route, () => {
 </script>
 
 <template>
-  <CustomCursor />
-  <NavigationBar />
   <RouterView v-slot="{ Component }">
     <transition :name="route.meta.transition || 'page'" mode="out-in">
       <component :is="Component" />
     </transition>
   </RouterView>
+  <NavigationBar />
+  <CustomCursor />
 </template>
 
 <style>

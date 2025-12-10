@@ -4,7 +4,7 @@
       v-motion
       :initial="{ y: -100, opacity: 0 }"
       :enter="{ y: 0, opacity: 1, transition: { duration: 1000, ease: [0.22, 1, 0.36, 1] } }"
-      class="fixed top-0 left-0 w-full z-50 px-4 md:px-10 py-5 lg:py-8 transition-colors duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      class="fixed top-0 left-0 w-full z-[900] px-4 md:px-10 py-5 lg:py-8 transition-colors duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
       :class="{ 
         'bg-white/10 backdrop-blur-sm text-black': !isMenuOpen,
         'bg-black text-white': isMenuOpen,
