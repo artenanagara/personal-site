@@ -5,6 +5,7 @@ import FooterSection from '../components/layout/FooterSection.vue';
 import WorkCard from '../components/ui/WorkCard.vue';
 import worksData from '../data/works.json';
 import { useCursor } from '../composables/useCursor';
+import AnimatedButton from '../components/ui/AnimatedButton.vue';
 
 const route = useRoute();
 const project = ref(null);
@@ -29,7 +30,6 @@ const loadProjectData = async () => {
     const currentId = route.params.id;
     nextProjects.value = worksData
       .filter(w => String(w.id) !== String(currentId))
-      .sort(() => 0.5 - Math.random())
       .slice(0, 2);
       
   } catch (error) {
@@ -64,7 +64,7 @@ watch(() => route.params.id, () => {
         :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 200 } }"
         class="mb-4 text-xl font-medium"
       >
-        <span class="text-gray-400">Work / </span>
+        <span class="text-gray-400 text-sm">Work / </span>
         <span>{{ project.title }}</span>
       </div>
 
@@ -79,17 +79,14 @@ watch(() => route.params.id, () => {
           {{ project.subtitle }}
         </h1>
 
-        <a
+        <AnimatedButton
           v-if="project.url"
           :href="project.url"
-          target="_blank"
-          rel="noopener noreferrer"
+          text="Visit Site"
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 550 } }"
-          class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium transition-transform hover:scale-105"
         >
-          Visit Site
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="20" 
@@ -104,7 +101,7 @@ watch(() => route.params.id, () => {
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
-        </a>
+        </AnimatedButton>
       </div>
 
       <!-- Metadata Grid -->
@@ -112,7 +109,7 @@ watch(() => route.params.id, () => {
         v-motion
         :initial="{ opacity: 0, y: 40 }"
         :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 600 } }"
-        class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24 border-t pt-8 border-gray-200"
+        class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 md:mb-24 border-t pt-8 border-gray-200"
       >
         <div v-for="(meta, index) in project.metadata" :key="index">
           <h3 class="text-gray-500 font-light mb-1">{{ meta.label }}</h3>
@@ -126,7 +123,7 @@ watch(() => route.params.id, () => {
         v-motion
         :initial="{ opacity: 0, y: 40 }"
         :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 700 } }"
-        class="mb-24 max-w-4xl"
+        class="mb-8 md:mb-24 max-w-4xl"
       >
         <p class="text-lg md:text-xl leading-8 font-light text-gray-800">
           {{ project.description }}
@@ -143,7 +140,7 @@ watch(() => route.params.id, () => {
             v-motion
             :initial="{ opacity: 0, y: 60 }"
             :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain, duration: 1500 } }"
-            class="w-full h-[80vh] lg:h-[90vh] bg-[#d9d9d9] overflow-hidden"
+            class="w-full h-auto md:h-[90vh] bg-[#d9d9d9] overflow-hidden"
           >
             <!-- Placeholder for actual image -->
             <img v-if="section.src && section.src !== '#d9d9d9'" :src="section.src" class="w-full h-full object-cover">
@@ -176,7 +173,7 @@ watch(() => route.params.id, () => {
           <!-- Two Column Images -->
           <div 
             v-else-if="section.type === 'two-column-image'"
-            class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-10"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10"
           >
             <div 
               v-for="(item, idx) in section.items" 
@@ -184,7 +181,7 @@ watch(() => route.params.id, () => {
               v-motion
               :initial="{ opacity: 0, y: 60 }"
               :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: idx * 100 } }"
-              class="bg-[#d9d9d9] w-full h-[50vh] lg:h-[80vh]"
+              class="bg-[#d9d9d9] w-full h-auto lg:h-[80vh]"
             >
              <img v-if="item.src && item.src !== '#d9d9d9'" :src="item.src" class="w-full h-full object-cover">
             </div>
@@ -201,7 +198,7 @@ watch(() => route.params.id, () => {
               v-motion
               :initial="{ opacity: 0, y: 40 }"
               :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: idx * 100 } }"
-              class="bg-[#d9d9d9] h-[50vh] lg:h-[80vh]"
+              class="bg-[#d9d9d9] h-auto md:h-[50vh] lg:h-[80vh]"
               :class="item.span || 'col-span-1'"
             >
               <img 
@@ -245,11 +242,10 @@ watch(() => route.params.id, () => {
           <span class="text-gray-400">doesn't exist</span> or has been moved.
         </h1>
         
-        <RouterLink 
+        <AnimatedButton 
           to="/work" 
-          class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium transition-transform hover:scale-105"
+          text="Back to works"
         >
-          Back to works
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="20" 
@@ -264,7 +260,7 @@ watch(() => route.params.id, () => {
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
-        </RouterLink>
+        </AnimatedButton>
       </div>
     </div>
 
@@ -273,7 +269,9 @@ watch(() => route.params.id, () => {
 </template>
 
 <style scoped>
-*, *::before, *::after {
-  cursor: none !important;
+@media (min-width: 768px) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
 }
 </style>

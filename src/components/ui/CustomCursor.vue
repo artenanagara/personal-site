@@ -54,19 +54,19 @@ const isButton = computed(() => variant.value === 'button');
 
 <template>
   <div 
-    class="custom-cursor flex items-center justify-center pointer-events-none fixed z-[9999] w-3 h-3"
+    class="custom-cursor hidden md:flex items-center justify-center pointer-events-none fixed z-[9999] w-3 h-3 mix-blend-difference"
     :style="{ 
       transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
       opacity: isVisible ? 1 : 0
     }"
   >
     <div 
-      class="cursor-bg absolute inset-0 bg-black rounded-full transition-transform duration-300 ease-out"
+      class="cursor-bg absolute inset-0 bg-white rounded-full transition-transform duration-300 ease-out"
       :class="{ 'scale-100': !isButton, 'scale-[8]': isButton }"
     ></div>
     <span 
       v-if="text" 
-      class="relative text-white font-medium text-[10px] tracking-wider uppercase transition-opacity duration-300 z-10 text-center px-1 whitespace-nowrap"
+      class="relative text-black font-medium text-[10px] tracking-wider uppercase transition-opacity duration-300 z-10 text-center px-1 whitespace-nowrap"
       :class="{ 'opacity-100 delay-100': isButton, 'opacity-0': !isButton }"
     >
       {{ text }}

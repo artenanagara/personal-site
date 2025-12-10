@@ -83,20 +83,12 @@ onUnmounted(() => {
         v-if="project.cover.default && project.cover.default.startsWith('/')"
         :src="project.cover.default" 
         :alt="project.title"
-        class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
-        :class="{
-          '-translate-x-[20%] opacity-0': isHovering && project.cover.hover,
-          'translate-x-0 opacity-100': !isHovering || !project.cover.hover
-        }"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
       />
       <div 
         v-else-if="project.cover.default"
-        class="absolute inset-0 w-full h-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+        class="absolute inset-0 w-full h-full transition-transform duration-[2000ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
         :style="{ backgroundColor: project.cover.default }"
-        :class="{
-           '-translate-x-[20%] opacity-0': isHovering && project.cover.hover,
-           'translate-x-0 opacity-100': !isHovering || !project.cover.hover
-        }"
       ></div>
 
       <!-- Hover Cover -->
@@ -105,19 +97,19 @@ onUnmounted(() => {
           v-if="project.cover.hover.startsWith('/')"
           :src="project.cover.hover" 
           :alt="project.title + ' Hover'"
-          class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
           :class="{
-            'translate-x-0 opacity-100': isHovering,
-            'translate-x-full opacity-0': !isHovering,
+            'translate-x-0': isHovering,
+            'translate-x-full': !isHovering,
           }"
         />
         <div 
           v-else
-          class="absolute inset-0 w-full h-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          class="absolute inset-0 w-full h-full transition-transform duration-[2000ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
           :style="{ backgroundColor: project.cover.hover }"
           :class="{
-            'translate-x-0 opacity-100': isHovering,
-            'translate-x-full opacity-0': !isHovering,
+            'translate-x-0': isHovering,
+            'translate-x-full': !isHovering,
           }"
         ></div>
       </template>

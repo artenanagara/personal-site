@@ -12,11 +12,11 @@
     {
         "id": "theinvestor",
         "title": "The Investor",
-        "category": "Company Profile, Stock Learning",
+        "category": "Company Profile, Stock",
         "type": "visit",
         "url": "https://theinvestor.id",
         "cover": {
-            "default": "/images/works/theinvestor/building.jpeg",
+            "default": "/images/works/theinvestor/building.jpg",
             "hover": "/images/works/theinvestor/mockup.jpg"
         }
     },
@@ -42,4 +42,3 @@
         }
     }
 ]
-
