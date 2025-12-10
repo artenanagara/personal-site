@@ -9,22 +9,52 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: Home
+            component: Home,
+            meta: {
+                title: 'Artena Nagara | UI/UX Designer'
+            }
         },
         {
             path: '/about',
             name: 'about',
-            component: About
+            component: About,
+            meta: {
+                title: 'About | Artena Nagara'
+            }
         },
         {
             path: '/work',
             name: 'work',
-            component: () => import('../views/WorkView.vue')
+            component: () => import('../views/WorkView.vue'),
+            meta: {
+                title: 'Work | Artena Nagara'
+            }
         },
         {
             path: '/work/:id',
             name: 'work-detail',
-            component: () => import('../views/WorkDetailView.vue')
+            component: () => import('../views/WorkDetailView.vue'),
+            meta: {
+                title: 'Project | Artena Nagara'
+            }
+        },
+        {
+            path: '/cv',
+            name: 'cv',
+            component: () => import('../cv/CvView.vue'),
+            meta: {
+                title: 'CV | Artena Nagara',
+                hideNavigation: true,
+                hideFooter: true
+            }
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: () => import('../views/NotFoundView.vue'),
+            meta: {
+                title: 'Page Not Found | Artena Nagara'
+            }
         }
     ],
     scrollBehavior(to, from, savedPosition) {
@@ -34,6 +64,11 @@ const router = createRouter({
             return { top: 0 }
         }
     }
+})
+
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title || 'Artena Nagara - UI/UX Designer'
+    next()
 })
 
 export default router

@@ -1,5 +1,8 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
+import { useCursor } from '../../composables/useCursor';
+
+const { text, variant } = useCursor();
 
 const x = ref(0);
 const y = ref(0);
@@ -45,33 +48,37 @@ onUnmounted(() => {
   document.body.removeEventListener('mouseenter', handleMouseEnter);
   document.body.removeEventListener('mouseleave', handleMouseLeave);
 });
+
+const isButton = computed(() => variant.value === 'button');
 </script>
 
 <template>
   <div 
-    class="custom-cursor"
+    class="custom-cursor hidden md:flex items-center justify-center pointer-events-none fixed z-[9999] w-3 h-3"
     :style="{ 
-      transform: `translate(${x}px, ${y}px)`,
+      transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
       opacity: isVisible ? 1 : 0
     }"
-  ></div>
+  >
+    <div 
+      class="cursor-bg absolute inset-0 bg-black rounded-full transition-transform duration-300 ease-out"
+      :class="{ 'scale-100': !isButton, 'scale-[8]': isButton }"
+    ></div>
+    <span 
+      v-if="text" 
+      class="relative text-white font-medium text-[10px] tracking-wider uppercase transition-opacity duration-300 z-10 text-center px-1 whitespace-nowrap"
+      :class="{ 'opacity-100 delay-100': isButton, 'opacity-0': !isButton }"
+    >
+      {{ text }}
+    </span>
+  </div>
 </template>
 
 <style scoped>
 .custom-cursor {
-  position: fixed;
+  /* Positioning handled by style binding */
   top: 0;
   left: 0;
-  width: 12px;
-  height: 12px;
-  background-color: black;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform-origin: center center;
-  margin-top: -6px;
-  margin-left: -6px;
-  /* Removed transition for js-based smoothing */
   will-change: transform;
 }
 </style>
