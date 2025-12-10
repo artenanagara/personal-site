@@ -13,10 +13,14 @@
       
       <RouterLink 
         to="/work"
-        :hovered="hoverEffect"
-        class="text-sm md:text-base lg:text-lg underline cursor-pointer hover:text-gray-600 transition duration-300"
+        class="relative cursor-pointer overflow-hidden group text-sm md:text-base lg:text-lg"
       >
-        See All
+        <span class="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
+            See All
+        </span>
+        <span class="block absolute top-0 left-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-full group-hover:translate-y-0">
+            See All
+        </span>
       </RouterLink>
     </div>
 

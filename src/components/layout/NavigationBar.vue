@@ -12,15 +12,16 @@
     >
       <div class="container mx-auto flex justify-between items-center h-full">
 
-        <p
+        <RouterLink
+          to="/"
           v-motion
           :initial="{ opacity: 0, x: -20 }"
           :enter="{ opacity: 1, x: 0, transition: { duration: 800, delay: 100, ease: [0.22, 1, 0.36, 1] } }"
-          class="text-xl md:text-2xl font-normal cursor-pointer transition-colors duration-700"
+          class="text-xl md:text-2xl font-normal cursor-pointer transition-colors duration-700 block"
           :class="{ 'text-white': isMenuOpen, 'text-black': !isMenuOpen }"
         >
           artena.
-        </p>
+        </RouterLink>
 
         <nav 
           class="hidden md:flex space-x-10 text-base font-sans font-normal text-nowrap transition-opacity duration-500"
@@ -36,16 +37,20 @@
               v-for="(link, index) in links" 
               :key="link.name" 
               :to="link.href" 
-              class="relative shrink-0 cursor-pointer hover:text-gray-600 transition duration-300"
+              class="relative shrink-0 cursor-pointer overflow-hidden group"
             >
-              <p
+              <div 
                 v-motion
-                :initial="{ opacity: 0, y: -10 }"
-                :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 + index * 150, ease: [0.22, 1, 0.36, 1] } }"
-                :hovered="{ y: -2, transition: { duration: 400, ease: [0.22, 1, 0.36, 1] } }"
+                 :initial="{ opacity: 0, y: -10 }"
+                 :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 + index * 150, ease: [0.22, 1, 0.36, 1] } }"
               >
-                {{ link.name }}
-              </p>
+                  <span class="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
+                      {{ link.name }}
+                  </span>
+                  <span class="block absolute top-0 left-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-full group-hover:translate-y-0">
+                      {{ link.name }}
+                  </span>
+              </div>
             </RouterLink>
           </div>
         </nav>

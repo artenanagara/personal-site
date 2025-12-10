@@ -1,5 +1,29 @@
 <script setup>
 import FooterSection from '../components/layout/FooterSection.vue';
+import { useRouter } from 'vue-router';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+
+const router = useRouter();
+
+// Scroll Animation Logic for Profile Image
+const scrollY = ref(0);
+const handleScroll = () => {
+  scrollY.value = window.scrollY;
+};
+
+const imageScale = computed(() => {
+  // Scale down from 1 to 0.9 as user scrolls 500px
+  const scale = 1 - (scrollY.value * 0.0002); 
+  return Math.max(0.9, scale);
+});
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 
 // Smooth custom bezier for premium feel
 const transitionMain = { duration: 1200, ease: [0.22, 1, 0.36, 1] };
@@ -53,12 +77,17 @@ const motionStagger = (delay = 0) => ({
 
         <!-- Profile Image (Right) -->
         <div 
-          v-motion
-          :initial="{ opacity: 0, scale: 0.95 }"
-          :enter="{ opacity: 1, scale: 1, transition: { ...transitionMain, delay: 400 } }"
-          class="w-full lg:w-80 h-80 bg-[#d9d9d9] shrink-0 rounded-none shadow-sm origin-center"
+           class="w-full lg:w-80 h-80 shrink-0 origin-center sticky top-40"
+           :style="{ transform: `scale(${imageScale})` }"
         >
-            <img src="../assets/images/photo-me.PNG" alt="" class="grayscale"></img>
+          <div 
+            v-motion
+            :initial="{ opacity: 0, scale: 0.95 }"
+            :enter="{ opacity: 1, scale: 1, transition: { ...transitionMain, delay: 400 } }"
+            class="w-full h-full bg-[#d9d9d9] rounded-none shadow-sm"
+          >
+              <img src="../assets/images/photo-me.PNG" alt="" class="grayscale w-full h-full object-cover">
+          </div>
         </div>
       </div>
 
@@ -69,7 +98,7 @@ const motionStagger = (delay = 0) => ({
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain } }"
-          class="w-full h-screen bg-[#d9d9d9] rounded-none mb-12 shadow-sm"
+          class="w-full h-screen rounded-none mb-12 shadow-sm"
         >
              <img src="../assets/images/about-me.png" alt="" class="w-full h-full object-cover">
         </div>
@@ -89,44 +118,57 @@ const motionStagger = (delay = 0) => ({
           <!-- Links -->
           <div class="flex flex-col gap-6 w-full lg:w-96 shrink-0">
              <!-- Experience -->
-            <div 
+            <!-- Experience -->
+            <a 
+              href="/cv"
+              target="_blank"
               v-motion
               :initial="{ opacity: 0, x: 20 }"
               :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 300 } }"
-              class="border border-black/10 p-6 hover:border-black/30 transition-colors group cursor-pointer bg-white"
+              class="border border-black/10 p-6 hover:border-black/30 transition-colors group cursor-pointer bg-white block"
             >
-              <div class="flex items-center gap-3 mb-1">
-                 <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-black group-hover:bg-black transition-colors"></div>
-                 <h3 class="text-xl font-medium">View My Experience</h3>
+              <div class="flex items-center mb-1">
+                 <div class="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-3 transition-all duration-300 ease-out">
+                    <div class="w-2 h-2 rounded-full bg-black"></div>
+                 </div>
+                 <h3 class="text-xl font-medium transition-transform duration-300">View My Experience</h3>
               </div>
-              <p class="text-gray-500 text-sm pl-4.5">My professional background and achievements</p>
-            </div>
+              <p class="text-gray-500 text-sm transition-all duration-300">My professional background and achievements</p>
+            </a>
              <!-- Dribbble -->
-            <div 
+            <a 
+              href="https://dribbble.com/artenanagara"
+              target="_blank"
               v-motion
               :initial="{ opacity: 0, x: 20 }"
               :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 400 } }"
-              class="border border-black/10 p-6 hover:border-black/30 transition-colors group cursor-pointer bg-white"
+              class="border border-black/10 p-6 hover:border-black/30 transition-colors group cursor-pointer bg-white block"
             >
-              <div class="flex items-center gap-3 mb-1">
-                 <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-black group-hover:bg-black transition-colors"></div>
-                 <h3 class="text-xl font-medium">Dribbble</h3>
+              <div class="flex items-center mb-1">
+                 <div class="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-3 transition-all duration-300 ease-out">
+                    <div class="w-2 h-2 rounded-full bg-[#ea4c89]"></div>
+                   </div>
+                 <h3 class="text-xl font-medium transition-transform duration-300">Dribbble</h3>
               </div>
-              <p class="text-gray-500 text-sm pl-4.5">Check out my design exploration</p>
-            </div>
+              <p class="text-gray-500 text-sm transition-all duration-300">Check out my design exploration</p>
+            </a>
              <!-- LinkedIn -->
-            <div 
+            <a 
+              href="https://linkedin.com/in/artenanagara"
+              target="_blank"
               v-motion
               :initial="{ opacity: 0, x: 20 }"
               :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 500 } }"
-              class="border border-black/10 p-6 hover:border-black/30 transition-colors group cursor-pointer bg-white"
+              class="border border-black/10 p-6 hover:border-black/30 transition-colors group cursor-pointer bg-white block"
             >
-              <div class="flex items-center gap-3 mb-1">
-                 <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-black group-hover:bg-black transition-colors"></div>
-                 <h3 class="text-xl font-medium">LinkedIn</h3>
+              <div class="flex items-center mb-1">
+                 <div class="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-3 transition-all duration-300 ease-out">
+                    <div class="w-2 h-2 rounded-full bg-[#0a66c2]"></div>
+                 </div>
+                 <h3 class="text-xl font-medium transition-transform duration-300">LinkedIn</h3>
               </div>
-               <p class="text-gray-500 text-sm pl-4.5">Let's connect professionally.</p>
-            </div>
+               <p class="text-gray-500 text-sm transition-all duration-300">Let's connect professionally.</p>
+            </a>
           </div>
         </div>
       </div>
