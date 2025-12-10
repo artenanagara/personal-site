@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+import AnimatedButton from '../components/ui/AnimatedButton.vue';
 import FooterSection from '../components/layout/FooterSection.vue';
 </script>
 
@@ -12,11 +12,10 @@ import FooterSection from '../components/layout/FooterSection.vue';
           <span class="text-gray-400">doesn't exist</span> or has been moved.
         </h1>
         
-        <RouterLink 
+        <AnimatedButton 
           to="/" 
-          class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium transition-transform hover:scale-105"
+          text="Go to home"
         >
-          Go to home
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="20" 
@@ -31,7 +30,7 @@ import FooterSection from '../components/layout/FooterSection.vue';
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
-        </RouterLink>
+        </AnimatedButton>
       </div>
     </div>
     <FooterSection />
