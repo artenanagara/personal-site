@@ -45,11 +45,11 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/manisgrafika/hero.png",
+                    "src": "/images/works/manisgrafika/hero.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/manisgrafika/collection.png",
+                    "src": "/images/works/manisgrafika/collection.webp",
                     "span": "col-span-2"
                 },
                 {
@@ -68,19 +68,19 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/manisgrafika/detail.png",
+                    "src": "/images/works/manisgrafika/detail.webp",
                     "span": "col-span-4"
                 },
                 {
-                    "src": "/images/works/manisgrafika/text.png",
+                    "src": "/images/works/manisgrafika/text.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/manisgrafika/variant.png",
+                    "src": "/images/works/manisgrafika/variant.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/manisgrafika/list.png",
+                    "src": "/images/works/manisgrafika/list.webp",
                     "span": "col-span-4"
                 }
             ]
@@ -95,19 +95,19 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/manisgrafika/typo.png",
+                    "src": "/images/works/manisgrafika/typo.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/manisgrafika/color.jpg",
+                    "src": "/images/works/manisgrafika/color.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/manisgrafika/branding.jpg",
+                    "src": "/images/works/manisgrafika/branding.webp",
                     "span": "col-span-4"
                 },
                 {
-                    "src": "/images/works/manisgrafika/mockup.jpg",
+                    "src": "/images/works/manisgrafika/mockup.webp",
                     "span": "col-span-4"
                 }
             ]

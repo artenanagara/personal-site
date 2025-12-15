@@ -5,8 +5,8 @@
         "category": "Dashboard, Waste Bank",
         "type": "open",
         "cover": {
-            "default": "/images/works/greenprobolinggo/waste.jpg",
-            "hover": "/images/works/greenprobolinggo/mockup.jpg"
+            "default": "/images/works/greenprobolinggo/waste.webp",
+            "hover": "/images/works/greenprobolinggo/mockup.webp"
         }
     },
     {
@@ -16,8 +16,8 @@
         "type": "visit",
         "url": "https://theinvestor.id",
         "cover": {
-            "default": "/images/works/theinvestor/building.jpg",
-            "hover": "/images/works/theinvestor/mockup.jpg"
+            "default": "/images/works/theinvestor/building.webp",
+            "hover": "/images/works/theinvestor/mockup.webp"
         }
     },
     {
@@ -27,8 +27,8 @@
         "type": "open",
         "url": "https://manisgrafika.id",
         "cover": {
-            "default": "/images/works/manisgrafika/yasin.jpg",
-            "hover": "/images/works/manisgrafika/mockup.jpg"
+            "default": "/images/works/manisgrafika/yasin.webp",
+            "hover": "/images/works/manisgrafika/mockup.webp"
         }
     },
     {
@@ -38,7 +38,7 @@
         "type": "open",
         "cover": {
             "default": "/images/works/exmood/hand.webp",
-            "hover": "/images/works/exmood/mockup.jpg"
+            "hover": "/images/works/exmood/mockup.webp"
         }
     }
 ]

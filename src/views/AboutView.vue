@@ -86,7 +86,7 @@ const motionStagger = (delay = 0) => ({
             :enter="{ opacity: 1, scale: 1, transition: { ...transitionMain, delay: 400 } }"
             class="w-full h-full bg-[#d9d9d9] rounded-none shadow-sm"
           >
-              <img src="../assets/images/photo-me.PNG" alt="" class="grayscale w-full h-full object-cover">
+              <img src="../assets/images/photo-me.webp" alt="" class="grayscale w-full h-full object-cover">
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ const motionStagger = (delay = 0) => ({
           :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain } }"
           class="w-full h-screen rounded-none mb-12 shadow-sm"
         >
-             <img src="../assets/images/about-me.png" alt="" class="w-full h-full object-cover">
+             <img src="../assets/images/about-me.webp" alt="" class="w-full h-full object-cover">
         </div>
 
         <div class="flex flex-col lg:flex-row gap-16 justify-between items-start">
