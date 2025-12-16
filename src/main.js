@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import { MotionPlugin } from '@vueuse/motion';
 
-import { createHead } from '@unhead/vue'
+import { createHead } from '@unhead/vue/client'
 
 const app = createApp(App);
 const head = createHead();
