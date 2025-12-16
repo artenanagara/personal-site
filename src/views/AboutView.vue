@@ -2,6 +2,16 @@
 import FooterSection from '../components/layout/FooterSection.vue';
 import { useRouter } from 'vue-router';
 import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'About',
+  meta: [
+    { name: 'description', content: 'Learn more about Artena Nagara, a UI/UX Designer and Frontend Developer with a passion for simplicity and clarity in digital design.' },
+    { property: 'og:title', content: 'About | Artena Nagara' },
+    { property: 'og:description', content: 'Learn more about Artena Nagara, a UI/UX Designer and Frontend Developer with a passion for simplicity and clarity in digital design.' },
+  ]
+})
 
 const router = useRouter();
 

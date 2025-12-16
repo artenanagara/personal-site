@@ -1,12 +1,18 @@
-<script setup>
 import { onMounted } from 'vue';
 import cvFile from './CV - Artena Nagara.pdf';
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'CV - Artenna Dhyttya Nagara',
+  meta: [
+    { name: 'description', content: 'Curriculum Vitae of Artena Nagara - UI/UX Designer' }
+  ]
+})
 
 onMounted(() => {
     document.body.style.backgroundColor = '#ffffff';
-    document.title = 'CV - Artenna Dhyttya Nagara';
 });
-</script>
+
 
 <template>
     <div class="min-h-screen bg-gray-200 py-10 px-4 md:px-0 font-serif leading-relaxed text-black">

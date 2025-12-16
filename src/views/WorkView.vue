@@ -1,6 +1,17 @@
 <script setup>
 import FooterSection from '../components/layout/FooterSection.vue';
 import WorkCard from '../components/ui/WorkCard.vue';
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'Work',
+  meta: [
+    { name: 'description', content: 'Explore the design portfolio of Artena Nagara, featuring selected UI/UX projects, web designs, and case studies.' },
+    { property: 'og:title', content: 'Work | Artena Nagara' },
+    { property: 'og:description', content: 'Explore the design portfolio of Artena Nagara, featuring selected UI/UX projects, web designs, and case studies.' },
+  ]
+})
+
 
 // Smooth custom bezier for premium feel
 const transitionMain = { duration: 1200, ease: [0.22, 1, 0.36, 1] };

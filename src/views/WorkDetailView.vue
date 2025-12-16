@@ -1,17 +1,27 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import FooterSection from '../components/layout/FooterSection.vue';
 import WorkCard from '../components/ui/WorkCard.vue';
 import worksData from '../data/works.json';
 import { useCursor } from '../composables/useCursor';
 import AnimatedButton from '../components/ui/AnimatedButton.vue';
+import { useHead } from '@unhead/vue'
 
 const route = useRoute();
 const project = ref(null);
 const loading = ref(true);
 const nextProjects = ref([]);
 const { setCursor, resetCursor } = useCursor();
+
+useHead({
+  title: computed(() => project.value?.title),
+  meta: [
+    { name: 'description', content: computed(() => project.value?.description) },
+    { property: 'og:title', content: computed(() => project.value?.title ? `${project.value.title} | Artena Nagara` : '') },
+    { property: 'og:description', content: computed(() => project.value?.description) },
+  ]
+})
 
 const transitionMain = { duration: 1200, ease: [0.22, 1, 0.36, 1] };
 
@@ -20,11 +30,6 @@ const loadProjectData = async () => {
   try {
     const data = await import(`../data/work-details/${route.params.id}.json`);
     project.value = data.default;
-    
-    // Update document title for SEO
-    if (project.value && project.value.title) {
-      document.title = `${project.value.title} | Artena Nagara`;
-    }
     
     // Get random next projects
     const currentId = route.params.id;
@@ -39,6 +44,7 @@ const loadProjectData = async () => {
     loading.value = false;
   }
 };
+
 
 onMounted(() => {
   loadProjectData();

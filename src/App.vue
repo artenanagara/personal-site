@@ -6,8 +6,40 @@ import Lenis from 'lenis'
 import { onMounted, watch } from 'vue';
 import { useCursor } from './composables/useCursor';
 import { SpeedInsights } from "@vercel/speed-insights/vue";
+import { useHead } from '@unhead/vue'
+
 const route = useRoute();
 const { resetCursor } = useCursor();
+
+useHead({
+  titleTemplate: (title) => title ? `${title} | Artena Nagara` : 'Artena Nagara - UI/UX Designer',
+  meta: [
+    { name: 'author', content: 'Artena Nagara' },
+    { property: 'og:site_name', content: 'Artena Nagara' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Arttenna Dhyttya Nagara",
+        "alternateName": ["Artena", "Artena Nagara"],
+        "jobTitle": "UI/UX Designer",
+        "url": "https://artenanagara.my.id",
+        "sameAs": [
+          "https://www.linkedin.com/in/artenanagara",
+          "https://dribbble.com/artenanagara",
+          "https://instagram.com/artenanagara",
+          "https://x.com/artenanagara"
+        ]
+      })
+    }
+  ]
+})
+
 
 onMounted(() => {
   const lenis = new Lenis()
