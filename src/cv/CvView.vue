@@ -5,7 +5,11 @@ import { useHead } from '@unhead/vue'
 useHead({
   title: 'CV - Artenna Dhyttya Nagara',
   meta: [
-    { name: 'description', content: 'Curriculum Vitae of Artena Nagara - UI/UX Designer' }
+    { name: 'description', content: 'Curriculum Vitae of Artena Nagara - UI/UX Designer' },
+    { property: 'og:url', content: 'https://cv.artenanagara.my.id/' }
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://cv.artenanagara.my.id/' }
   ]
 })
 

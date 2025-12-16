@@ -130,7 +130,7 @@ const motionStagger = (delay = 0) => ({
              <!-- Experience -->
             <!-- Experience -->
             <a 
-              href="/cv"
+              href="https://cv.artenanagara.my.id"
               target="_blank"
               v-motion
               :initial="{ opacity: 0, x: 20 }"
