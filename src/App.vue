@@ -29,6 +29,30 @@ useHead({
         "alternateName": ["Artena", "Artena Nagara"],
         "jobTitle": "UI/UX Designer",
         "url": "https://artenanagara.my.id",
+        "workLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Klaten",
+            "addressRegion": "Central Java",
+            "addressCountry": "ID"
+          }
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Klaten"
+          },
+          {
+            "@type": "City",
+            "name": "Surakarta",
+            "alternateName": "Solo"
+          },
+          {
+            "@type": "State",
+            "name": "Central Java"
+          }
+        ],
         "sameAs": [
           "https://www.linkedin.com/in/artenanagara",
           "https://dribbble.com/artenanagara",

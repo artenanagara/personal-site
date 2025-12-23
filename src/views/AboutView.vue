@@ -7,9 +7,10 @@ import { useHead } from '@unhead/vue'
 useHead({
   title: 'About',
   meta: [
-    { name: 'description', content: 'Learn more about Artena Nagara, a UI/UX Designer and Frontend Developer with a passion for simplicity and clarity in digital design.' },
+    { name: 'description', content: 'Learn more about Artena Nagara, a UI/UX Designer and Frontend Developer based in Klaten, serving Solo and Surakarta. 4+ years of experience creating digital experiences for Central Java businesses.' },
+    { name: 'keywords', content: 'artena nagara, ui ux designer klaten, ui ux designer solo, about artena, surakarta designer' },
     { property: 'og:title', content: 'About | Artena Nagara' },
-    { property: 'og:description', content: 'Learn more about Artena Nagara, a UI/UX Designer and Frontend Developer with a passion for simplicity and clarity in digital design.' },
+    { property: 'og:description', content: 'UI/UX Designer based in Klaten, serving Solo and Surakarta. 4+ years of experience with a passion for simplicity and clarity in digital design.' },
   ]
 })
 
@@ -80,7 +81,7 @@ const motionStagger = (delay = 0) => ({
           
           <div class="lg:ml-32 max-w-xl mt-8">
             <p class="text-lg leading-7 font-normal text-black/80">
-              In a world full of digital noise, the clearest message wins. That's the principle at the core of my work. As a UI/UX Designer and Frontend Developer with over 4 years of experience, I meticulously craft digital experiences that prioritize clarity and function. By leveraging tools like Figma, WordPress, and Webflow, I build intuitive interfaces that transform a brand's vision into a high-performing digital reality. My passion is to drive meaningful interaction and create a lasting, positive impression, providing modern brands with the ultimate sophistication: simplicity that works.
+              In a world full of digital noise, the clearest message wins. That's the principle at the core of my work. Based in Klaten and serving businesses across Solo and Surakarta, I'm a UI/UX Designer and Frontend Developer with over 4 years of experience meticulously crafting digital experiences that prioritize clarity and function. By leveraging tools like Figma, WordPress, and Webflow, I build intuitive interfaces that transform a brand's vision into a high-performing digital reality for clients throughout Central Java. My passion is to drive meaningful interaction and create a lasting, positive impression, providing modern brands with the ultimate sophistication: simplicity that works.
             </p>
           </div>
         </div>
