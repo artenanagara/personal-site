@@ -65,18 +65,18 @@ onUnmounted(() => {
   <component
     :is="linkComponent"
     v-bind="linkBindings"
-    @mouseenter="onMouseEnter" 
-    @mouseleave="onMouseLeave"
     v-motion
     :initial="{ opacity: 0, y: 40 }"
     :visible="{ opacity: 1, y: 0, transition: { duration: 800, delay: delay * 1000, ease: [0.22, 1, 0.36, 1] } }"
     :delay="delay * 1000"
     class="block group"
-    :style="{ cursor: 'none' }"
     :class="{ 'opacity-50': !isClickable }"
   >
     <div 
       class="w-full relative mb-3 overflow-hidden bg-gray-200 aspect-[4/3]"
+      @mouseenter="onMouseEnter" 
+      @mouseleave="onMouseLeave"
+      :style="{ cursor: 'none' }"
     >
       <!-- Default Cover -->
       <img 

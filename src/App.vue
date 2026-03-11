@@ -82,12 +82,12 @@ watch(route, () => {
 </script>
 
 <template>
+  <NavigationBar v-if="!route.meta.hideNavigation" />
   <RouterView v-slot="{ Component }">
     <transition :name="route.meta.transition || 'page'" mode="out-in">
       <component :is="Component" />
     </transition>
   </RouterView>
-  <NavigationBar v-if="!route.meta.hideNavigation" />
   <CustomCursor v-if="!route.meta.hideCursor" />
   <SpeedInsights />
 </template>

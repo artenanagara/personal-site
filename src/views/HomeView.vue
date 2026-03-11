@@ -17,13 +17,13 @@ import FooterSection from '../components/layout/FooterSection.vue';
 import { useHead } from '@unhead/vue'
 
 useHead({
-  title: 'Artena Nagara - UI/UX Designer Klaten | Solo | Surakarta',
+  title: 'Artena Nagara - UI/UX Designer | Simplicity, crafted for modern brands',
   titleTemplate: null, // Override template for home to be exact
   meta: [
-    { name: 'description', content: 'Artena Nagara - UI/UX Designer based in Klaten, serving Solo and Surakarta. Creating intuitive and visually stunning digital experiences for businesses in Central Java. Portfolio and recent works.' },
-    { name: 'keywords', content: 'artena, ui ux klaten, ui ux solo, ui ux surakarta, ui designer klaten, ux designer solo, artena nagara' },
-    { property: 'og:title', content: 'Artena Nagara - UI/UX Designer Klaten | Solo | Surakarta' },
-    { property: 'og:description', content: 'UI/UX Designer based in Klaten, serving Solo and Surakarta. Creating intuitive digital experiences for Central Java businesses.' },
+    { name: 'description', content: 'Artena Nagara - UI/UX Designer. Simplicity, crafted for modern brands. Creating intuitive and visually stunning digital experiences. Portfolio and recent works.' },
+    { name: 'keywords', content: 'artena, ui ux designer, artena nagara, ui design, ux design, simplicity crafted for modern brands' },
+    { property: 'og:title', content: 'Artena Nagara - UI/UX Designer | Simplicity, crafted for modern brands' },
+    { property: 'og:description', content: 'Simplicity, crafted for modern brands. Creating intuitive digital experiences for modern businesses.' },
   ],
   script: [
     {

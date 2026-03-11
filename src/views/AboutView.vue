@@ -225,11 +225,41 @@ const motionStagger = (delay = 0) => ({
                         <p class="text-sm text-gray-500 leading-relaxed">Designing and product visualizing fintech and business Rintisan.</p>
                      </div>
 
-                      <!-- Job 2 -->
+                     <!-- Job 2 -->
                      <div 
                        v-motion
                        :initial="{ opacity: 0, y: 30 }"
                        :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 300 } }"
+                       class="w-full md:w-[calc(50%-2.5rem)]"
+                     >
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="text-xl font-medium">Obsidian Lab</h3>
+                            <span class="text-sm font-medium">Now</span>
+                        </div>
+                        <p class="text-sm text-gray-800 font-medium italic mb-2">UI Designer</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Designing user interfaces for various client projects at a web agency.</p>
+                     </div>
+
+                     <!-- Job 3 -->
+                     <div 
+                       v-motion
+                       :initial="{ opacity: 0, y: 30 }"
+                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 400 } }"
+                       class="w-full md:w-[calc(50%-2.5rem)]"
+                     >
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="text-xl font-medium">Futake Indonesia</h3>
+                            <span class="text-sm font-medium">Now</span>
+                        </div>
+                        <p class="text-sm text-gray-800 font-medium italic mb-2">UI/UX Designer</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Designing and creating company profile websites for several Futake brands.</p>
+                     </div>
+
+                      <!-- Job 4 -->
+                     <div 
+                       v-motion
+                       :initial="{ opacity: 0, y: 30 }"
+                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 500 } }"
                        class="w-full md:w-[calc(50%-2.5rem)]"
                      >
                         <div class="flex justify-between items-baseline mb-1">
@@ -240,11 +270,11 @@ const motionStagger = (delay = 0) => ({
                         <p class="text-sm text-gray-500 leading-relaxed">Designing and developing user-friendly company profile websites using WordPress.</p>
                      </div>
 
-                      <!-- Job 3 -->
+                      <!-- Job 5 -->
                      <div 
                        v-motion
                        :initial="{ opacity: 0, y: 30 }"
-                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 400 } }"
+                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 600 } }"
                        class="w-full md:w-[calc(50%-2.5rem)]"
                      >
                         <div class="flex justify-between items-baseline mb-1">
@@ -255,11 +285,11 @@ const motionStagger = (delay = 0) => ({
                          <p class="text-sm text-gray-500 leading-relaxed">Contributed to developing a responsive and user-friendly ERP interface.</p>
                      </div>
 
-                      <!-- Job 4 -->
+                      <!-- Job 6 -->
                      <div 
                        v-motion
                        :initial="{ opacity: 0, y: 30 }"
-                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 500 } }"
+                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 700 } }"
                        class="w-full md:w-[calc(50%-2.5rem)]"
                      >
                         <div class="flex justify-between items-baseline mb-1">

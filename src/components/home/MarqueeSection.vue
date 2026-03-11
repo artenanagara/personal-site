@@ -83,6 +83,7 @@ const sectionVisible = (delay) => ({
 });
 
 const items = [
+  { link: 'https://dribbble.com/shots/27113999-ResikWorks-Deep-Cleaning-Home-Service-Landing-Page', image: 'https://cdn.dribbble.com/userupload/46829930/file/cf57f37e7d0b8ee9f0ce177b43435d50.jpg?resize=2400x1800&vertical=center' },
   { link: 'https://dribbble.com/shots/26790239-Jobar-Smart-Job-Portal-App', image: 'https://cdn.dribbble.com/userupload/45759357/file/bfa45f83b652d083d553519c8b83e425.jpg?resize=752x&vertical=center' },
   { link: 'https://dribbble.com/shots/26759374-Bakr-Modern-POS-System-for-Bakeries', image: 'https://cdn.dribbble.com/userupload/45661058/file/22a9db05acb54835b1ab69f55db89a54.jpg?resize=752x&vertical=center' },
   { link: 'https://dribbble.com/shots/26051673-Kemayu-Beauty-Clinic-Homepage', image: 'https://cdn.dribbble.com/userupload/43399396/file/original-9d3525b9aab6058d2086ccffec6927db.jpg?resize=752x&vertical=center' },
