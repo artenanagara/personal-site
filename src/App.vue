@@ -3,13 +3,21 @@ import NavigationBar from './components/layout/NavigationBar.vue';
 import CustomCursor from './components/ui/CustomCursor.vue';
 import { RouterView, useRoute } from 'vue-router'
 import Lenis from 'lenis'
-import { onMounted, watch } from 'vue';
+import { onMounted, watch, computed } from 'vue';
 import { useCursor } from './composables/useCursor';
 import { SpeedInsights } from "@vercel/speed-insights/vue";
 import { useHead } from '@unhead/vue'
 
 const route = useRoute();
 const { resetCursor } = useCursor();
+
+const canonicalUrl = computed(() => {
+  const base = window.location.hostname.startsWith('cv.') 
+    ? 'https://cv.artenanagara.my.id' 
+    : 'https://artenanagara.my.id';
+  const path = route.path === '/' ? '' : route.path;
+  return `${base}${path}`;
+});
 
 useHead({
   titleTemplate: (title) => title ? `${title} | Artena Nagara` : 'Artena Nagara - UI/UX Designer',
@@ -18,6 +26,9 @@ useHead({
     { property: 'og:site_name', content: 'Artena Nagara' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
+  ],
+  link: [
+    { rel: 'canonical', href: canonicalUrl }
   ],
   script: [
     {
