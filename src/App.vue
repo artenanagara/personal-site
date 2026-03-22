@@ -20,7 +20,7 @@ const canonicalUrl = computed(() => {
 });
 
 useHead({
-  titleTemplate: (title) => title ? `${title} | Artena Nagara` : 'Artena Nagara - UI/UX Designer',
+  titleTemplate: (title) => title ? `${title} - Artena Nagara` : 'Artena Nagara',
   meta: [
     { name: 'author', content: 'Artena Nagara' },
     { property: 'og:site_name', content: 'Artena Nagara' },
@@ -100,6 +100,9 @@ onUnmounted(() => {
 
 watch(route, () => {
   resetCursor();
+  if (lenisInstance) {
+    lenisInstance.scrollTo(0, { immediate: true });
+  }
 });
 </script>
 
@@ -115,15 +118,19 @@ watch(route, () => {
 </template>
 
 <style>
-.page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.3s ease;
 }
-
-.page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: scale(0.98) translateY(10px);
+}
+
+.page-enter-active {
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(24px);
 }
 </style>
 

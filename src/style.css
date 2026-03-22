@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: auto !important;
+}
+
 @theme {
   --font-sans: 'Urbanist', system-ui, sans-serif;
 }

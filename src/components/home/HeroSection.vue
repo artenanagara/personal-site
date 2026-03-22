@@ -2,64 +2,93 @@
   <!-- Hero Section -->
   <section class="h-screen flex flex-col justify-end bg-white text-black pb-8 px-4 md:px-8 md:pb-4 overflow-hidden">
     <div class="container mx-auto flex flex-col justify-between h-full">
-      <div class="font-sans font-normal leading-none relative w-full flex flex-col justify-center h-full pt-0">
-        <h1 
-          v-motion
-          :initial="motionInitialHidden"
-          :enter="heroTextEnter(200)"
-          class="text-6xl font-light lg:text-8xl leading-tight w-full"
-        >
-          <p class="mb-0 overflow-hidden">
-            <span>Creates intuitive and engaging </span>
-          </p>
 
-          <span class="inline-block">
-            <span class="font-light italic">user experiences</span>
-          </span>
-          
-          <p class="mb-0 overflow-hidden">
-            through minimalist design
-          </p>
+      <!-- Main Headline -->
+      <div class="font-sans font-normal leading-none relative w-full flex flex-col justify-center h-full">
+        <h1 class="text-5xl font-light md:text-6xl lg:text-8xl leading-[1.1] w-full">
+
+          <div class="overflow-hidden pb-[0.1em]">
+            <div
+              class="transition-transform will-change-transform"
+              :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
+              style="transition-duration: 1100ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 80ms"
+            >
+              Creates intuitive and engaging
+            </div>
+          </div>
+
+          <div class="overflow-hidden pb-[0.1em]">
+            <div
+              class="transition-transform will-change-transform"
+              :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
+              style="transition-duration: 1100ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 250ms"
+            >
+              <span class="font-light italic">user experiences</span>
+            </div>
+          </div>
+
+          <div class="overflow-hidden pb-[0.1em]">
+            <div
+              class="transition-transform will-change-transform"
+              :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
+              style="transition-duration: 1100ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 420ms"
+            >
+              through minimalist design
+            </div>
+          </div>
+
         </h1>
       </div>
 
-      <div
-        v-motion
-        :initial="motionInitialHiddenSmall"
-        :enter="heroFooterEnter"
-        class="flex justify-between items-end relative w-full pt-8 pb-0 md:pt-8 md:pb-4"
-      >    
-        <p class="text-xs md:text-sm lg:text-base leading-snug">
-          Located in<br />
-          <span>Surakarta, Indonesia 🇮🇩</span>
-        </p>
-        
-        <p class="text-xs md:text-sm lg:text-base text-right leading-snug">
-          Currently available for<br />
-          <span>🌎 freelance worldwide</span>
-        </p>
+      <!-- Bottom Bar -->
+      <div class="relative w-full pt-8 pb-0 md:pt-8 md:pb-4">
+
+        <!-- Animated divider line -->
+        <div
+          class="absolute top-0 left-0 h-px bg-black transition-all will-change-transform"
+          :class="entered ? 'w-full opacity-100' : 'w-0 opacity-0'"
+          style="transition-duration: 900ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 600ms"
+        ></div>
+
+        <div class="flex justify-between items-end">
+          <div class="overflow-hidden">
+            <p
+              class="text-xs md:text-sm lg:text-base leading-snug transition-transform will-change-transform"
+              :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
+              style="transition-duration: 900ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 720ms"
+            >
+              Located in<br />
+              <span>Surakarta, Indonesia 🇮🇩</span>
+            </p>
+          </div>
+
+          <div class="overflow-hidden">
+            <p
+              class="text-xs md:text-sm lg:text-base text-right leading-snug transition-transform will-change-transform"
+              :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
+              style="transition-duration: 900ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 840ms"
+            >
+              Currently available for<br />
+              <span>🌎 freelance worldwide</span>
+            </p>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
-  <!-- Hero Section End -->
 </template>
 
 <script setup>
-// Animation Constants
-const transitionMain = { duration: 1200, ease: [0.22, 1, 0.36, 1] };
+import { ref, onMounted } from 'vue'
 
-const motionInitialHidden = { opacity: 0, y: 40 };
-const motionInitialHiddenSmall = { opacity: 0, y: 40 };
+const entered = ref(false)
 
-const heroTextEnter = (delay) => ({
-  opacity: 1,
-  y: 0,
-  transition: { ...transitionMain, delay }
-});
-
-const heroFooterEnter = {
-  opacity: 1,
-  y: 0,
-  transition: { ...transitionMain, duration: 1000, delay: 800 }
-};
+onMounted(() => {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      entered.value = true
+    })
+  })
+})
 </script>

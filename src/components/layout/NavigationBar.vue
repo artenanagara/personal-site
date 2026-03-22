@@ -98,7 +98,7 @@
             :key="link.name"
             :to="link.href"
             @click="isMenuOpen = false"
-            class="text-6xl sm:text-5xl font-extralight py-10 px-4 md:px-10 border-b border-gray-800 text-white hover:bg-gray-900 transition duration-300"
+            class="text-4xl sm:text-5xl lg:text-6xl font-extralight py-8 sm:py-10 px-4 md:px-10 border-b border-gray-800 text-white hover:bg-gray-900 transition duration-300"
           >
             <p
               v-motion

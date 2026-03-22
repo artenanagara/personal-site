@@ -31,22 +31,22 @@ const getColSpan = (index) => {
     
     <!-- Header Section -->
     <div class="px-4 md:px-20 max-w-screen-2xl mx-auto w-full mb-16">
-      <div 
-        class="flex flex-col lg:flex-row justify-between items-start w-full mt-52"
+      <div
+        class="flex flex-col lg:flex-row justify-between items-start w-full mt-16 lg:mt-52"
       >
-        <h1 
+        <h1
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 200 } }"
-          class="text-5xl font-medium leading-normal mb-8 lg:mb-0"
+          class="text-4xl md:text-5xl font-medium leading-normal mb-8 lg:mb-0"
         >
           Works
         </h1>
-        <p 
+        <p
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 400 } }"
-          class="text-xl md:text-22px text-black max-w-3xl leading-8 font-light mb-24"
+          class="text-lg md:text-xl text-black max-w-3xl leading-8 font-light mb-12 lg:mb-24"
         >
           This portfolio showcases a selection of my work, representing the range and diversity of projects I've undertaken. While some pieces are not displayed due to client confidentiality, I believe these examples capture the breadth of what I can bring to each project.
         </p>

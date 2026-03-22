@@ -5,7 +5,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useHead } from '@unhead/vue'
 
 useHead({
-  title: 'About — UI/UX Designer & Freelancer',
+  title: 'About',
   meta: [
     { name: 'description', content: 'Simplicity, crafted for modern brands. Artena Nagara is a freelance UI/UX designer & frontend developer with 4+ years of experience, based in Indonesia. Creating digital experiences that prioritize clarity and function.' },
     { name: 'keywords', content: 'artena nagara, freelance ui ux designer indonesia, ui ux designer klaten, ui ux designer solo, ui ux designer surakarta, minimalist web designer, about artena nagara' },
@@ -88,7 +88,7 @@ const motionStagger = (delay = 0) => ({
 
         <!-- Profile Image (Right) -->
         <div 
-           class="w-full lg:w-80 h-80 shrink-0 origin-center sticky top-40"
+           class="w-full lg:w-96 h-64 md:h-80 shrink-0 origin-center lg:sticky lg:top-40"
            :style="{ transform: `scale(${imageScale})` }"
         >
           <div 
@@ -109,7 +109,7 @@ const motionStagger = (delay = 0) => ({
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain } }"
-          class="w-full h-screen rounded-none mb-12 shadow-sm"
+          class="w-full h-[60vw] md:h-screen rounded-none mb-12 shadow-sm"
         >
              <img src="../assets/images/about-me.webp" alt="" class="w-full h-full object-cover">
         </div>
@@ -119,7 +119,7 @@ const motionStagger = (delay = 0) => ({
              v-motion
              :initial="{ opacity: 0, y: 30 }"
              :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 200 } }"
-             class="lg:w-xl"
+             class="w-full lg:w-[480px]"
           >
             <p class="text-lg leading-7 font-normal text-black/80">
               Beyond the world of code and design, I find balance and inspiration in a variety of activities. You might find me on the badminton court or in the swimming pool to clear my mind. Other times, I enjoy a casual cycle, a long walk while listening to music, and of course, adventuring to find the best local culinary gems. For me, life is all about the harmony between perfect pixels and flavorful adventures.

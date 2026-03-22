@@ -74,17 +74,13 @@ const routes = isCvSubdomain ? [
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes,
-    scrollBehavior(to, from, savedPosition) {
-        if (savedPosition) {
-            return savedPosition
-        } else {
-            return { top: 0 }
-        }
+    scrollBehavior() {
+        return false
     }
 })
 
 router.beforeEach((to, from, next) => {
-    document.title = to.meta.title || 'Artena Nagara - UI/UX Designer'
+    document.title = to.meta.title || 'Artena Nagara'
     next()
 })
 
