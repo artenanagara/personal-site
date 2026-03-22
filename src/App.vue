@@ -92,7 +92,7 @@ let lenisRafId = null;
 
 onMounted(() => {
   lenisInstance = new Lenis({
-    duration: 1.8,
+    duration: 2.6,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
   });
@@ -132,18 +132,18 @@ watch(route, () => {
 
 <style>
 .page-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.6s ease;
 }
 .page-leave-to {
   opacity: 0;
 }
 
 .page-enter-active {
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .page-enter-from {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(32px);
 }
 </style>
 

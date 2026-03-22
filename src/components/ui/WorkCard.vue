@@ -67,7 +67,7 @@ onUnmounted(() => {
     v-bind="linkBindings"
     v-motion
     :initial="{ opacity: 0, y: 50 }"
-    :visible="{ opacity: 1, y: 0, transition: { duration: 1000, delay: delay * 1000, ease: [0.22, 1, 0.36, 1] } }"
+    :visible="{ opacity: 1, y: 0, transition: { duration: 1400, delay: delay * 1000, ease: [0.22, 1, 0.36, 1] } }"
     class="block group"
     :class="{ 'opacity-50': !isClickable }"
   >
@@ -83,12 +83,12 @@ onUnmounted(() => {
         v-if="project.cover.default && project.cover.default.startsWith('/')"
         :src="project.cover.default"
         :alt="project.title"
-        class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-[2400ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
         :class="{ 'scale-[1.06]': isHovering, 'scale-100': !isHovering }"
       />
       <div
         v-else-if="project.cover.default"
-        class="absolute inset-0 w-full h-full transition-transform duration-[1800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+        class="absolute inset-0 w-full h-full transition-transform duration-[2400ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
         :style="{ backgroundColor: project.cover.default }"
       ></div>
 
@@ -99,12 +99,12 @@ onUnmounted(() => {
           :src="project.cover.hover"
           :alt="project.title + ' Hover'"
           loading="lazy"
-          class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1700ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
           :class="{ 'translate-x-0': isHovering, 'translate-x-full': !isHovering }"
         />
         <div
           v-else
-          class="absolute inset-0 w-full h-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          class="absolute inset-0 w-full h-full transition-transform duration-[1700ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
           :style="{ backgroundColor: project.cover.hover }"
           :class="{ 'translate-x-0': isHovering, 'translate-x-full': !isHovering }"
         ></div>
@@ -112,18 +112,18 @@ onUnmounted(() => {
 
       <!-- Dark overlay -->
       <div
-        class="absolute inset-0 bg-black transition-opacity duration-500"
+        class="absolute inset-0 bg-black transition-opacity duration-700"
         :class="isHovering ? 'opacity-10' : 'opacity-0'"
       ></div>
     </div>
 
     <!-- Text info — subtle upward nudge on hover -->
     <div class="flex flex-col gap-0.5 mt-1">
-      <p class="font-normal text-base text-black md:text-lg transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      <p class="font-normal text-base text-black md:text-lg transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
         :class="{ '-translate-y-0.5': isHovering }">
         {{ project.title }}
       </p>
-      <p class="font-normal text-sm transition-colors duration-300"
+      <p class="font-normal text-sm transition-colors duration-500"
         :class="isHovering ? 'text-black' : 'text-gray-400'">
         {{ project.category }}
       </p>

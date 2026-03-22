@@ -8,7 +8,7 @@
         <p
           v-motion
           :initial="{ y: 80 }"
-          :visible="{ y: 0, transition: { duration: 1000, ease: [0.22, 1, 0.36, 1] } }"
+          :visible="{ y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
           class="text-4xl lg:text-5xl font-medium"
         >
           Selected Works
@@ -19,10 +19,10 @@
         to="/work"
         class="relative overflow-hidden group text-sm md:text-base lg:text-lg shrink-0"
       >
-        <span class="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
+        <span class="block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
           See All
         </span>
-        <span class="block absolute top-0 left-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-full group-hover:translate-y-0">
+        <span class="block absolute top-0 left-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-full group-hover:translate-y-0">
           See All
         </span>
       </RouterLink>

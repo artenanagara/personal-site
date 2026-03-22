@@ -4,7 +4,7 @@
     :class="{ 'pointer-events-none': leaving }"
     :style="{
       transform: leaving ? 'translateY(-105%)' : 'translateY(0)',
-      transition: leaving ? 'transform 1.1s cubic-bezier(0.76, 0, 0.24, 1)' : 'none'
+      transition: leaving ? 'transform 1.4s cubic-bezier(0.76, 0, 0.24, 1)' : 'none'
     }"
   >
 
@@ -117,7 +117,7 @@ onUnmounted(() => {
 <style scoped>
 /* ── Greeting word ─────────────────── */
 .word-enter-active {
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s;
 }
 .word-enter-from {
   transform: translateY(110%);
@@ -129,7 +129,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease-in, opacity 0.25s ease-in;
+  transition: transform 0.45s ease-in, opacity 0.4s ease-in;
 }
 .word-leave-to {
   transform: translateY(-110%);
@@ -138,7 +138,7 @@ onUnmounted(() => {
 
 /* ── Sub text (slight delay) ───────── */
 .sub-enter-active {
-  transition: transform 0.5s 0.06s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s 0.06s;
+  transition: transform 0.7s 0.08s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s 0.08s;
 }
 .sub-enter-from {
   transform: translateY(110%);
@@ -150,7 +150,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.25s ease-in, opacity 0.2s ease-in;
+  transition: transform 0.4s ease-in, opacity 0.35s ease-in;
 }
 .sub-leave-to {
   transform: translateY(-110%);

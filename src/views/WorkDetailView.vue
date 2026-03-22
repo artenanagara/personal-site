@@ -23,7 +23,7 @@ useHead({
   ]
 })
 
-const transitionMain = { duration: 1200, ease: [0.22, 1, 0.36, 1] };
+const transitionMain = { duration: 1600, ease: [0.22, 1, 0.36, 1] };
 
 const loadProjectData = async () => {
   loading.value = true;
@@ -79,7 +79,7 @@ const getGalleryItemClass = (span) => {
       <div 
         v-motion
         :initial="{ opacity: 0, y: 20 }"
-        :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 200 } }"
+        :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 300 } }"
         class="mb-4 text-xl font-medium"
       >
         <span class="text-gray-400 text-sm">Work / </span>
@@ -157,7 +157,7 @@ const getGalleryItemClass = (span) => {
             v-if="section.type === 'full-width-image'"
             v-motion
             :initial="{ opacity: 0, y: 80 }"
-            :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
+            :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1800, ease: [0.22, 1, 0.36, 1] } }"
             class="w-full h-auto md:h-[90vh] bg-[#d9d9d9] overflow-hidden"
           >
             <img
@@ -173,7 +173,7 @@ const getGalleryItemClass = (span) => {
             v-else-if="section.type === 'text-block'"
             v-motion
             :initial="{ opacity: 0, y: 40 }"
-            :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1000, ease: [0.22, 1, 0.36, 1] } }"
+            :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
             class="flex w-full"
             :class="{
               'justify-start': section.align === 'left' || !section.align,
@@ -200,7 +200,7 @@ const getGalleryItemClass = (span) => {
               :key="idx"
               v-motion
               :initial="{ opacity: 0, y: 70 }"
-              :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1200, delay: idx * 150, ease: [0.22, 1, 0.36, 1] } }"
+              :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1600, delay: idx * 200, ease: [0.22, 1, 0.36, 1] } }"
               class="bg-[#d9d9d9] w-full h-auto lg:h-[80vh] overflow-hidden"
             >
               <img
@@ -222,7 +222,7 @@ const getGalleryItemClass = (span) => {
               :key="idx"
               v-motion
               :initial="{ opacity: 0, y: 50 }"
-              :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1000, delay: idx * 80, ease: [0.22, 1, 0.36, 1] } }"
+              :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1400, delay: idx * 120, ease: [0.22, 1, 0.36, 1] } }"
               class="bg-[#d9d9d9] h-auto md:h-[50vh] lg:h-[80vh] overflow-hidden"
               :class="getGalleryItemClass(item.span)"
             >

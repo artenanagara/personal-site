@@ -7,7 +7,7 @@
         <p
           v-motion
           :initial="{ y: 80 }"
-          :visible="{ y: 0, transition: { duration: 1000, ease: [0.22, 1, 0.36, 1] } }"
+          :visible="{ y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
           class="text-4xl lg:text-5xl font-medium"
         >
           Another Exploration
@@ -19,7 +19,7 @@
     <div
       v-motion
       :initial="{ opacity: 0, y: 50 }"
-      :visible="{ opacity: 1, y: 0, transition: { duration: 1100, delay: 150, ease: [0.22, 1, 0.36, 1] } }"
+      :visible="{ opacity: 1, y: 0, transition: { duration: 1500, delay: 200, ease: [0.22, 1, 0.36, 1] } }"
       class="relative w-full overflow-hidden"
     >
       <!-- Edge gradient masks -->
@@ -41,7 +41,7 @@
               v-if="item.image"
               :src="item.image"
               loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+              class="w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
               alt="Exploration"
             />
             <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
@@ -64,7 +64,7 @@
               v-if="item.image"
               :src="item.image"
               loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+              class="w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
               alt="Exploration"
             />
             <div v-else class="w-full h-full flex items-center justify-center text-gray-400">

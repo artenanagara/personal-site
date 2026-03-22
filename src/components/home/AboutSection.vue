@@ -8,7 +8,7 @@
         <p
           v-motion
           :initial="{ y: 80 }"
-          :visible="{ y: 0, transition: { duration: 1000, ease: [0.22, 1, 0.36, 1] } }"
+          :visible="{ y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
           class="text-4xl lg:text-5xl font-medium"
         >
           About Me
@@ -21,7 +21,7 @@
         <div
           v-motion
           :initial="{ opacity: 0, y: 30 }"
-          :visible="{ opacity: 1, y: 0, transition: { duration: 900, delay: 200, ease: [0.22, 1, 0.36, 1] } }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 1300, delay: 250, ease: [0.22, 1, 0.36, 1] } }"
           class="md:col-span-1 space-y-2 text-sm lg:text-base leading-relaxed"
         >
           <p class="w-full">
@@ -39,7 +39,7 @@
           <div
             v-motion
             :initial="{ opacity: 0, y: 40 }"
-            :visible="{ opacity: 1, y: 0, transition: { duration: 1000, delay: 100, ease: [0.22, 1, 0.36, 1] } }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 1400, delay: 150, ease: [0.22, 1, 0.36, 1] } }"
           >
             <p>
               I prioritize clean and organized layouts, clear and clean typography, and meticulous alignment in all my designs. This focus on user-friendliness stems from my passion for minimalism. I believe in maximizing the impact of a brand's message, story, and visuals through each creation.
@@ -49,7 +49,7 @@
           <div
             v-motion
             :initial="{ opacity: 0, y: 40 }"
-            :visible="{ opacity: 1, y: 0, transition: { duration: 1000, delay: 250, ease: [0.22, 1, 0.36, 1] } }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 1400, delay: 350, ease: [0.22, 1, 0.36, 1] } }"
           >
             <p>
               My background in training and designing presentations for domestic enterprises for many years has instilled in me a deep understanding of layout, content handling, and incorporating motion effects. Now, I leverage this expertise, along with my knowledge of front-end programming, to create beautiful and functional websites.

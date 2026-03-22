@@ -11,7 +11,7 @@
             <div
               class="transition-transform will-change-transform"
               :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
-              style="transition-duration: 1100ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 80ms"
+              style="transition-duration: 1500ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 100ms"
             >
               Creates intuitive and engaging
             </div>
@@ -21,7 +21,7 @@
             <div
               class="transition-transform will-change-transform"
               :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
-              style="transition-duration: 1100ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 250ms"
+              style="transition-duration: 1500ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 320ms"
             >
               <span class="font-light italic">user experiences</span>
             </div>
@@ -31,7 +31,7 @@
             <div
               class="transition-transform will-change-transform"
               :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
-              style="transition-duration: 1100ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 420ms"
+              style="transition-duration: 1500ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 540ms"
             >
               through minimalist design
             </div>
@@ -47,7 +47,7 @@
         <div
           class="absolute top-0 left-0 h-px bg-black transition-all will-change-transform"
           :class="entered ? 'w-full opacity-100' : 'w-0 opacity-0'"
-          style="transition-duration: 900ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 600ms"
+          style="transition-duration: 1200ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 750ms"
         ></div>
 
         <div class="flex justify-between items-end">
@@ -55,7 +55,7 @@
             <p
               class="text-xs md:text-sm lg:text-base leading-snug transition-transform will-change-transform"
               :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
-              style="transition-duration: 900ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 720ms"
+              style="transition-duration: 1200ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 900ms"
             >
               Located in<br />
               <span>Surakarta, Indonesia 🇮🇩</span>
@@ -66,7 +66,7 @@
             <p
               class="text-xs md:text-sm lg:text-base text-right leading-snug transition-transform will-change-transform"
               :class="entered ? 'translate-y-0' : 'translate-y-[110%]'"
-              style="transition-duration: 900ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 840ms"
+              style="transition-duration: 1200ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-delay: 1060ms"
             >
               Currently available for<br />
               <span>🌎 freelance worldwide</span>
