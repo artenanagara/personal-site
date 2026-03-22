@@ -3,7 +3,7 @@ import NavigationBar from './components/layout/NavigationBar.vue';
 import CustomCursor from './components/ui/CustomCursor.vue';
 import { RouterView, useRoute } from 'vue-router'
 import Lenis from 'lenis'
-import { onMounted, watch, computed } from 'vue';
+import { onMounted, onUnmounted, watch, computed } from 'vue';
 import { useCursor } from './composables/useCursor';
 import { SpeedInsights } from "@vercel/speed-insights/vue";
 import { useHead } from '@unhead/vue'
@@ -39,7 +39,19 @@ useHead({
         "name": "Arttenna Dhyttya Nagara",
         "alternateName": ["Artena", "Artena Nagara"],
         "jobTitle": "UI/UX Designer",
+        "description": "Simplicity, crafted for modern brands. Freelance UI/UX designer & frontend developer creating intuitive digital experiences for modern businesses.",
         "url": "https://artenanagara.my.id",
+        "image": "https://artenanagara.my.id/og-image.jpg",
+        "knowsAbout": ["UI Design", "UX Design", "Frontend Development", "Figma", "Web Design", "Product Design", "Minimalist Design"],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "UI/UX Designer",
+          "occupationLocation": {
+            "@type": "Country",
+            "name": "Indonesia"
+          },
+          "skills": "UI Design, UX Design, Figma, Frontend Development, Web Design"
+        },
         "workLocation": {
           "@type": "Place",
           "address": {
@@ -50,19 +62,10 @@ useHead({
           }
         },
         "areaServed": [
-          {
-            "@type": "City",
-            "name": "Klaten"
-          },
-          {
-            "@type": "City",
-            "name": "Surakarta",
-            "alternateName": "Solo"
-          },
-          {
-            "@type": "State",
-            "name": "Central Java"
-          }
+          { "@type": "City", "name": "Klaten" },
+          { "@type": "City", "name": "Surakarta", "alternateName": "Solo" },
+          { "@type": "State", "name": "Central Java" },
+          { "@type": "Country", "name": "Indonesia" }
         ],
         "sameAs": [
           "https://www.linkedin.com/in/artenanagara",
@@ -76,16 +79,24 @@ useHead({
 })
 
 
+let lenisInstance = null;
+let lenisRafId = null;
+
 onMounted(() => {
-  const lenis = new Lenis()
+  lenisInstance = new Lenis();
 
   function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
+    lenisInstance.raf(time);
+    lenisRafId = requestAnimationFrame(raf);
   }
 
-  requestAnimationFrame(raf)
-})
+  lenisRafId = requestAnimationFrame(raf);
+});
+
+onUnmounted(() => {
+  if (lenisRafId) cancelAnimationFrame(lenisRafId);
+  if (lenisInstance) lenisInstance.destroy();
+});
 
 watch(route, () => {
   resetCursor();

@@ -24,13 +24,15 @@ const handleMouseLeave = () => {
     isVisible.value = false
 }
 
+let rafId = null;
+
 const animate = () => {
   const ease = 0.15; // Adjustable smoothing factor
-  
+
   x.value += (targetX.value - x.value) * ease;
   y.value += (targetY.value - y.value) * ease;
-  
-  requestAnimationFrame(animate);
+
+  rafId = requestAnimationFrame(animate);
 }
 
 onMounted(() => {
@@ -46,6 +48,7 @@ onUnmounted(() => {
   window.removeEventListener('mousemove', updateCursor);
   document.body.removeEventListener('mouseenter', handleMouseEnter);
   document.body.removeEventListener('mouseleave', handleMouseLeave);
+  if (rafId) cancelAnimationFrame(rafId);
 });
 
 const isButton = computed(() => variant.value === 'button');

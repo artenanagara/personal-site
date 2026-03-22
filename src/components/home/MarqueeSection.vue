@@ -34,9 +34,10 @@
             class="shrink-0 w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[300px] lg:h-[400px] bg-[#d9d9d9] relative group overflow-hidden"
           >
             <!-- Placeholder for image -->
-             <img 
+             <img
                v-if="item.image"
-               :src="item.image" 
+               :src="item.image"
+               loading="lazy"
                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                alt="Exploration"
              />
@@ -48,17 +49,18 @@
 
         <!-- Duplicate Set for looping -->
         <div class="flex gap-8 items-center animate-marquee pl-8" aria-hidden="true">
-          <a 
-            v-for="(item, index) in items" 
+          <a
+            v-for="(item, index) in items"
             :key="`duplicate-${index}`"
             :href="item.link"
             target="_blank"
             rel="noopener noreferrer"
             class="shrink-0 w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[300px] lg:h-[400px] bg-[#d9d9d9] relative group overflow-hidden"
           >
-             <img 
+             <img
                v-if="item.image"
-               :src="item.image" 
+               :src="item.image"
+               loading="lazy"
                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                alt="Exploration"
              />

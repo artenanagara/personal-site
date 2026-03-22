@@ -5,12 +5,12 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useHead } from '@unhead/vue'
 
 useHead({
-  title: 'About',
+  title: 'About — UI/UX Designer & Freelancer',
   meta: [
-    { name: 'description', content: 'Learn more about Artena Nagara, a UI/UX Designer and Frontend Developer based in Klaten, serving Solo and Surakarta. 4+ years of experience creating digital experiences for Central Java businesses.' },
-    { name: 'keywords', content: 'artena nagara, ui ux designer klaten, ui ux designer solo, about artena, surakarta designer' },
-    { property: 'og:title', content: 'About | Artena Nagara' },
-    { property: 'og:description', content: 'UI/UX Designer based in Klaten, serving Solo and Surakarta. 4+ years of experience with a passion for simplicity and clarity in digital design.' },
+    { name: 'description', content: 'Simplicity, crafted for modern brands. Artena Nagara is a freelance UI/UX designer & frontend developer with 4+ years of experience, based in Indonesia. Creating digital experiences that prioritize clarity and function.' },
+    { name: 'keywords', content: 'artena nagara, freelance ui ux designer indonesia, ui ux designer klaten, ui ux designer solo, ui ux designer surakarta, minimalist web designer, about artena nagara' },
+    { property: 'og:title', content: 'About Artena Nagara — UI/UX Designer & Freelancer' },
+    { property: 'og:description', content: 'Simplicity, crafted for modern brands. Freelance UI/UX designer & frontend developer with 4+ years of experience building digital experiences that prioritize clarity and function.' },
   ]
 })
 

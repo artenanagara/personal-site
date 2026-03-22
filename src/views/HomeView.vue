@@ -9,21 +9,23 @@
 </template>
 
 <script setup>
+import { defineAsyncComponent } from 'vue';
 import HeroSection from '../components/home/HeroSection.vue';
-import AboutSection from '../components/home/AboutSection.vue';
-import SelectedWorks from '../components/home/SelectedWorks.vue';
-import MarqueeSection from '../components/home/MarqueeSection.vue';
-import FooterSection from '../components/layout/FooterSection.vue';
 import { useHead } from '@unhead/vue'
 
+const AboutSection = defineAsyncComponent(() => import('../components/home/AboutSection.vue'));
+const SelectedWorks = defineAsyncComponent(() => import('../components/home/SelectedWorks.vue'));
+const MarqueeSection = defineAsyncComponent(() => import('../components/home/MarqueeSection.vue'));
+const FooterSection = defineAsyncComponent(() => import('../components/layout/FooterSection.vue'));
+
 useHead({
-  title: 'Artena Nagara - UI/UX Designer | Simplicity, crafted for modern brands',
+  title: 'Artena Nagara - Simplicity, crafted for modern brands',
   titleTemplate: null, // Override template for home to be exact
   meta: [
-    { name: 'description', content: 'Artena Nagara - UI/UX Designer. Simplicity, crafted for modern brands. Creating intuitive and visually stunning digital experiences. Portfolio and recent works.' },
-    { name: 'keywords', content: 'artena, ui ux designer, artena nagara, ui design, ux design, simplicity crafted for modern brands' },
-    { property: 'og:title', content: 'Artena Nagara - UI/UX Designer | Simplicity, crafted for modern brands' },
-    { property: 'og:description', content: 'Simplicity, crafted for modern brands. Creating intuitive digital experiences for modern businesses.' },
+    { name: 'description', content: 'Simplicity, crafted for modern brands. Artena Nagara is a UI/UX designer & freelancer building intuitive, visually stunning digital experiences. View portfolio and recent works.' },
+    { name: 'keywords', content: 'ui ux designer portfolio, ui ux designer indonesia, freelance ui ux designer, web designer portfolio, artena nagara, minimalist ui design, product designer, simplicity crafted for modern brands' },
+    { property: 'og:title', content: 'UI/UX Designer Portfolio — Artena Nagara' },
+    { property: 'og:description', content: 'Simplicity, crafted for modern brands. UI/UX designer & freelancer creating intuitive digital experiences for modern businesses worldwide.' },
   ],
   script: [
     {
@@ -31,8 +33,9 @@ useHead({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Artena Nagara Portfolio",
+        "name": "Artena Nagara — UI/UX Designer Portfolio",
         "url": "https://artenanagara.my.id",
+        "description": "Simplicity, crafted for modern brands. UI/UX designer portfolio by Artena Nagara.",
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://artenanagara.my.id/?q={search_term_string}",

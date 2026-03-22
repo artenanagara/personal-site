@@ -93,10 +93,11 @@ onUnmounted(() => {
 
       <!-- Hover Cover -->
       <template v-if="project.cover.hover">
-        <img 
+        <img
           v-if="project.cover.hover.startsWith('/')"
-          :src="project.cover.hover" 
+          :src="project.cover.hover"
           :alt="project.title + ' Hover'"
+          loading="lazy"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
           :class="{
             'translate-x-0': isHovering,
