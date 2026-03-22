@@ -91,7 +91,11 @@ let lenisInstance = null;
 let lenisRafId = null;
 
 onMounted(() => {
-  lenisInstance = new Lenis();
+  lenisInstance = new Lenis({
+    duration: 1.8,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  });
 
   function raf(time) {
     lenisInstance.raf(time);

@@ -73,16 +73,14 @@ const emit = defineEmits(['done'])
 const INTERVAL = 520
 
 const greetings = [
-  { lang: 'EN', greeting: 'Hello',      name: "I'm Artena",        dir: 'ltr' },
-  { lang: 'FR', greeting: 'Bonjour',    name: 'je suis Artena',    dir: 'ltr' },
-  { lang: 'DE', greeting: 'Hallo',      name: 'ich bin Artena',    dir: 'ltr' },
-  { lang: 'JA', greeting: 'こんにちは',  name: 'アルテナです',        dir: 'ltr' },
-  { lang: 'ZH', greeting: '你好',        name: '我是 Artena',        dir: 'ltr' },
-  { lang: 'ES', greeting: 'Hola',       name: 'soy Artena',        dir: 'ltr' },
-  { lang: 'AR', greeting: 'مرحباً',     name: 'أنا أرتينا',         dir: 'rtl' },
-  { lang: 'KO', greeting: '안녕하세요',  name: '아르테나입니다',       dir: 'ltr' },
-  { lang: 'PT', greeting: 'Olá',        name: 'eu sou Artena',     dir: 'ltr' },
-  { lang: 'ID', greeting: 'Halo',       name: 'saya Artena',       dir: 'ltr' },
+  { lang: 'EN', greeting: 'Hello',      name: "I'm Artena",      dir: 'ltr' },
+  { lang: 'FR', greeting: 'Bonjour',    name: 'je suis Artena',  dir: 'ltr' },
+  { lang: 'DE', greeting: 'Hallo',      name: 'ich bin Artena',  dir: 'ltr' },
+  { lang: 'JA', greeting: 'こんにちは',  name: 'アルテナです',      dir: 'ltr' },
+  { lang: 'ZH', greeting: '你好',        name: '我是 Artena',      dir: 'ltr' },
+  { lang: 'ES', greeting: 'Hola',       name: 'soy Artena',      dir: 'ltr' },
+  { lang: 'KO', greeting: '안녕하세요',  name: '아르테나입니다',     dir: 'ltr' },
+  { lang: 'ID', greeting: 'Halo',       name: 'saya Artena',     dir: 'ltr' },
 ]
 
 const current = ref(0)
