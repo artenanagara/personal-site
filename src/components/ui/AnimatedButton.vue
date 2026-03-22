@@ -1,6 +1,9 @@
 <script setup>
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
+import { useMagnetic } from '../../composables/useMagnetic'
+
+const { el } = useMagnetic(0.3)
 
 const props = defineProps({
   text: {
@@ -22,12 +25,13 @@ const isExternal = computed(() => !!props.href);
 
 <template>
   <component
+    ref="el"
     :is="isExternal ? 'a' : (to ? 'RouterLink' : 'button')"
     :href="href"
     :to="to"
     :target="isExternal ? '_blank' : null"
     :rel="isExternal ? 'noopener noreferrer' : null"
-    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-transparent bg-black px-8 py-4 font-medium text-white transition-all duration-300 hover:bg-white hover:text-black hover:border-black"
+    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-transparent bg-black px-8 py-4 font-medium text-white transition-colors duration-300 hover:bg-white hover:text-black hover:border-black"
   >
     <div class="relative flex flex-col items-center overflow-hidden h-[1.5em] leading-[1.5em]">
       <span class="translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full block">

@@ -1,12 +1,20 @@
 <script setup>
 import NavigationBar from './components/layout/NavigationBar.vue';
 import CustomCursor from './components/ui/CustomCursor.vue';
+import PreloaderScreen from './components/ui/PreloaderScreen.vue';
 import { RouterView, useRoute } from 'vue-router'
 import Lenis from 'lenis'
-import { onMounted, onUnmounted, watch, computed } from 'vue';
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue';
 import { useCursor } from './composables/useCursor';
 import { SpeedInsights } from "@vercel/speed-insights/vue";
 import { useHead } from '@unhead/vue'
+
+const showPreloader = ref(!sessionStorage.getItem('visited'))
+
+const onPreloaderDone = () => {
+  showPreloader.value = false
+  sessionStorage.setItem('visited', '1')
+}
 
 const route = useRoute();
 const { resetCursor } = useCursor();
@@ -107,6 +115,7 @@ watch(route, () => {
 </script>
 
 <template>
+  <PreloaderScreen v-if="showPreloader" @done="onPreloaderDone" />
   <NavigationBar v-if="!route.meta.hideNavigation" />
   <RouterView v-slot="{ Component }">
     <transition :name="route.meta.transition || 'page'" mode="out-in">

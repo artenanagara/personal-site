@@ -153,76 +153,84 @@ const getGalleryItemClass = (span) => {
         <template v-for="(section, index) in project.content" :key="index">
           
           <!-- Full Width Image -->
-          <div 
+          <div
             v-if="section.type === 'full-width-image'"
             v-motion
-            :initial="{ opacity: 0, y: 60 }"
-            :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain, duration: 1500 } }"
+            :initial="{ opacity: 0, y: 80 }"
+            :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
             class="w-full h-auto md:h-[90vh] bg-[#d9d9d9] overflow-hidden"
           >
-            <!-- Placeholder for actual image -->
-            <img v-if="section.src && section.src !== '#d9d9d9'" :src="section.src" class="w-full h-full object-cover">
+            <img
+              v-if="section.src && section.src !== '#d9d9d9'"
+              :src="section.src"
+              class="w-full h-full object-cover transition-transform duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] scale-[1.04] group-hover:scale-100"
+              loading="lazy"
+            >
           </div>
 
           <!-- Text Block -->
-          <div 
+          <div
             v-else-if="section.type === 'text-block'"
             v-motion
             :initial="{ opacity: 0, y: 40 }"
-            :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain } }"
+            :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1000, ease: [0.22, 1, 0.36, 1] } }"
             class="flex w-full"
             :class="{
-                'justify-start': section.align === 'left' || !section.align,
-                'justify-end': section.align === 'right'
+              'justify-start': section.align === 'left' || !section.align,
+              'justify-end': section.align === 'right'
             }"
           >
-            <div 
-              class="w-full lg:w-[60%]"
-            >
-                <h2 class="text-sm md:text-base text-gray-400 mb-4 font-light tracking-wide">
-                    {{ section.label }}
-                </h2>
-                <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
-                    {{ section.content }}
-                </p>
+            <div class="w-full lg:w-[60%]">
+              <h2 class="text-sm md:text-base text-gray-400 mb-4 font-light tracking-wide">
+                {{ section.label }}
+              </h2>
+              <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+                {{ section.content }}
+              </p>
             </div>
           </div>
 
           <!-- Two Column Images -->
-          <div 
+          <div
             v-else-if="section.type === 'two-column-image'"
             class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10"
           >
-            <div 
-              v-for="(item, idx) in section.items" 
-              :key="idx"
-              v-motion
-              :initial="{ opacity: 0, y: 60 }"
-              :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: idx * 100 } }"
-              class="bg-[#d9d9d9] w-full h-auto lg:h-[80vh]"
-            >
-             <img v-if="item.src && item.src !== '#d9d9d9'" :src="item.src" class="w-full h-full object-cover">
-            </div>
-          </div>
-
-           <!-- Gallery Grid -->
-           <div 
-            v-else-if="section.type === 'gallery-grid'"
-            class="flex flex-wrap gap-4"
-          >
-            <div 
+            <div
               v-for="(item, idx) in section.items"
               :key="idx"
               v-motion
-              :initial="{ opacity: 0, y: 40 }"
-              :visibleOnce="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: idx * 100 } }"
-              class="bg-[#d9d9d9] h-auto md:h-[50vh] lg:h-[80vh]"
+              :initial="{ opacity: 0, y: 70 }"
+              :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1200, delay: idx * 150, ease: [0.22, 1, 0.36, 1] } }"
+              class="bg-[#d9d9d9] w-full h-auto lg:h-[80vh] overflow-hidden"
+            >
+              <img
+                v-if="item.src && item.src !== '#d9d9d9'"
+                :src="item.src"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <!-- Gallery Grid -->
+          <div
+            v-else-if="section.type === 'gallery-grid'"
+            class="flex flex-wrap gap-4"
+          >
+            <div
+              v-for="(item, idx) in section.items"
+              :key="idx"
+              v-motion
+              :initial="{ opacity: 0, y: 50 }"
+              :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1000, delay: idx * 80, ease: [0.22, 1, 0.36, 1] } }"
+              class="bg-[#d9d9d9] h-auto md:h-[50vh] lg:h-[80vh] overflow-hidden"
               :class="getGalleryItemClass(item.span)"
             >
-              <img 
-                v-if="item.src && item.src !== '#d9d9d9'" 
-                :src="item.src" 
+              <img
+                v-if="item.src && item.src !== '#d9d9d9'"
+                :src="item.src"
                 class="w-full h-full object-cover"
+                loading="lazy"
                 alt="Gallery image"
               >
             </div>

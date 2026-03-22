@@ -39,20 +39,20 @@
           </div>
 
           <div class="flex gap-4 mt-8 md:mt-0">
-            <a href="https://instagram.com/artenanagara" target="_blank" rel="noopener noreferrer"
-              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300">
+            <a v-magnetic="0.4" href="https://instagram.com/artenanagara" target="_blank" rel="noopener noreferrer"
+              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
               <Instagram :size="20" stroke-width="1.5" />
             </a>
-            <a href="https://linkedin.com/in/artenanagara" target="_blank" rel="noopener noreferrer"
-              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300">
+            <a v-magnetic="0.4" href="https://linkedin.com/in/artenanagara" target="_blank" rel="noopener noreferrer"
+              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
               <Linkedin :size="20" stroke-width="1.5" />
             </a>
-            <a href="https://dribbble.com/artenanagara" target="_blank" rel="noopener noreferrer"
-              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300">
+            <a v-magnetic="0.4" href="https://dribbble.com/artenanagara" target="_blank" rel="noopener noreferrer"
+              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
               <Dribbble :size="20" stroke-width="1.5" />
             </a>
-            <a href="https://x.com/artenanagara" target="_blank" rel="noopener noreferrer"
-              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300">
+            <a v-magnetic="0.4" href="https://x.com/artenanagara" target="_blank" rel="noopener noreferrer"
+              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
               <Twitter :size="20" stroke-width="1.5" />
             </a>
           </div>
