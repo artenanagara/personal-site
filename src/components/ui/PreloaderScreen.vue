@@ -22,29 +22,41 @@
     <div class="text-center select-none px-8 w-full">
 
       <!-- Big greeting word -->
-      <div class="relative overflow-hidden h-[3.75rem] md:h-[6rem] flex items-center justify-center mb-3 md:mb-4">
-        <Transition name="word">
-          <p
-            :key="'g' + current"
-            class="text-white text-6xl md:text-8xl font-light leading-none w-full text-center"
-            :dir="greetings[current].dir"
+      <div class="relative overflow-hidden h-[3.75rem] md:h-[6rem] w-full mb-3 md:mb-4">
+        <TransitionGroup name="word">
+          <div
+            v-for="(item, index) in greetings"
+            :key="'w' + index"
+            v-show="current === index"
+            class="absolute inset-0 flex items-center justify-center"
           >
-            {{ greetings[current].greeting }}
-          </p>
-        </Transition>
+            <p
+              class="text-white text-6xl md:text-8xl font-light leading-none w-full text-center"
+              :dir="item.dir"
+            >
+              {{ item.greeting }}
+            </p>
+          </div>
+        </TransitionGroup>
       </div>
 
       <!-- Sub text -->
-      <div class="relative overflow-hidden h-[1.5rem] md:h-[1.75rem] flex items-center justify-center">
-        <Transition name="sub">
-          <p
-            :key="'s' + current"
-            class="text-white/40 text-base md:text-lg font-light leading-none w-full text-center"
-            :dir="greetings[current].dir"
+      <div class="relative overflow-hidden h-[1.5rem] md:h-[1.75rem] w-full">
+        <TransitionGroup name="sub">
+          <div
+            v-for="(item, index) in greetings"
+            :key="'s' + index"
+            v-show="current === index"
+            class="absolute inset-0 flex items-center justify-center"
           >
-            {{ greetings[current].name }}
-          </p>
-        </Transition>
+            <p
+              class="text-white/40 text-base md:text-lg font-light leading-none w-full text-center"
+              :dir="item.dir"
+            >
+              {{ item.name }}
+            </p>
+          </div>
+        </TransitionGroup>
       </div>
 
     </div>
@@ -124,11 +136,6 @@ onUnmounted(() => {
   opacity: 0;
 }
 .word-leave-active {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: transform 0.45s ease-in, opacity 0.4s ease-in;
 }
 .word-leave-to {
@@ -145,11 +152,6 @@ onUnmounted(() => {
   opacity: 0;
 }
 .sub-leave-active {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: transform 0.4s ease-in, opacity 0.35s ease-in;
 }
 .sub-leave-to {
