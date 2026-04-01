@@ -82,7 +82,9 @@ onUnmounted(() => {
       <img
         v-if="project.cover.default && project.cover.default.startsWith('/')"
         :src="project.cover.default"
-        :alt="project.title"
+        :alt="`${project.title} - ${project.category} Portfolio Design`"
+        loading="lazy"
+        decoding="async"
         class="absolute inset-0 w-full h-full object-cover transition-transform duration-[2400ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
         :class="{ 'scale-[1.06]': isHovering, 'scale-100': !isHovering }"
       />
@@ -97,8 +99,9 @@ onUnmounted(() => {
         <img
           v-if="project.cover.hover.startsWith('/')"
           :src="project.cover.hover"
-          :alt="project.title + ' Hover'"
+          :alt="`${project.title} - Alternate Preview`"
           loading="lazy"
+          decoding="async"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1700ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
           :class="{ 'translate-x-0': isHovering, 'translate-x-full': !isHovering }"
         />
