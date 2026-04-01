@@ -3,21 +3,29 @@
   <section class="container mx-auto px-4 md:px-0 py-16 lg:py-24 text-black overflow-hidden">
 
     <!-- Header -->
-    <div class="flex justify-between items-end mb-8 lg:mb-10 border-b border-gray-200 pb-4">
-      <div class="overflow-hidden">
-        <p
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 lg:mb-10 border-b border-gray-200 pb-4 gap-6">
+      <div class="overflow-hidden max-w-2xl">
+        <h2
           v-motion
           :initial="{ y: 80 }"
           :visible="{ y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
-          class="text-4xl lg:text-5xl font-medium"
+          class="text-4xl lg:text-5xl font-medium mb-4"
         >
-          Selected Works
+          Selected Works.
+        </h2>
+        <p
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 1400, delay: 200, ease: [0.22, 1, 0.36, 1] } }"
+          class="text-gray-600 font-light text-base md:text-lg leading-relaxed"
+        >
+          Every project begins with a question, a blank canvas, and a problem waiting to be unraveled. Below is a curated selection of my professional journey—where strategic intent meets meticulous craft.
         </p>
       </div>
 
       <RouterLink
         to="/work"
-        class="relative overflow-hidden group text-sm md:text-base lg:text-lg shrink-0"
+        class="relative overflow-hidden group text-sm md:text-base lg:text-lg shrink-0 pb-2"
       >
         <span class="block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
           See All

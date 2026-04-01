@@ -3,14 +3,22 @@
 
     <!-- Title — line reveal -->
     <div class="container mx-auto px-4 md:px-0 mb-12">
-      <div class="overflow-hidden">
-        <p
+      <div class="overflow-hidden max-w-2xl">
+        <h2
           v-motion
           :initial="{ y: 80 }"
           :visible="{ y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
-          class="text-4xl lg:text-5xl font-medium"
+          class="text-4xl lg:text-5xl font-medium mb-4"
         >
-          Another Exploration
+          Another Exploration.
+        </h2>
+        <p
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 1400, delay: 200, ease: [0.22, 1, 0.36, 1] } }"
+          class="text-gray-600 font-light text-base md:text-lg leading-relaxed"
+        >
+          Beyond the structured realms of client briefs lies a playground of unrestrained curiosity. This space is my visual diary—a collection of spontaneous ideas, experimental interactions, and speculative designs.
         </p>
       </div>
     </div>
