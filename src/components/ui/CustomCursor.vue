@@ -24,20 +24,21 @@ const handleMouseLeave = () => {
     isVisible.value = false
 }
 
+let rafId = null;
+
 const animate = () => {
   const ease = 0.15; // Adjustable smoothing factor
-  
+
   x.value += (targetX.value - x.value) * ease;
   y.value += (targetY.value - y.value) * ease;
-  
-  requestAnimationFrame(animate);
+
+  rafId = requestAnimationFrame(animate);
 }
 
 onMounted(() => {
   window.addEventListener('mousemove', updateCursor);
   document.body.addEventListener('mouseenter', handleMouseEnter);
   document.body.addEventListener('mouseleave', handleMouseLeave);
-  // Initialize position
   x.value = targetX.value;
   y.value = targetY.value;
   animate();
@@ -47,22 +48,30 @@ onUnmounted(() => {
   window.removeEventListener('mousemove', updateCursor);
   document.body.removeEventListener('mouseenter', handleMouseEnter);
   document.body.removeEventListener('mouseleave', handleMouseLeave);
+  if (rafId) cancelAnimationFrame(rafId);
 });
 
 const isButton = computed(() => variant.value === 'button');
+
+// Key fix: Calculate a dynamic z-index. The disappearing is because motion divs and scale transforms 
+// on other pages create z-index stacking contexts that trap fixed elements if they're not explicitly isolated.
 </script>
 
 <template>
   <div 
-    class="custom-cursor hidden md:flex items-center justify-center pointer-events-none fixed z-[9999] w-3 h-3"
+    class="custom-cursor hidden md:flex items-center justify-center pointer-events-none fixed w-3 h-3 transition-colors duration-300"
     :style="{ 
       transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
-      opacity: isVisible ? 1 : 0
+      opacity: isVisible ? 1 : 0,
+      mixBlendMode: isButton ? 'normal' : 'difference',
+      zIndex: 999999
     }"
   >
     <div 
-      class="cursor-bg absolute inset-0 bg-black rounded-full transition-transform duration-300 ease-out"
-      :class="{ 'scale-100': !isButton, 'scale-[8]': isButton }"
+      class="cursor-bg absolute inset-0 rounded-full transition-all duration-300 ease-out"
+      :class="[
+        isButton ? 'bg-black scale-[8]' : 'bg-white scale-100'
+      ]"
     ></div>
     <span 
       v-if="text" 
@@ -76,7 +85,6 @@ const isButton = computed(() => variant.value === 'button');
 
 <style scoped>
 .custom-cursor {
-  /* Positioning handled by style binding */
   top: 0;
   left: 0;
   will-change: transform;

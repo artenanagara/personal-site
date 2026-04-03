@@ -26,7 +26,7 @@
     "content": [
         {
             "type": "full-width-image",
-            "src": "/images/works/exmood/cover.jpg",
+            "src": "/images/works/exmood/cover.webp",
             "aspectRatio": "aspect-[16/9]"
         },
         {
@@ -45,15 +45,15 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/exmood/onboard.jpg",
+                    "src": "/images/works/exmood/onboard.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/exmood/happy.jpg",
+                    "src": "/images/works/exmood/happy.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/exmood/styleguide.jpg",
+                    "src": "/images/works/exmood/styleguide.webp",
                     "span": "col-span-4"
                 }
             ]
@@ -68,19 +68,19 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/exmood/motivation.jpg",
+                    "src": "/images/works/exmood/motivation.webp",
                     "span": "col-span-4"
                 },
                 {
-                    "src": "/images/works/exmood/home.jpg",
+                    "src": "/images/works/exmood/home.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/exmood/music.jpg",
+                    "src": "/images/works/exmood/music.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/exmood/todo.jpg",
+                    "src": "/images/works/exmood/todo.webp",
                     "span": "col-span-4"
                 }
             ]
@@ -95,15 +95,15 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/exmood/card.jpg",
+                    "src": "/images/works/exmood/card.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/exmood/modal.jpg",
+                    "src": "/images/works/exmood/modal.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/exmood/mockup.jpg",
+                    "src": "/images/works/exmood/mockup.webp",
                     "span": "col-span-4"
                 }
             ]

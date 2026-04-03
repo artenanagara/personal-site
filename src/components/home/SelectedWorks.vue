@@ -1,60 +1,57 @@
 <template>
   <!-- Selected Works Section -->
   <section class="container mx-auto px-4 md:px-0 py-16 lg:py-24 text-black overflow-hidden">
-    <div 
-      v-motion
-      :initial="motionInitialHiddenMedium"
-      :visible="sectionVisible(100)"
-      class="flex justify-between items-end mb-8 lg:mb-10 border-b border-gray-200 pb-4"
-    >
-      <p class="text-4xl lg:text-5xl font-medium">
-        Selected Works
-      </p>
-      
-      <RouterLink 
+
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 lg:mb-10 border-b border-gray-200 pb-4 gap-6">
+      <div class="overflow-hidden max-w-2xl">
+        <h2
+          v-motion
+          :initial="{ y: 80 }"
+          :visible="{ y: 0, transition: { duration: 1400, ease: [0.22, 1, 0.36, 1] } }"
+          class="text-4xl lg:text-5xl font-medium mb-4"
+        >
+          Selected Works.
+        </h2>
+        <p
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 1400, delay: 200, ease: [0.22, 1, 0.36, 1] } }"
+          class="text-gray-600 font-light text-base md:text-lg leading-relaxed"
+        >
+          Every project begins with a question, a blank canvas, and a problem waiting to be unraveled. Below is a curated selection of my professional journey—where strategic intent meets meticulous craft.
+        </p>
+      </div>
+
+      <RouterLink
         to="/work"
-        :hovered="hoverEffect"
-        class="text-sm md:text-base lg:text-lg underline cursor-pointer hover:text-gray-600 transition duration-300"
+        class="relative overflow-hidden group text-sm md:text-base lg:text-lg shrink-0 pb-2"
       >
-        See All
+        <span class="block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
+          See All
+        </span>
+        <span class="block absolute top-0 left-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-full group-hover:translate-y-0">
+          See All
+        </span>
       </RouterLink>
     </div>
 
+    <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-      <WorkCard 
+      <WorkCard
         v-for="(project, index) in works"
         :key="project.id"
-        :project="project" 
-        :delay="0.3 + index * 0.1" 
+        :project="project"
+        :delay="0.15 + index * 0.12"
       />
     </div>
+
   </section>
-  <!-- Selected Works Section End -->
 </template>
 
 <script setup>
 import WorkCard from '../ui/WorkCard.vue';
-
-// Animation Constants
-const transitionSection = { duration: 800, ease: [0.22, 1, 0.36, 1] };
-const transitionQuick = { duration: 300, ease: [0.22, 1, 0.36, 1] };
-
-const motionInitialHiddenMedium = { opacity: 0, y: 40 };
-
-const sectionVisible = (delay) => ({
-  opacity: 1,
-  y: 0,
-  transition: { ...transitionSection, delay: delay || 0 }
-});
-
-const hoverEffect = {
-  x: 5,
-  transition: transitionQuick
-};
-
-// Data
 import worksData from '../../data/works.json';
 
-// Get first 4 items
 const works = worksData.slice(0, 4);
 </script>

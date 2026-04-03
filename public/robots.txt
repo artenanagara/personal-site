@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://artenanagara.com/sitemap.xml
+Sitemap: https://artenanagara.my.id/sitemap.xml

@@ -1,0 +1,112 @@
+{
+    "id": "rintisan-affiliate",
+    "title": "Rintisan Billing — Affiliate",
+    "category": "Mobile App & Web Dashboard",
+    "subtitle": "Turning Active Merchants into Organic Growth Agents",
+    "url": "billing.rintisan.co.id",
+    "description": "The Affiliate feature is part of Rintisan Billing an invoicing platform that helps merchants manage customer billing and supplier payments. This feature enables verified merchants to grow the Rintisan ecosystem organically by sharing a referral link, earning points from referred users' transactions, and redeeming those points for rewards.",
+    "metadata": [
+        {
+            "label": "Role",
+            "value": "UI Designer"
+        },
+        {
+            "label": "Client",
+            "value": "Rintisan"
+        },
+        {
+            "label": "Timeline",
+            "value": "3-4 Weeks"
+        },
+        {
+            "label": "Year",
+            "value": "2026"
+        }
+    ],
+    "content": [
+        {
+            "type": "full-width-image",
+            "src": "",
+            "aspectRatio": "aspect-[16/9]"
+        },
+        {
+            "type": "text-block",
+            "label": "The Problem",
+            "align": "left",
+            "content": "Rintisan Billing is an invoicing application that helps merchants manage customer billing and supplier payments in one platform. Despite its growing user base, Rintisan had no mechanism to drive organic user acquisition active, verified merchants had no real incentive to recommend the platform to others, leaving growth entirely dependent on internal efforts."
+        },
+        {
+            "type": "text-block",
+            "label": "Challenge",
+            "align": "right",
+            "content": "Designing an affiliate system that works consistently across two platforms mobile app and web dashboard each with different usage contexts. On mobile, information needs to be digestible at a glance with actions easy to reach. On web, the wider canvas needs to be utilized without losing focus. Across both, the core challenge was the same: clearly communicating the difference between \"registered via link\" and \"earned points from transaction\" without creating confusion for the user."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "The Solution",
+            "align": "left",
+            "content": "I designed the affiliate feature as an end-to-end experience across both platforms. Verified merchants receive a unique referral link they can share anywhere. Points are only earned when a newly referred user completes a real transaction in Rintisan Billing whether billing a customer or paying a supplier with point amounts proportional to the transaction value. Accumulated points can be redeemed for products or vouchers."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Summary",
+            "align": "left",
+            "content": "The Rintisan Billing Affiliate feature gives active merchants a genuine reason to bring others into the Rintisan ecosystem. With a point system tied directly to real invoicing activity, flexible reward redemption, and a consistent UI across mobile and web the feature bridges the gap between existing user satisfaction and sustainable organic platform growth."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "",
+                    "span": "col-span-4"
+                }
+            ]
+        }
+    ]
+}

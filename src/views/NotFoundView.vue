@@ -1,6 +1,13 @@
 <script setup>
 import AnimatedButton from '../components/ui/AnimatedButton.vue';
 import FooterSection from '../components/layout/FooterSection.vue';
+import { useHead } from '@unhead/vue';
+
+useHead({
+  meta: [
+    { name: 'robots', content: 'noindex' }
+  ]
+});
 </script>
 
 <template>
