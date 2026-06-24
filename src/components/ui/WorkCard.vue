@@ -121,7 +121,7 @@ onUnmounted(() => {
     </div>
 
     <div class="flex flex-col gap-0.5">
-      <p class="font-normal text-base text-black md:text-lg">{{ project.title }}</p>
+      <p class="font-normal text-base text-[#091413] md:text-lg">{{ project.title }}</p>
       <p class="font-normal text-sm text-gray-500">{{ project.category }}</p>
     </div>
   </component>

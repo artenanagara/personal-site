@@ -40,5 +40,16 @@
             "default": "/images/works/exmood/hand.webp",
             "hover": "/images/works/exmood/mockup.jpg"
         }
+    },
+    {
+        "id": "fungsix",
+        "title": "Fungsix",
+        "category": "Website Design, Company Profile",
+        "type": "visit",
+        "url": "https://fungsix.com",
+        "cover": {
+            "default": "/images/works/fungsix/event.png",
+            "hover": "/images/works/fungsix/fungsix.png"
+        }
     }
 ]

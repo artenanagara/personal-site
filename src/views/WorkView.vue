@@ -16,7 +16,7 @@ const getColSpan = (index) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-black pt-32 lg:pt-40 overflow-hidden font-sans flex flex-col">
+  <div class="min-h-screen bg-white text-[#091413] pt-32 lg:pt-40 overflow-hidden font-sans flex flex-col">
     
     <!-- Header Section -->
     <div class="px-4 md:px-20 max-w-screen-2xl mx-auto w-full mb-16">
@@ -35,7 +35,7 @@ const getColSpan = (index) => {
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 400 } }"
-          class="text-xl md:text-22px text-black max-w-3xl leading-8 font-light mb-24"
+          class="text-xl md:text-22px text-[#091413] max-w-3xl leading-8 font-light mb-24"
         >
           This portfolio showcases a selection of my work, representing the range and diversity of projects I've undertaken. While some pieces are not displayed due to client confidentiality, I believe these examples capture the breadth of what I can bring to each project.
         </p>

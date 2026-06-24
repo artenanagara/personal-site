@@ -1,6 +1,6 @@
 <template>
   <!-- Selected Works Section -->
-  <section class="container mx-auto px-4 md:px-0 py-16 lg:py-24 text-black overflow-hidden">
+  <section class="container mx-auto px-4 md:px-0 py-16 lg:py-24 text-[#091413] overflow-hidden">
     <div 
       v-motion
       :initial="motionInitialHiddenMedium"

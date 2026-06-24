@@ -31,16 +31,16 @@
 
           <div class="flex gap-4 mt-8 md:mt-0">
              <!-- Social Icons -->
-             <a href="https://instagram.com/artenanagara" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+             <a href="https://instagram.com/artenanagara" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#091413] transition-all">
                <Instagram :size="20" stroke-width="1.5" />
              </a>
-             <a href="https://linkedin.com/in/artenanagara" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+             <a href="https://linkedin.com/in/artenanagara" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#091413] transition-all">
                <Linkedin :size="20" stroke-width="1.5" />
              </a>
-             <a href="https://dribbble.com/artenanagara" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+             <a href="https://dribbble.com/artenanagara" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#091413] transition-all">
                <Dribbble :size="20" stroke-width="1.5" />
              </a>
-             <a href="https://x.com/artenanagara" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+             <a href="https://x.com/artenanagara" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#091413] transition-all">
                <Twitter :size="20" stroke-width="1.5" />
              </a>
           </div>

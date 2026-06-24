@@ -1,6 +1,6 @@
 <template>
   <!-- Hero Section -->
-  <section class="h-screen flex flex-col justify-end bg-white text-black pb-8 px-4 md:px-8 md:pb-4 overflow-hidden">
+  <section class="h-screen flex flex-col justify-end bg-white text-[#091413] pb-8 px-4 md:px-8 md:pb-4 overflow-hidden">
     <div class="container mx-auto flex flex-col justify-between h-full">
       <div class="font-sans font-normal leading-none relative w-full flex flex-col justify-center h-full pt-0">
         <h1 

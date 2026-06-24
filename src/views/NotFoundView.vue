@@ -4,7 +4,7 @@ import FooterSection from '../components/layout/FooterSection.vue';
 </script>
 
 <template>
-  <div class="min-h-screen w-full flex flex-col bg-white text-black pt-32 lg:pt-40 font-sans">
+  <div class="min-h-screen w-full flex flex-col bg-white text-[#091413] pt-32 lg:pt-40 font-sans">
     <div class="flex-grow flex flex-col items-center justify-center px-6 mb-32">
       <div class="max-w-4xl w-full">
         <h1 class="text-5xl md:text-7xl font-light leading-tight tracking-tight mb-12">

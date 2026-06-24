@@ -9,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="min-h-screen bg-gray-200 py-10 px-4 md:px-0 font-serif leading-relaxed text-black">
+    <div class="min-h-screen bg-gray-200 py-10 px-4 md:px-0 font-serif leading-relaxed text-[#091413]">
         <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-lg">
         <!-- Header -->
         <header class="mb-4">
@@ -35,7 +35,7 @@ onMounted(() => {
 
         <!-- Work Experience -->
         <section>
-            <h2 class="text-xl font-bold border-b border-black pb-1 mb-2">Work Experience</h2>
+            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-2">Work Experience</h2>
 
             <!-- Job 1 -->
             <div class="mb-6">
@@ -120,7 +120,7 @@ onMounted(() => {
 
         <!-- Education -->
         <section class="mt-8">
-            <h2 class="text-xl font-bold border-b border-black pb-1 mb-6">Education</h2>
+            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-6">Education</h2>
             <div class="mb-6">
                 <div class="flex flex-col md:flex-row justify-between font-bold">
                     <span>Universitas Negeri Semarang</span>
@@ -139,7 +139,7 @@ onMounted(() => {
 
         <!-- Organizational Experience -->
         <section class="mt-8">
-            <h2 class="text-xl font-bold border-b border-black pb-1 mb-6">Organizational Experience</h2>
+            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-6">Organizational Experience</h2>
             
             <div class="mb-6">
                 <div class="flex flex-col md:flex-row justify-between font-bold">
@@ -172,7 +172,7 @@ onMounted(() => {
 
         <!-- Volunteer Experience -->
         <section class="mt-8">
-            <h2 class="text-xl font-bold border-b border-black pb-1 mb-6">Volunteer Experience</h2>
+            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-6">Volunteer Experience</h2>
             
             <div class="mb-6">
                 <div class="flex flex-col md:flex-row justify-between font-bold">
@@ -191,7 +191,7 @@ onMounted(() => {
 
         <!-- Skills -->
         <section class="mt-8">
-            <h2 class="text-xl font-bold border-b border-black pb-1 mb-6">Skill</h2>
+            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-6">Skill</h2>
             <div class="space-y-4 text-sm md:text-base">
                 <div>
                     <span class="font-bold">Software:</span> Figma, Figjam, Wordpress, Elementor, Webflow, Framer, Maze, Trello, Notion, Photoshop, Illustrator, Github
@@ -246,13 +246,13 @@ onMounted(() => {
 
     /* Ensure text is black */
     body {
-        color: black !important;
+        color: #091413 !important;
     }
 
     /* Clean links */
     a {
         text-decoration: none !important;
-        color: black !important;
+        color: #091413 !important;
     }
     
     @page {

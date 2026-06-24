@@ -1,5 +1,5 @@
 <template>
-  <section class="py-24 overflow-hidden bg-white text-black" data-name="Another Exploration Section">
+  <section class="py-24 overflow-hidden bg-white text-[#091413]" data-name="Another Exploration Section">
     <div class="container mx-auto px-4 md:px-0 mb-12">
       <p 
         v-motion

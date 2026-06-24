@@ -1,6 +1,6 @@
 <template>
   <!-- About Section -->
-  <section class="min-h-screen flex items-center bg-white text-black px-4 md:px-10 py-16 lg:pt-32 lg:pb-16 overflow-hidden">
+  <section class="min-h-screen flex items-center bg-white text-[#091413] px-4 md:px-10 py-16 lg:pt-32 lg:pb-16 overflow-hidden">
     <div class="container mx-auto">
       <p
         v-motion

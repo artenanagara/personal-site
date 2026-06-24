@@ -62,7 +62,7 @@ const getGalleryItemClass = (span) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-black font-sans flex flex-col">
+  <div class="min-h-screen bg-white text-[#091413] font-sans flex flex-col">
     <div v-if="loading" class="h-screen flex items-center justify-center">
       <!-- Simple loading state -->
       <div class="animate-pulse bg-gray-200 h-8 w-32 rounded"></div>
