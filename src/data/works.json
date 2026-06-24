@@ -1,12 +1,13 @@
 [
     {
-        "id": "greenprobolinggo",
-        "title": "Greenprobolinggo",
-        "category": "Dashboard, Waste Bank",
-        "type": "open",
+        "id": "fungsix",
+        "title": "Fungsix",
+        "category": "Website Design, Company Profile",
+        "type": "visit",
+        "url": "https://fungsix.com",
         "cover": {
-            "default": "/images/works/greenprobolinggo/waste.jpg",
-            "hover": "/images/works/greenprobolinggo/mockup.jpg"
+            "default": "/images/works/fungsix/event.png",
+            "hover": "/images/works/fungsix/fungsix.png"
         }
     },
     {
@@ -21,17 +22,6 @@
         }
     },
     {
-        "id": "manisgrafika",
-        "title": "Manis Grafika",
-        "category": "Website Design, Print Service",
-        "type": "open",
-        "url": "https://manisgrafika.id",
-        "cover": {
-            "default": "/images/works/manisgrafika/yasin.jpg",
-            "hover": "/images/works/manisgrafika/mockup.jpg"
-        }
-    },
-    {
         "id": "exmood",
         "title": "Exmood",
         "category": "Mobile App, Mental Health",
@@ -42,14 +32,24 @@
         }
     },
     {
-        "id": "fungsix",
-        "title": "Fungsix",
-        "category": "Website Design, Company Profile",
-        "type": "visit",
-        "url": "https://fungsix.com",
+        "id": "manisgrafika",
+        "title": "Manis Grafika",
+        "category": "Website Design, Print Service",
+        "type": "open",
+        "url": "https://manisgrafika.id",
         "cover": {
-            "default": "/images/works/fungsix/event.png",
-            "hover": "/images/works/fungsix/fungsix.png"
+            "default": "/images/works/manisgrafika/yasin.jpg",
+            "hover": "/images/works/manisgrafika/mockup.jpg"
+        }
+    },
+        {
+        "id": "greenprobolinggo",
+        "title": "Greenprobolinggo",
+        "category": "Dashboard, Waste Bank",
+        "type": "open",
+        "cover": {
+            "default": "/images/works/greenprobolinggo/waste.jpg",
+            "hover": "/images/works/greenprobolinggo/mockup.jpg"
         }
     }
 ]
