@@ -89,44 +89,51 @@ const motionStagger = (delay = 0) => ({
           <!-- Links -->
           <div class="flex flex-col gap-6 w-full lg:w-96 shrink-0">
              <!-- Experience -->
-            <div 
+            <router-link
+              to="/cv"
               v-motion
               :initial="{ opacity: 0, x: 20 }"
               :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 300 } }"
-              class="border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
+              class="block border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
             >
               <div class="flex items-center gap-3 mb-1">
                  <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-[#091413] group-hover:bg-[#091413] transition-colors"></div>
                  <h3 class="text-xl font-medium">View My Experience</h3>
               </div>
               <p class="text-gray-500 text-sm pl-4.5">My professional background and achievements</p>
-            </div>
+            </router-link>
              <!-- Dribbble -->
-            <div 
+            <a
+              href="https://dribbble.com/artenanagara"
+              target="_blank"
+              rel="noopener noreferrer"
               v-motion
               :initial="{ opacity: 0, x: 20 }"
               :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 400 } }"
-              class="border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
+              class="block border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
             >
               <div class="flex items-center gap-3 mb-1">
                  <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-[#091413] group-hover:bg-[#091413] transition-colors"></div>
                  <h3 class="text-xl font-medium">Dribbble</h3>
               </div>
               <p class="text-gray-500 text-sm pl-4.5">Check out my design exploration</p>
-            </div>
+            </a>
              <!-- LinkedIn -->
-            <div 
+            <a
+              href="https://linkedin.com/in/artenanagara"
+              target="_blank"
+              rel="noopener noreferrer"
               v-motion
               :initial="{ opacity: 0, x: 20 }"
               :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 500 } }"
-              class="border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
+              class="block border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
             >
               <div class="flex items-center gap-3 mb-1">
                  <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-[#091413] group-hover:bg-[#091413] transition-colors"></div>
                  <h3 class="text-xl font-medium">LinkedIn</h3>
               </div>
                <p class="text-gray-500 text-sm pl-4.5">Let's connect professionally.</p>
-            </div>
+            </a>
           </div>
         </div>
       </div>
