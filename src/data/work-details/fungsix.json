@@ -1,0 +1,96 @@
+{
+    "id": "fungsix",
+    "title": "Fungsi X",
+    "category": "Website",
+    "subtitle": "Building a Bold Digital Presence for an Integrated Creative Agency",
+    "url": "https://fungsix.com",
+    "description": "Fungsi X is an integrated creative and production agency based in Jakarta that handles everything in-house, from the first strategic brief to final on-site execution. The website was built to communicate the agency's bold, high-impact positioning across its three capabilities (event and brand activation, digital campaign and video production, and construction and production) while reflecting the precision and accountability that define its work.",
+    "metadata": [
+        {
+            "label": "Role",
+            "value": "UI Designer, Web Animation (GSAP)"
+        },
+        {
+            "label": "Client",
+            "value": "Fungsi X"
+        },
+        {
+            "label": "Timeline",
+            "value": "4 Weeks"
+        },
+        {
+            "label": "Year",
+            "value": "2025"
+        }
+    ],
+    "content": [
+        {
+            "type": "full-width-image",
+            "src": "/images/works/fungsix/cover.webp",
+            "aspectRatio": "aspect-[16/9]"
+        },
+        {
+            "type": "text-block",
+            "label": "The Problem",
+            "align": "left",
+            "content": "Most agencies stop at the idea and hand execution off to outside vendors, leaving brands to manage fragmented teams and inconsistent delivery. Fungsi X needed a digital presence that made its end-to-end, in-house model immediately clear and signaled that it could be trusted with large-scale, high-stakes projects."
+        },
+        {
+            "type": "text-block",
+            "label": "Challenge",
+            "align": "right",
+            "content": "Translating a broad, multi-capability agency into a single focused narrative. The site had to present event activation, digital production, and construction under one identity without feeling cluttered, while conveying scale, credibility, and momentum through layout, pacing, and motion."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/fungsix/hero.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/fungsix/about.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/fungsix/run.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "The Solution",
+            "align": "left",
+            "content": "I designed a bold, high-contrast landing experience built around a clear three-capability structure and strong typographic hierarchy. A dark, cinematic palette and generous spacing keep the work front and center, while GSAP-driven motion such as scroll reveals, smooth transitions, and subtle parallax adds rhythm and a sense of polish that mirrors the agency's own execution standard."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/fungsix/motion.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/fungsix/service.webp",
+                    "span": "col-span-2"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Summary",
+            "align": "left",
+            "content": "The Fungsi X site presents an integrated creative and production agency with clarity and confidence. A structured layout, bold visual language, and smooth GSAP animations work together to deliver one promise: one accountable team, full execution control, and real, measurable impact."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/fungsix/fungsix.png",
+                    "span": "col-span-4"
+                }
+            ]
+        }
+    ]
+}
