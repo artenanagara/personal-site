@@ -87,7 +87,7 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/fungsix/fungsix.png",
+                    "src": "/images/works/fungsix/fungsix.webp",
                     "span": "col-span-4"
                 }
             ]
