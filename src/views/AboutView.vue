@@ -1,239 +1,109 @@
 <script setup>
 import FooterSection from '../components/layout/FooterSection.vue';
+import { journey } from '../data/cv';
 
-// Smooth custom bezier for premium feel
-const transitionMain = { duration: 1200, ease: [0.22, 1, 0.36, 1] };
+const experience = journey;
 
-// Motion Variants
-const motionContainer = {
-  initial: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: transitionMain 
-  }
-};
-
-const motionStagger = (delay = 0) => ({
-  initial: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      ...transitionMain,
-      delay
-    } 
-  }
-});
+const links = [
+  { label: 'Full CV', note: 'Experience, skills, education', to: '/cv' },
+  { label: 'Dribbble', note: 'Design explorations', href: 'https://dribbble.com/artenanagara' },
+  { label: 'LinkedIn', note: "Let's connect", href: 'https://linkedin.com/in/artenanagara' },
+];
 </script>
 
 <template>
-  <div class="bg-white min-h-screen pt-32 lg:pt-40 font-sans text-[#091413] flex flex-col">
-    <div class="max-w-[1440px] mx-auto px-4 md:px-16 lg:px-32 w-full flex-grow">
-      
-      <!-- Intro Section -->
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-32 items-start mb-20 lg:mb-16">
-        <!-- Intro Text (Left) -->
-        <div 
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :enter="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 200 } }"
-          class="flex flex-col gap-8 w-full pt-10"
-        >
-          <h1 class="text-4xl md:text-6xl lg:text-7xl font-normal leading-tight tracking-tight max-w-2xl">
-            Simplicity, crafted for modern brands.
-          </h1>
-          
-          <div class="lg:ml-32 max-w-xl mt-8">
-            <p class="text-lg leading-7 font-normal text-[#091413]/80">
-              In a world full of digital noise, the clearest message wins. That's the principle at the core of my work. As a UI/UX Designer and Frontend Developer with over 4 years of experience, I meticulously craft digital experiences that prioritize clarity and function. By leveraging tools like Figma, WordPress, and Webflow, I build intuitive interfaces that transform a brand's vision into a high-performing digital reality. My passion is to drive meaningful interaction and create a lasting, positive impression, providing modern brands with the ultimate sophistication: simplicity that works.
-            </p>
-          </div>
-        </div>
+  <div class="flex min-h-screen flex-col">
+    <!-- Intro -->
+    <section class="page-x relative pb-24 pt-36 md:pb-40 md:pt-52">
+      <h1 v-reveal.lines class="text-[clamp(3rem,9vw,9.5rem)] leading-[0.9] tracking-[-0.055em]">
+        <span class="line-mask"><span style="--d: 80ms">Simplicity,</span></span>
+        <span class="line-mask md:pl-[14vw]"><span style="--d: 180ms">crafted for</span></span>
+        <span class="line-mask"><span style="--d: 280ms"><em class="serif-i">modern brands.</em></span></span>
+      </h1>
 
-        <!-- Profile Image (Right) -->
-        <div 
-          v-motion
-          :initial="{ opacity: 0, scale: 0.95 }"
-          :enter="{ opacity: 1, scale: 1, transition: { ...transitionMain, delay: 400 } }"
-          class="w-full lg:w-80 h-80 bg-[#d9d9d9] shrink-0 rounded-none shadow-sm origin-center"
-        >
-            <img src="../assets/images/photo-me.webp" alt="" class="grayscale"></img>
+      <div class="mt-16 flex flex-col gap-12 md:mt-24 md:flex-row md:items-start">
+        <figure v-reveal="200" class="w-[60%] md:ml-[4%] md:w-[22%]">
+          <img src="../assets/images/photo-me.webp" alt="Portrait of Artena Nagara" class="aspect-[4/5] w-full object-cover grayscale" />
+          <figcaption class="mono-label mt-2 text-graphite">Artena Nagara, Surakarta</figcaption>
+        </figure>
+
+        <div class="md:ml-[14%] md:mt-[10vw] md:max-w-[44ch]">
+          <p v-reveal="300" class="text-[clamp(1.3rem,1.9vw,1.75rem)] leading-[1.3] tracking-[-0.02em]">
+            In a world full of digital noise, the clearest message wins. That's the principle at the core of my work.
+          </p>
+          <p v-reveal="350" class="mt-6 text-[17px] leading-relaxed text-ink/80">
+            I'm a Product Designer with 3+ years designing SaaS and industrial web products, from tablet POS, billing, and
+            loyalty apps for F&amp;B businesses to a multi-unit manufacturing group website. I build scalable design systems in
+            Figma and understand front-end implementation (React, Next.js, Tailwind CSS), so every design stays grounded in
+            what can be built, and ships pixel-accurate.
+          </p>
         </div>
       </div>
+    </section>
 
-      <!-- Activities Section -->
-      <div class="mb-20 lg:mb-32 mt-32">
-        <!-- Activities Image -->
-        <div 
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain } }"
-          class="w-full h-screen bg-[#d9d9d9] rounded-none mb-12 shadow-sm"
+    <!-- Life outside work -->
+    <figure v-reveal class="overflow-hidden bg-hairline">
+      <img src="../assets/images/about-me.webp" alt="Artena outside of work" loading="lazy" class="h-[70vh] w-full object-cover md:h-[92vh]" />
+    </figure>
+
+    <section class="page-x py-24 md:py-40">
+      <div class="relative md:pl-[30%]">
+        <p v-reveal class="mono-label mb-6 text-graphite md:absolute md:left-0 md:top-2 md:mb-0">(Off screen)</p>
+        <p v-reveal="100" class="max-w-[30ch] text-[clamp(1.5rem,2.8vw,2.6rem)] leading-[1.15] tracking-[-0.03em]">
+          Badminton, swimming, a slow bike ride, long walks with music, and hunting for the best local food.
+          Life is the balance between <span class="serif-i">perfect pixels</span> and good flavours.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="page-x pb-24 md:pb-40">
+      <div class="mb-10 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
+        <h2 v-reveal class="text-[clamp(2.25rem,5vw,4.5rem)] leading-none tracking-[-0.045em]">
+          Professional <span class="serif-i">journey</span>
+        </h2>
+        <p v-reveal="100" class="max-w-[38ch] text-[15px] leading-relaxed text-ink/70 md:mr-[6%]">
+          From front-end development to product design for SaaS and manufacturing, each role meant new problems, close work with engineers, and user-centred products.
+        </p>
+      </div>
+
+      <ol>
+        <li
+          v-for="(job, index) in experience"
+          :key="job.company"
+          v-reveal="index * 60"
+          class="flex flex-col gap-2 border-t border-hairline py-6 last:border-b md:flex-row md:items-baseline md:gap-0 md:py-8"
         >
-             <img src="../assets/images/about-me.webp" alt="" class="w-full h-full object-cover">
-        </div>
+          <span class="mono-label text-graphite md:w-[14%]">{{ job.period }}</span>
+          <span class="text-[clamp(1.5rem,2.6vw,2.4rem)] leading-none tracking-[-0.035em] md:w-[38%]">{{ job.company }}</span>
+          <span class="serif-i text-[19px] md:w-[18%]">{{ job.role }}</span>
+          <span class="text-[15px] leading-snug text-ink/70 md:w-[30%]">{{ job.summary }}</span>
+        </li>
+      </ol>
+    </section>
 
-        <div class="flex flex-col lg:flex-row gap-16 justify-between items-start">
-          <div 
-             v-motion
-             :initial="{ opacity: 0, y: 30 }"
-             :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 200 } }"
-             class="lg:w-xl"
-          >
-            <p class="text-lg leading-7 font-normal text-[#091413]/80">
-              Beyond the world of code and design, I find balance and inspiration in a variety of activities. You might find me on the badminton court or in the swimming pool to clear my mind. Other times, I enjoy a casual cycle, a long walk while listening to music, and of course, adventuring to find the best local culinary gems. For me, life is all about the harmony between perfect pixels and flavorful adventures.
-            </p>
-          </div>
-          
-          <!-- Links -->
-          <div class="flex flex-col gap-6 w-full lg:w-96 shrink-0">
-             <!-- Experience -->
-            <router-link
-              to="/cv"
-              v-motion
-              :initial="{ opacity: 0, x: 20 }"
-              :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 300 } }"
-              class="block border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
-            >
-              <div class="flex items-center gap-3 mb-1">
-                 <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-[#091413] group-hover:bg-[#091413] transition-colors"></div>
-                 <h3 class="text-xl font-medium">View My Experience</h3>
-              </div>
-              <p class="text-gray-500 text-sm pl-4.5">My professional background and achievements</p>
-            </router-link>
-             <!-- Dribbble -->
-            <a
-              href="https://dribbble.com/artenanagara"
-              target="_blank"
-              rel="noopener noreferrer"
-              v-motion
-              :initial="{ opacity: 0, x: 20 }"
-              :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 400 } }"
-              class="block border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
-            >
-              <div class="flex items-center gap-3 mb-1">
-                 <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-[#091413] group-hover:bg-[#091413] transition-colors"></div>
-                 <h3 class="text-xl font-medium">Dribbble</h3>
-              </div>
-              <p class="text-gray-500 text-sm pl-4.5">Check out my design exploration</p>
-            </a>
-             <!-- LinkedIn -->
-            <a
-              href="https://linkedin.com/in/artenanagara"
-              target="_blank"
-              rel="noopener noreferrer"
-              v-motion
-              :initial="{ opacity: 0, x: 20 }"
-              :visible-once="{ opacity: 1, x: 0, transition: { ...transitionMain, delay: 500 } }"
-              class="block border border-[#091413]/10 p-6 hover:border-[#091413]/30 transition-colors group cursor-pointer bg-white"
-            >
-              <div class="flex items-center gap-3 mb-1">
-                 <div class="w-1.5 h-1.5 rounded-full bg-transparent border border-[#091413] group-hover:bg-[#091413] transition-colors"></div>
-                 <h3 class="text-xl font-medium">LinkedIn</h3>
-              </div>
-               <p class="text-gray-500 text-sm pl-4.5">Let's connect professionally.</p>
-            </a>
-          </div>
-        </div>
+    <!-- Links -->
+    <section class="page-x pb-32 md:pb-48">
+      <div class="flex flex-col md:ml-[30%]">
+        <component
+          :is="link.to ? 'RouterLink' : 'a'"
+          v-for="(link, index) in links"
+          :key="link.label"
+          v-reveal="index * 80"
+          :to="link.to"
+          :href="link.href"
+          :target="link.href ? '_blank' : null"
+          :rel="link.href ? 'noopener noreferrer' : null"
+          class="group flex items-baseline justify-between border-t border-hairline py-5 last:border-b"
+        >
+          <span class="text-[clamp(1.75rem,3.4vw,3.25rem)] leading-none tracking-[-0.04em] transition-transform duration-700 ease-out-expo group-hover:translate-x-4">
+            {{ link.label }}
+          </span>
+          <span class="mono-label text-graphite">{{ link.note }} {{ link.href ? '↗' : '→' }}</span>
+        </component>
       </div>
+    </section>
 
-      <!-- Professional Journey Section -->
-      <div class="mb-20 lg:mb-40">
-        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-            <!-- Title -->
-            <div 
-              v-motion
-              :initial="{ opacity: 0, y: 30 }"
-              :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain } }"
-              class="lg:w-100 shrink-0"
-            >
-                <h2 class="text-4xl md:text-5xl font-normal leading-tight">My Professional<br>Journey</h2>
-            </div>
-
-            <!-- Right Content -->
-            <div class="flex-grow">
-                <p 
-                  v-motion
-                  :initial="{ opacity: 0, y: 30 }"
-                  :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 100 } }"
-                  class="text-lg leading-7 font-normal text-[#091413]/80 mb-16"
-                >
-                    My career has been a journey through diverse roles, from UI/UX design to frontend development. Each position has been a valuable opportunity to solve unique problems, collaborate with talented teams, and deliver impactful, user-centered digital products.
-                </p>
-
-                <!-- Flexbox of Jobs -->
-                <div class="flex flex-col md:flex-row flex-wrap gap-x-20 gap-y-16">
-                     <!-- Job 1 -->
-                     <div 
-                       v-motion
-                       :initial="{ opacity: 0, y: 30 }"
-                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 200 } }"
-                       class="w-full md:w-[calc(50%-2.5rem)]"
-                     >
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="text-xl font-medium">Rintisan</h3>
-                            <span class="text-sm font-medium">Now</span>
-                        </div>
-                        <p class="text-sm text-gray-800 font-medium italic mb-2">UI/UX Designer</p>
-                        <p class="text-sm text-gray-500 leading-relaxed">Designing and product visualizing fintech and business Rintisan.</p>
-                     </div>
-
-                      <!-- Job 2 -->
-                     <div 
-                       v-motion
-                       :initial="{ opacity: 0, y: 30 }"
-                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 300 } }"
-                       class="w-full md:w-[calc(50%-2.5rem)]"
-                     >
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="text-xl font-medium">Digitakarya Creative</h3>
-                            <span class="text-sm font-medium">2023-2024</span>
-                        </div>
-                        <p class="text-sm text-gray-800 font-medium italic mb-2">Website Designer</p>
-                        <p class="text-sm text-gray-500 leading-relaxed">Designing and developing user-friendly company profile websites using WordPress.</p>
-                     </div>
-
-                      <!-- Job 3 -->
-                     <div 
-                       v-motion
-                       :initial="{ opacity: 0, y: 30 }"
-                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 400 } }"
-                       class="w-full md:w-[calc(50%-2.5rem)]"
-                     >
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="text-xl font-medium">Allure Industries</h3>
-                            <span class="text-sm font-medium">2022</span>
-                        </div>
-                        <p class="text-sm text-gray-800 font-medium italic mb-2">Frontend Developer</p>
-                         <p class="text-sm text-gray-500 leading-relaxed">Contributed to developing a responsive and user-friendly ERP interface.</p>
-                     </div>
-
-                      <!-- Job 4 -->
-                     <div 
-                       v-motion
-                       :initial="{ opacity: 0, y: 30 }"
-                       :visible-once="{ opacity: 1, y: 0, transition: { ...transitionMain, delay: 500 } }"
-                       class="w-full md:w-[calc(50%-2.5rem)]"
-                     >
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="text-xl font-medium">Arkatama Multi Solusindo</h3>
-                            <span class="text-sm font-medium">2022</span>
-                        </div>
-                         <p class="text-sm text-gray-800 font-medium italic mb-2">UI/UX Designer</p>
-                         <p class="text-sm text-gray-500 leading-relaxed">Successfully delivered more than eight UI/UX design projects for clients.</p>
-                     </div>
-                </div>
-            </div>
-        </div>
-      </div>
-
-    </div>
-    
-    <!-- Footer -->
     <FooterSection />
   </div>
 </template>
-
-<style scoped>
-</style>

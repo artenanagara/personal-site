@@ -1,60 +1,40 @@
 <template>
-  <!-- Selected Works Section -->
-  <section class="container mx-auto px-4 md:px-0 py-16 lg:py-24 text-[#091413] overflow-hidden">
-    <div 
-      v-motion
-      :initial="motionInitialHiddenMedium"
-      :visible="sectionVisible(100)"
-      class="flex justify-between items-end mb-8 lg:mb-10 border-b border-gray-200 pb-4"
-    >
-      <p class="text-4xl lg:text-5xl font-medium">
-        Selected Works
-      </p>
-      
-      <RouterLink 
-        to="/work"
-        :hovered="hoverEffect"
-        class="text-sm md:text-base lg:text-lg underline cursor-pointer hover:text-gray-600 transition duration-300"
-      >
-        See All
+  <section class="page-x pb-24 md:pb-40">
+    <div class="mb-12 flex items-end justify-between border-b border-hairline pb-4 md:mb-20">
+      <h2 v-reveal class="text-[clamp(2.25rem,5vw,4.5rem)] leading-none tracking-[-0.045em]">
+        Selected <span class="serif-i">work</span>
+      </h2>
+      <RouterLink v-reveal="100" to="/work" class="u-link text-[15px]">
+        All work <sup class="font-mono text-[9px]">{{ total }}</sup> →
       </RouterLink>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-      <WorkCard 
+    <!-- Staggered, off-grid composition on desktop; a simple stack on mobile -->
+    <div class="flex flex-col gap-16 md:gap-0">
+      <div
         v-for="(project, index) in works"
         :key="project.id"
-        :project="project" 
-        :delay="0.3 + index * 0.1" 
-      />
+        v-reveal="(index % 2) * 120"
+        class="w-full"
+        :class="layout[index].wrap"
+      >
+        <WorkCard :project="project" :aspect="layout[index].aspect" />
+      </div>
     </div>
   </section>
-  <!-- Selected Works Section End -->
 </template>
 
 <script setup>
 import WorkCard from '../ui/WorkCard.vue';
-
-// Animation Constants
-const transitionSection = { duration: 800, ease: [0.22, 1, 0.36, 1] };
-const transitionQuick = { duration: 300, ease: [0.22, 1, 0.36, 1] };
-
-const motionInitialHiddenMedium = { opacity: 0, y: 40 };
-
-const sectionVisible = (delay) => ({
-  opacity: 1,
-  y: 0,
-  transition: { ...transitionSection, delay: delay || 0 }
-});
-
-const hoverEffect = {
-  x: 5,
-  transition: transitionQuick
-};
-
-// Data
 import worksData from '../../data/works.json';
 
-// Get first 4 items
 const works = worksData.slice(0, 4);
+const total = worksData.length;
+
+const layout = [
+  { wrap: 'md:w-[58%]', aspect: 'aspect-[4/3]' },
+  { wrap: 'md:ml-auto md:-mt-[20vw] md:w-[30%]', aspect: 'aspect-[3/4]' },
+  { wrap: 'md:ml-[18%] md:mt-[9vw] md:w-[44%]', aspect: 'aspect-[16/11]' },
+  { wrap: 'md:ml-auto md:mr-[3%] md:-mt-[6vw] md:w-[32%]', aspect: 'aspect-[4/5]' },
+];
 </script>

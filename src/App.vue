@@ -10,7 +10,9 @@ const route = useRoute();
 const { resetCursor } = useCursor();
 
 onMounted(() => {
-  const lenis = new Lenis()
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const lenis = new Lenis({ lerp: 0.09 })
 
   function raf(time) {
     lenis.raf(time)
@@ -22,13 +24,15 @@ onMounted(() => {
 
 watch(route, () => {
   resetCursor();
+  // The CV page paints the body white; restore the paper background elsewhere.
+  if (route.name !== 'cv') document.body.style.backgroundColor = '';
 });
 </script>
 
 <template>
   <RouterView v-slot="{ Component }">
     <transition :name="route.meta.transition || 'page'" mode="out-in">
-      <component :is="Component" />
+      <component :is="Component" :key="route.path" />
     </transition>
   </RouterView>
   <NavigationBar v-if="!route.meta.hideNavigation" />
@@ -38,13 +42,11 @@ watch(route, () => {
 <style>
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: scale(0.98) translateY(10px);
 }
 </style>
-

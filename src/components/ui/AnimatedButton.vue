@@ -18,30 +18,24 @@ const props = defineProps({
 });
 
 const isExternal = computed(() => !!props.href);
+const tag = computed(() => (isExternal.value ? 'a' : props.to ? RouterLink : 'button'));
 </script>
 
 <template>
   <component
-    :is="isExternal ? 'a' : (to ? 'RouterLink' : 'button')"
+    :is="tag"
     :href="href"
     :to="to"
     :target="isExternal ? '_blank' : null"
     :rel="isExternal ? 'noopener noreferrer' : null"
-    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-transparent bg-black px-8 py-4 font-medium text-white transition-all duration-300 hover:bg-white hover:text-[#091413] hover:border-[#091413]"
+    class="group inline-flex items-center gap-3 rounded-full border border-ink px-6 py-3 text-[15px] transition-colors duration-500 ease-out-expo hover:bg-ink hover:text-paper"
   >
-    <div class="relative flex flex-col items-center overflow-hidden h-[1.5em] leading-[1.5em]">
-      <span class="translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full block">
-        {{ text }}
-      </span>
-      <span class="absolute top-full translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full block">
-        {{ text }}
-      </span>
-    </div>
-    
-    <!-- Optional Slot for Icons -->
-    <div v-if="$slots.default" class="ml-2 relative overflow-hidden h-[1.5em] w-[1.5em] flex items-center justify-center">
-        <!-- We can animate icon similarly if needed, or just keep it static / simple color change -->
-         <slot></slot>
-    </div>
+    <span class="relative block h-[1.4em] overflow-hidden leading-[1.4em]">
+      <span class="block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full">{{ text }}</span>
+      <span class="absolute left-0 top-full block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full" aria-hidden="true">{{ text }}</span>
+    </span>
+    <span v-if="$slots.default" class="flex h-4 w-4 items-center justify-center">
+      <slot></slot>
+    </span>
   </component>
 </template>

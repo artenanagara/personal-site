@@ -1,262 +1,124 @@
 <script setup>
 import { onMounted } from 'vue';
-import cvFile from './CV - Artena Nagara.pdf';
+import { RouterLink } from 'vue-router';
+import { profile, experience, skills, education, organizations } from '../data/cv';
 
 onMounted(() => {
-    document.body.style.backgroundColor = '#ffffff';
-    document.title = 'CV - Artenna Dhyttya Nagara';
+  document.title = `CV - ${profile.name}`;
 });
+
+const print = () => window.print();
 </script>
 
 <template>
-    <div class="min-h-screen bg-gray-200 py-10 px-4 md:px-0 font-serif leading-relaxed text-[#091413]">
-        <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-lg">
-        <!-- Header -->
-        <header class="mb-4">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-4">
-                <div>
-                    <h1 class="text-3xl font-bold mb-1">Artenna Dhyttya Nagara</h1>
-                    <div class="text-sm">
-                        <a href="mailto:artenanagara22@gmail.com" class="hover:underline block">artenanagara22@gmail.com</a>
-                        <span class="block">Klaten, Jawa Tengah (57474)</span>
-                    </div>
-                </div>
-                <div class="text-left md:text-right mt-4 md:mt-0 text-sm">
-                    <div class="italic font-bold mb-1">UI/UX Designer</div>
-                    <a href="https://linkedin.com/in/artenanagara" target="_blank" class="hover:underline block">linkedin.com/in/artenanagara</a>
-                    <a href="https://artenanagara.my.id" target="_blank" class="hover:underline block">artenanagara.my.id</a>
-                </div>
-            </div>
-            
-            <p class="text-justify text-sm md:text-base">
-                UI/UX Designer with 3 years of experience creating clean, modern, and user-friendly interface designs for both web and mobile platforms. Skilled in user research, wireframing, design system development, and interactive prototyping. Experienced in delivering real projects within startup environments, creative agencies, and certification programs. A Figma Expert since 2021, with strong collaboration skills working alongside developers to ensure efficient, consistent, and standard-compliant design implementation.
-            </p>
-        </header>
+  <div class="cv-page min-h-screen bg-paper px-4 py-6 text-ink md:py-12">
+    <nav class="mx-auto mb-6 flex max-w-[52rem] items-center justify-between text-[15px] print:hidden">
+      <RouterLink to="/about" class="u-link">← Back to site</RouterLink>
+      <button class="u-link" @click="print">Save as PDF</button>
+    </nav>
 
-        <!-- Work Experience -->
-        <section>
-            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-2">Work Experience</h2>
+    <article class="cv-sheet mx-auto max-w-[52rem] bg-white px-6 py-10 md:px-16 md:py-16">
+      <!-- Header -->
+      <header class="border-b border-ink pb-6">
+        <h1 class="text-[clamp(2rem,5vw,3rem)] leading-none tracking-[-0.04em]">{{ profile.name }}</h1>
+        <p class="serif-i mt-2 text-[22px]">{{ profile.title }} — {{ profile.focus }}</p>
+        <p class="mono-label mt-4 flex flex-wrap gap-x-4 gap-y-1 text-graphite">
+          <span>{{ profile.location }}</span>
+          <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
+          <a :href="`https://${profile.linkedin}`" target="_blank" rel="noopener noreferrer">{{ profile.linkedin }}</a>
+          <a :href="`https://${profile.website}`" target="_blank" rel="noopener noreferrer">{{ profile.website }}</a>
+        </p>
+      </header>
 
-            <!-- Job 1 -->
-            <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>PT Rintisan Teknologi Waralaba – Jakarta Pusat, DKI Jakarta (Remote)</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>UI/UX Designer</span>
-                    <span>August 2025 - Present</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Designed user interfaces for Kasheer, Rintisan Bisnis, and Rintisan Billing across dashboard, mobile, and tablet platforms with a focus on improving usability and efficiency.</li>
-                    <li>Redesigned the Dashboard V2 UI to enhance flow and help users better understand key information and functions.</li>
-                    <li>Collaborated closely with front-end and mobile developers during UI slicing to maintain visual accuracy and design consistency.</li>
-                </ul>
-            </div>
+      <section class="cv-section">
+        <h2 class="cv-heading">Summary</h2>
+        <p class="text-[15px] leading-relaxed">{{ profile.summary }}</p>
+      </section>
 
-            <!-- Job 2 -->
-             <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>Digitakarya Creative Agency – Surakarta, Jawa Tengah</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>Website Designer</span>
-                    <span>December 2022 – December 2024</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Designed 5 client websites using clean layouts and responsive navigation to optimize user experience.</li>
-                    <li>Built 2 WordPress websites, including theme adjustments, layout development, and content setup.</li>
-                    <li>Analyzed client needs and translated them into effective and implementable design solutions.</li>
-                </ul>
+      <section class="cv-section">
+        <h2 class="cv-heading">Work experience</h2>
+        <div class="flex flex-col gap-6">
+          <div v-for="job in experience" :key="job.role + job.period" class="cv-item">
+            <div class="flex flex-col justify-between gap-x-6 md:flex-row md:items-baseline">
+              <h3 class="text-[17px] font-medium tracking-[-0.01em]">{{ job.role }} <span class="font-normal text-graphite">— {{ job.company }}</span></h3>
+              <span class="mono-label shrink-0 text-graphite">{{ job.period }}</span>
             </div>
+            <p class="mono-label mt-0.5 text-graphite">{{ job.location }}</p>
+            <ul class="mt-2 list-disc space-y-1 pl-5 text-[14.5px] leading-relaxed marker:text-graphite">
+              <li v-for="point in job.points" :key="point">{{ point }}</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-            <!-- Job 3 -->
-             <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>PT Allure Alluminio – Jakarta Utara, DKI Jakarta (Remote)</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>Front-End Developer (Intern)</span>
-                    <span>August – December 2022</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Developed CRM features for the ERP system using Laravel and Tailwind CSS based on design and user requirements.</li>
-                    <li>Performed UI slicing and ensured alignment between provided designs and final interface components.</li>
-                    <li>Coordinated with backend developers to integrate data and synchronize system functionalities.</li>
-                </ul>
-            </div>
+      <section class="cv-section">
+        <h2 class="cv-heading">Skills</h2>
+        <dl class="flex flex-col gap-2 text-[14.5px] leading-relaxed">
+          <div v-for="skill in skills" :key="skill.label" class="md:flex md:gap-6">
+            <dt class="font-medium md:w-36 md:shrink-0">{{ skill.label }}</dt>
+            <dd>{{ skill.value }}</dd>
+          </div>
+        </dl>
+      </section>
 
-             <!-- Job 4 -->
-             <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>PT Arkatama Multi Solusindo – Malang, Jawa Timur (Hybrid)</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>UI/UX Designer (Intern)</span>
-                    <span>February – July 2022</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Completed more than 10 UI design projects for companies such as ASNET, AMD Academy, and SMKPPN Kupang.</li>
-                    <li>Built internal design systems to improve consistency across products and streamline design processes.</li>
-                    <li>Collaborated with developers to ensure accurate implementation of UI across applications.</li>
-                </ul>
-            </div>
+      <section class="cv-section">
+        <h2 class="cv-heading">Education</h2>
+        <div class="cv-item">
+          <div class="flex flex-col justify-between gap-x-6 md:flex-row md:items-baseline">
+            <h3 class="text-[17px] font-medium tracking-[-0.01em]">{{ education.degree }} <span class="font-normal text-graphite">— {{ education.school }}</span></h3>
+            <span class="mono-label shrink-0 text-graphite">{{ education.period }}</span>
+          </div>
+          <p class="mono-label mt-0.5 text-graphite">GPA {{ education.gpa }}</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-[14.5px] leading-relaxed marker:text-graphite">
+            <li v-for="point in education.points" :key="point">{{ point }}</li>
+          </ul>
+        </div>
+      </section>
 
-             <!-- Job 5 -->
-             <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>PT Impactbyte Teknologi Edukasi (Skilvul) – Jakarta Selatan, DKI Jakarta (Remote)</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>UI/UX Designer (Intern)</span>
-                    <span>August – December 2021</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Designed an online course application and created its design system for further development needs</li>
-                    <li>Developed a prototype solution for Bank Jago using the Design Thinking approach from research to testing.</li>
-                    <li>Conducted usability testing and achieved a score of 6/7 as the foundation for user experience evaluation.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="mt-8">
-            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-6">Education</h2>
-            <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>Universitas Negeri Semarang</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>Bachelor of Informatics Engineering (IPK: 3.63/4.00)</span>
-                    <span>2019 – 2025</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Won 1st Place UI/UX Design at DIMAS-TI AMLI 2022 by developing the EXMOOD app (UI, prototyping, design system).</li>
-                    <li>Served as a creative designer for P2MW 2022 (Erase), contributing to project funding success and participation in KMI Expo UPN Jawa Timur.</li>
-                    <li>Participated in the KBMI 2021 Program (Stilldie.id) as a creative designer, successfully securing Kemendikbud funding.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Organizational Experience -->
-        <section class="mt-8">
-            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-6">Organizational Experience</h2>
-            
-            <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>Keluarga Mahasiswa Klaten UNNES (KMK UNNES)</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>Publication & Documentation</span>
-                    <span>2020 - 2022</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Designed various visual assets for Instagram, posters, banners, and publication materials for internal and external events.</li>
-                    <li>Supported the visual branding of all KMK events to maintain consistency with organizational identity.</li>
-                </ul>
-            </div>
-
-            <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>Screenshot UNNES</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>Design & Animation Division</span>
-                    <span>2021–2022</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Produced posters and event banners to support effective and clear communication.</li>
-                    <li>Maintained Screenshot’s visual identity through consistent, professional, and cohesive design output.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Volunteer Experience -->
-        <section class="mt-8">
-            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-6">Volunteer Experience</h2>
-            
-            <div class="mb-6">
-                <div class="flex flex-col md:flex-row justify-between font-bold">
-                    <span>PKKMB FMIPA UNNES</span>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between italic">
-                    <span>IT Division</span>
-                    <span>2020 - 2022</span>
-                </div>
-                <ul class="list-disc ml-5 space-y-1 text-sm md:text-base">
-                    <li>Designed the PKKMB FMIPA UNNES website interface with a focus on readability, content structure, and user experience improvements.</li>
-                    <li>Performed UI slicing using Tailwind CSS and collaborated with backend developers for system integration.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section class="mt-8">
-            <h2 class="text-xl font-bold border-b border-[#091413] pb-1 mb-6">Skill</h2>
-            <div class="space-y-4 text-sm md:text-base">
-                <div>
-                    <span class="font-bold">Software:</span> Figma, Figjam, Wordpress, Elementor, Webflow, Framer, Maze, Trello, Notion, Photoshop, Illustrator, Github
-                </div>
-                <div>
-                   <span class="font-bold">Technical Skill:</span> UI/UX Design, Wireframing, Prototyping, Design System, HTML, CSS, JavaScript, React JS, Graphic Design, Front-end Development
-                </div>
-                <div>
-                   <span class="font-bold">Soft Skill:</span> Problem Solving, Teamwork, Communication, Creativity, Time Management, Adaptability
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <!-- Floating Download Button -->
-    <a 
-        :href="cvFile" 
-        download="CV - Artena Nagara.pdf"
-        class="fixed bottom-8 right-8 bg-black text-white px-6 py-3 rounded-full shadow-xl hover:scale-105 transition-transform print:hidden flex items-center gap-2 z-50 font-sans"
-    >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-        Download PDF
-    </a>
-    </div>
+      <section class="cv-section">
+        <h2 class="cv-heading">Organizational experience</h2>
+        <p class="text-[14.5px] leading-relaxed">{{ organizations }}</p>
+      </section>
+    </article>
+  </div>
 </template>
 
 <style scoped>
-/* Ensure font works even if tailwind config has issues */
-.font-serif {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+.cv-section {
+  margin-top: 2rem;
+}
+
+.cv-heading {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-graphite);
+  margin-bottom: 0.875rem;
 }
 
 @media print {
-    /* Reset background and padding for print */
-    .bg-gray-200 {
-        background-color: white !important;
-        padding: 0 !important;
-    }
-    .shadow-lg {
-        box-shadow: none !important;
-    }
-    .max-w-4xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* Hide non-printable elements */
-    .print\:hidden {
-        display: none !important;
-    }
+  .cv-page {
+    background: white !important;
+    padding: 0 !important;
+  }
 
-    /* Ensure text is black */
-    body {
-        color: #091413 !important;
-    }
+  .cv-sheet {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
 
-    /* Clean links */
-    a {
-        text-decoration: none !important;
-        color: #091413 !important;
-    }
-    
-    @page {
-        margin: 0.5cm;
-    }
+  .cv-item {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  @page {
+    margin: 1.2cm;
+  }
 }
 </style>
