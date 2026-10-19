@@ -70,7 +70,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { useLocalTime } from '../../composables/useLocalTime';
-import worksData from '../../data/works.json';
+import worksData from '../../data/works';
 
 const isMenuOpen = ref(false);
 const { time } = useLocalTime();

@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import FooterSection from '../components/layout/FooterSection.vue';
-import worksData from '../data/works.json';
+import worksData from '../data/works';
 import AnimatedButton from '../components/ui/AnimatedButton.vue';
 import { useCursor } from '../composables/useCursor';
 
@@ -30,9 +30,9 @@ const loadProjectData = async () => {
 onMounted(loadProjectData);
 watch(() => route.params.id, loadProjectData);
 
-// The next case study in list order, skipping external-only entries
+// The next case study in list order, skipping external-only and upcoming entries
 const nextProject = computed(() => {
-  const caseStudies = worksData.filter((w) => w.type !== 'visit');
+  const caseStudies = worksData.filter((w) => w.type === 'open');
   const index = caseStudies.findIndex((w) => w.id === route.params.id);
   if (index === -1 || caseStudies.length < 2) return null;
   return caseStudies[(index + 1) % caseStudies.length];

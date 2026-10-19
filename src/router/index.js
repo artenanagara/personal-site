@@ -57,12 +57,9 @@ const router = createRouter({
             }
         }
     ],
-    scrollBehavior(to, from, savedPosition) {
-        if (savedPosition) {
-            return savedPosition
-        } else {
-            return { top: 0 }
-        }
+    // Scroll is reset to the top by App.vue after the page transition
+    scrollBehavior() {
+        return false
     }
 })
 

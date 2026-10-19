@@ -8,11 +8,20 @@ import { useCursor } from './composables/useCursor';
 
 const route = useRoute();
 const { resetCursor } = useCursor();
+let lenis = null;
+
+// Every navigation starts at the top. Runs once the old page has faded out,
+// and resets Lenis too so its eased position doesn't drag the page back down.
+const scrollToTop = () => {
+  if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+  window.scrollTo(0, 0);
+};
 
 onMounted(() => {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const lenis = new Lenis({ lerp: 0.09 })
+  lenis = new Lenis({ lerp: 0.09 })
 
   function raf(time) {
     lenis.raf(time)
@@ -31,7 +40,7 @@ watch(route, () => {
 
 <template>
   <RouterView v-slot="{ Component }">
-    <transition :name="route.meta.transition || 'page'" mode="out-in">
+    <transition :name="route.meta.transition || 'page'" mode="out-in" @after-leave="scrollToTop">
       <component :is="Component" :key="route.path" />
     </transition>
   </RouterView>

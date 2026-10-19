@@ -5,10 +5,10 @@
   --font-serif: 'Newsreader', Georgia, serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;
 
-  --color-paper: #F1F1EE;
+  --color-paper: #FFFFFF;
   --color-ink: #141414;
-  --color-graphite: #6B6B66;
-  --color-hairline: #D6D6D0;
+  --color-graphite: #6E6E73;
+  --color-hairline: #E5E5E7;
   --color-nila: #2F3FBF;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

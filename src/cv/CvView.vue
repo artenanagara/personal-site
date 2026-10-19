@@ -11,7 +11,7 @@ const print = () => window.print();
 </script>
 
 <template>
-  <div class="cv-page min-h-screen bg-paper px-4 py-6 text-ink md:py-12">
+  <div class="cv-page min-h-screen bg-[#F4F4F5] px-4 py-6 text-ink md:py-12">
     <nav class="mx-auto mb-6 flex max-w-[52rem] items-center justify-between text-[15px] print:hidden">
       <RouterLink to="/about" class="u-link">← Back to site</RouterLink>
       <button class="u-link" @click="print">Save as PDF</button>

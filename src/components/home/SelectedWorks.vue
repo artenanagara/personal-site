@@ -26,7 +26,7 @@
 
 <script setup>
 import WorkCard from '../ui/WorkCard.vue';
-import worksData from '../../data/works.json';
+import worksData from '../../data/works';
 
 const works = worksData.slice(0, 4);
 const total = worksData.length;

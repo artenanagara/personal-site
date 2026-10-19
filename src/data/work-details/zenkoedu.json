@@ -1,0 +1,118 @@
+{
+    "id": "zenkoedu",
+    "title": "Zenko",
+    "category": "Website",
+    "subtitle": "An Online Tryout Marketplace That Turns Practice Into a Clear Next Step",
+    "url": "https://zenkoedu.id",
+    "description": "Zenko is an online tryout platform for many kinds of exams in Indonesia, including SKD CPNS, UTBK-SNBT, TKA, PPPK, and BUMN. Students find practice packages from tutors and tutoring centres, take timed CBT simulations, and review their scores and explanations to see what to study next. Tutors and tutoring centres can publish their own question banks on the platform.",
+    "metadata": [
+        {
+            "label": "Product",
+            "value": "Zenko"
+        },
+        {
+            "label": "Platform",
+            "value": "Website, mobile web"
+        },
+        {
+            "label": "Audience",
+            "value": "Students, tutors, and tutoring centres"
+        },
+        {
+            "label": "Exams",
+            "value": "SKD CPNS, UTBK-SNBT, TKA, PPPK, BUMN"
+        }
+    ],
+    "content": [
+        {
+            "type": "full-width-image",
+            "src": "/images/works/zenkoedu/hero.webp"
+        },
+        {
+            "type": "text-block",
+            "label": "The Problem",
+            "align": "left",
+            "content": "Exam prep is scattered across many tutors and tutoring centres, each with their own packages. Students struggle to find practice that matches their target exam, and after a tryout they often get a score without a clear sense of what to work on next."
+        },
+        {
+            "type": "text-block",
+            "label": "The Approach",
+            "align": "right",
+            "content": "One simple loop: find the right practice, measure your ability, then focus on what's still missing. Search starts from the exam goal, with popular exams one tap away, so students reach a relevant package quickly."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/zenkoedu/student.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/zenkoedu/card.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/zenkoedu/library.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "The Catalogue",
+            "align": "left",
+            "content": "Package cards put what matters for the decision up front: the tutor or tutoring centre, rating, attempts, price, and exam category. Students can try five questions for free on a package page before signing up."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/zenkoedu/flow.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "The Exam Room",
+            "align": "left",
+            "content": "Practice happens in a timed CBT room that mirrors the real exam: a countdown timer, a question map that shows unanswered, flagged, and answered questions at a glance, and a 'Ragu-ragu' flag for questions to revisit. Before submitting, a confirmation calls out any flagged questions, and scores come back instantly with results per subtest."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/zenkoedu/exam.webp",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/zenkoedu/mobile.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/zenkoedu/result.webp",
+                    "span": "col-span-2"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Summary",
+            "align": "right",
+            "content": "Zenko brings scattered exam prep into one place with a single loop: find the right practice, measure your ability with a timed simulation, then focus on what still needs work. A calm blue palette and a clear type pairing keep the experience trustworthy and easy to scan on any screen."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/zenkoedu/typo.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/zenkoedu/colors.webp",
+                    "span": "col-span-2"
+                }
+            ]
+        }
+    ]
+}

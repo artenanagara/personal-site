@@ -42,7 +42,7 @@
             "hover": "/images/works/manisgrafika/mockup.webp"
         }
     },
-        {
+    {
         "id": "greenprobolinggo",
         "title": "Greenprobolinggo",
         "category": "Dashboard, Waste Bank",
@@ -50,6 +50,67 @@
         "cover": {
             "default": "/images/works/greenprobolinggo/waste.webp",
             "hover": "/images/works/greenprobolinggo/mockup.webp"
+        }
+    },
+    {
+        "id": "pickin",
+        "title": "Pickin",
+        "category": "Web App, Photo Selection",
+        "type": "open",
+        "url": "https://pickin.id",
+        "cover": {
+            "default": "/images/works/pickin/cover.webp",
+            "hover": "/images/works/pickin/hero.webp"
+        },
+        "featured": {
+            "image": "/images/works/pickin/hero.webp"
+        }
+    },
+    {
+        "id": "zenkoedu",
+        "title": "Zenko",
+        "category": "Website, Online Tryout",
+        "type": "open",
+        "url": "https://zenkoedu.id",
+        "cover": {
+            "default": "/images/works/zenkoedu/cover.webp",
+            "hover": "/images/works/zenkoedu/hero.webp"
+        },
+        "featured": {
+            "image": "/images/works/zenkoedu/hero.webp"
+        }
+    },
+    {
+        "id": "kfg",
+        "title": "Kembar Futagroup",
+        "category": "Website, Manufacturing Group",
+        "type": "soon",
+        "cover": {
+            "default": "/images/works/kfg/cover.webp"
+        }
+    },
+    {
+        "id": "kasheer",
+        "title": "Kasheer",
+        "category": "SaaS, POS for F&B",
+        "type": "visit",
+        "url": "https://kasheer.id",
+        "draft": true,
+        "cover": {
+            "default": "/images/works/kasheer/cover.webp",
+            "hover": "/images/works/kasheer/mockup.webp"
+        }
+    },
+    {
+        "id": "rintisan",
+        "title": "Rintisan",
+        "category": "SaaS, Business Platform",
+        "type": "visit",
+        "url": "https://rintisan.co.id",
+        "draft": true,
+        "cover": {
+            "default": "/images/works/rintisan/cover.webp",
+            "hover": "/images/works/rintisan/mockup.webp"
         }
     }
 ]
