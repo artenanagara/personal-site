@@ -3,11 +3,34 @@ import NavigationBar from './components/layout/NavigationBar.vue';
 import CustomCursor from './components/ui/CustomCursor.vue';
 import { RouterView, useRoute } from 'vue-router'
 import Lenis from 'lenis'
-import { onMounted, watch } from 'vue';
+import { computed, onMounted, watch } from 'vue';
+import { useHead } from '@unhead/vue'
+import { SpeedInsights } from '@vercel/speed-insights/vue'
 import { useCursor } from './composables/useCursor';
 
 const route = useRoute();
 const { resetCursor } = useCursor();
+
+const SITE = 'https://artenanagara.my.id';
+const DEFAULT_DESCRIPTION = 'Artena Nagara is a Product Designer (UI/UX) creating clear, buildable interfaces for SaaS and industry. View the portfolio and recent work.';
+
+const canonicalUrl = computed(() => {
+  const base = window.location.hostname.startsWith('cv.') ? 'https://cv.artenanagara.my.id' : SITE;
+  return `${base}${route.path === '/' ? '/' : route.path}`;
+});
+
+// Per-page title, description, canonical, and robots. Social tags and JSON-LD are static in index.html.
+// Pages can override title/description (the case study pages do).
+useHead({
+  title: computed(() => route.meta.title || null),
+  titleTemplate: (title) => (title ? `${title} — Artena Nagara` : 'Artena Nagara — Product Designer (UI/UX)'),
+  meta: [
+    { name: 'description', content: computed(() => route.meta.description || DEFAULT_DESCRIPTION) },
+    { name: 'robots', content: computed(() => (route.meta.noindex ? 'noindex' : 'index, follow')) },
+  ],
+  link: [{ rel: 'canonical', href: canonicalUrl }],
+});
+
 let lenis = null;
 
 // Every navigation starts at the top. Runs once the old page has faded out,
@@ -46,6 +69,7 @@ watch(route, () => {
   </RouterView>
   <NavigationBar v-if="!route.meta.hideNavigation" />
   <CustomCursor v-if="!route.meta.hideCursor" />
+  <SpeedInsights />
 </template>
 
 <style>

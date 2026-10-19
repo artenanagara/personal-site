@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import { useHead } from '@unhead/vue';
 import FooterSection from '../components/layout/FooterSection.vue';
 import worksData from '../data/works';
 import AnimatedButton from '../components/ui/AnimatedButton.vue';
@@ -16,9 +17,6 @@ const loadProjectData = async () => {
   try {
     const data = await import(`../data/work-details/${route.params.id}.json`);
     project.value = data.default;
-    if (project.value?.title) {
-      document.title = `${project.value.title} | Artena Nagara`;
-    }
   } catch (error) {
     console.error('Failed to load project data:', error);
     project.value = null;
@@ -29,6 +27,14 @@ const loadProjectData = async () => {
 
 onMounted(loadProjectData);
 watch(() => route.params.id, loadProjectData);
+
+useHead({
+  title: computed(() => project.value?.title || (loading.value ? 'Project' : 'Project Not Found')),
+  meta: [
+    { name: 'description', content: computed(() => project.value?.description) },
+    { name: 'robots', content: computed(() => (!loading.value && !project.value ? 'noindex' : 'index, follow')) },
+  ],
+});
 
 // The next case study in list order, skipping external-only and upcoming entries
 const nextProject = computed(() => {

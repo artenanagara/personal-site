@@ -1,11 +1,9 @@
 <script setup>
-import { onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import { profile, experience, skills, education, organizations } from '../data/cv';
 
-onMounted(() => {
-  document.title = `CV - ${profile.name}`;
-});
+// On cv.artenanagara.my.id the rest of the site lives on the main domain
+const onCvSubdomain = window.location.hostname.startsWith('cv.');
 
 const print = () => window.print();
 </script>
@@ -13,7 +11,8 @@ const print = () => window.print();
 <template>
   <div class="cv-page min-h-screen bg-[#F4F4F5] px-4 py-6 text-ink md:py-12">
     <nav class="mx-auto mb-6 flex max-w-[52rem] items-center justify-between text-[15px] print:hidden">
-      <RouterLink to="/about" class="u-link">← Back to site</RouterLink>
+      <a v-if="onCvSubdomain" href="https://artenanagara.my.id/about" class="u-link">← Back to site</a>
+      <RouterLink v-else to="/about" class="u-link">← Back to site</RouterLink>
       <button class="u-link" @click="print">Save as PDF</button>
     </nav>
 
