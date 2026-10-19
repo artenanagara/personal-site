@@ -1,65 +1,60 @@
 <template>
-  <!-- Hero Section -->
-  <section class="h-screen flex flex-col justify-end bg-white text-[#091413] pb-8 px-4 md:px-8 md:pb-4 overflow-hidden">
-    <div class="container mx-auto flex flex-col justify-between h-full">
-      <div class="font-sans font-normal leading-none relative w-full flex flex-col justify-center h-full pt-0">
-        <h1 
-          v-motion
-          :initial="motionInitialHidden"
-          :enter="heroTextEnter(200)"
-          class="text-6xl font-light lg:text-8xl leading-tight w-full"
-        >
-          <p class="mb-0 overflow-hidden">
-            <span>Creates intuitive and engaging </span>
-          </p>
+  <section class="page-x relative flex min-h-[100svh] flex-col pb-5 pt-24 md:pt-28">
+    <div v-reveal.load="600" class="mono-label flex justify-between text-graphite">
+      <span>Portfolio — Product &amp; web design</span>
+      <span class="hidden md:block">07°34′S, 110°49′E</span>
+    </div>
 
-          <span class="inline-block">
-            <span class="font-light italic">user experiences</span>
-          </span>
-          
-          <p class="mb-0 overflow-hidden">
-            through minimalist design
-          </p>
-        </h1>
-      </div>
+    <h1 v-reveal.load.lines class="hero-title mt-auto">
+      <span class="line-mask"><span style="--d: 80ms">Creates intuitive</span></span>
+      <span class="line-mask md:pl-[11vw]"><span style="--d: 180ms">and engaging <em class="serif-i">user</em></span></span>
+      <span class="line-mask"><span style="--d: 280ms">
+        <em class="serif-i">experiences</em>
+        <img
+          src="/images/photo-me.webp"
+          alt="Portrait of Artena Nagara"
+          class="mx-[0.12em] inline-block h-[0.74em] w-[1.15em] object-cover align-[-0.04em] grayscale"
+        />
+        through
+      </span></span>
+      <span class="line-mask md:pl-[6vw]"><span style="--d: 380ms">minimalist design.</span></span>
+    </h1>
 
-      <div
-        v-motion
-        :initial="motionInitialHiddenSmall"
-        :enter="heroFooterEnter"
-        class="flex justify-between items-end relative w-full pt-8 pb-0 md:pt-8 md:pb-4"
-      >    
-        <p class="text-xs md:text-sm lg:text-base leading-snug">
-          Located in<br />
-          <span>Surakarta, Indonesia 🇮🇩</span>
-        </p>
-        
-        <p class="text-xs md:text-sm lg:text-base text-right leading-snug">
-          Currently available for<br />
-          <span>🌎 freelance worldwide</span>
-        </p>
-      </div>
+    <div
+      v-reveal.load="700"
+      class="mt-10 flex flex-wrap items-end gap-x-[7vw] gap-y-4 border-t border-hairline pt-4 md:mt-14"
+    >
+      <p>
+        <span class="mono-label block text-graphite">Based in</span>
+        <span class="text-[15px]">Surakarta, Indonesia</span>
+      </p>
+      <p>
+        <span class="mono-label block text-graphite">Available for</span>
+        <span class="text-[15px]">Freelance, worldwide</span>
+      </p>
+      <p class="ml-auto hidden text-right sm:block">
+        <span class="mono-label block text-graphite">Scroll</span>
+        <span class="text-[15px]">Selected work ↓</span>
+      </p>
     </div>
   </section>
-  <!-- Hero Section End -->
 </template>
 
-<script setup>
-// Animation Constants
-const transitionMain = { duration: 1200, ease: [0.22, 1, 0.36, 1] };
+<style scoped>
+.hero-title {
+  font-size: clamp(2.6rem, 12.4vw, 4.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
 
-const motionInitialHidden = { opacity: 0, y: 40 };
-const motionInitialHiddenSmall = { opacity: 0, y: 40 };
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: clamp(4.5rem, 8.2vw, 10rem);
+  }
+}
 
-const heroTextEnter = (delay) => ({
-  opacity: 1,
-  y: 0,
-  transition: { ...transitionMain, delay }
-});
-
-const heroFooterEnter = {
-  opacity: 1,
-  y: 0,
-  transition: { ...transitionMain, duration: 1000, delay: 800 }
-};
-</script>
+.hero-title .serif-i {
+  letter-spacing: -0.035em;
+}
+</style>

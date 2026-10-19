@@ -1,0 +1,103 @@
+{
+    "id": "pickin",
+    "title": "Pickin",
+    "category": "Web App",
+    "subtitle": "A Photo Selection Gallery Built Around How Indonesian Photographers Already Work",
+    "url": "https://pickin.id",
+    "description": "Pickin is a photo selection gallery for photographers in Indonesia. Clients open a link, tap a heart on the photos they want, and send their picks; the photographer receives a clean list of file names. Photos stay in the photographer's own Google Drive, and the whole loop, from sharing the gallery to delivering edits, runs through WhatsApp.",
+    "metadata": [
+        {
+            "label": "Product",
+            "value": "Pickin"
+        },
+        {
+            "label": "Platform",
+            "value": "Web app, mobile web"
+        },
+        {
+            "label": "Audience",
+            "value": "Photographers in Indonesia"
+        },
+        {
+            "label": "Pricing",
+            "value": "Free, then pay per gallery"
+        }
+    ],
+    "content": [
+        {
+            "type": "full-width-image",
+            "src": "/images/works/pickin/hero.webp"
+        },
+        {
+            "type": "text-block",
+            "label": "The Problem",
+            "align": "left",
+            "content": "After a shoot, choosing photos usually means sending a Drive folder, waiting for screenshots or a list of file names typed by hand, then matching them up one by one. Clients get lost in folders, and photographers lose time on admin instead of editing."
+        },
+        {
+            "type": "text-block",
+            "label": "The Approach",
+            "align": "right",
+            "content": "Remove every step that isn't choosing. Clients don't log in or install anything: they open a link, tap a heart, and send. Photographers don't upload again, because the gallery reads straight from Google Drive, and the hand-off happens in WhatsApp, where the conversation already lives."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/photographer.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/phone.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/couple.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Mobile First",
+            "align": "left",
+            "content": "Most clients open the link on their phone, often on a weak connection. The gallery, picking flow, and plan details are designed to read and work comfortably on a small screen first."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/whatsapp.webp",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/pickin/plan.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/price.webp",
+                    "span": "col-span-2"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Pricing",
+            "align": "right",
+            "content": "No subscription. Every photographer starts free, then pays once per gallery in rupiah via QRIS, only when a gallery needs more photos, a longer active period, or no branding. All plans include revisions, a results tab, and CSV export."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/typo.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/colors.webp",
+                    "span": "col-span-2"
+                }
+            ]
+        }
+    ]
+}

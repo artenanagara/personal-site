@@ -4,35 +4,15 @@ import FooterSection from '../components/layout/FooterSection.vue';
 </script>
 
 <template>
-  <div class="min-h-screen w-full flex flex-col bg-white text-[#091413] pt-32 lg:pt-40 font-sans">
-    <div class="flex-grow flex flex-col items-center justify-center px-6 mb-32">
-      <div class="max-w-4xl w-full">
-        <h1 class="text-5xl md:text-7xl font-light leading-tight tracking-tight mb-12">
-          Oops. It looks like the page you're trying to reach
-          <span class="text-gray-400">doesn't exist</span> or has been moved.
-        </h1>
-        
-        <AnimatedButton 
-          to="/" 
-          text="Go to home"
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="20" 
-            height="20" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round"
-          >
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </AnimatedButton>
-      </div>
-    </div>
+  <div class="flex min-h-screen flex-col">
+    <section class="page-x flex min-h-[100svh] flex-col justify-end pb-16 pt-40">
+      <p v-reveal class="mono-label text-graphite">Error 404</p>
+      <h1 v-reveal.lines class="mt-6 max-w-[16ch] text-[clamp(2.75rem,7vw,7.5rem)] leading-[0.95] tracking-[-0.05em]">
+        <span class="line-mask"><span style="--d: 80ms">This page doesn't</span></span>
+        <span class="line-mask"><span style="--d: 180ms">exist or has <em class="serif-i">moved.</em></span></span>
+      </h1>
+      <AnimatedButton v-reveal="300" to="/" text="Back to home" class="mt-10 self-start md:ml-[30%]" />
+    </section>
     <FooterSection />
   </div>
 </template>
