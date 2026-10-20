@@ -12,5 +12,6 @@ export default allWorks
   .map((work) => ({
     ...work,
     summary: byId[work.id]?.subtitle || work.category,
-    year: yearOf(byId[work.id]),
-  }));
+    year: yearOf(byId[work.id]) || work.year,
+  }))
+  .sort((a, b) => Number(b.year || 0) - Number(a.year || 0));

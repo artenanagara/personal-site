@@ -19,14 +19,15 @@
             "value": "Photographers in Indonesia"
         },
         {
-            "label": "Pricing",
-            "value": "Free, then pay per gallery"
+            "label": "Year",
+            "value": "2026"
         }
     ],
     "content": [
         {
             "type": "full-width-image",
-            "src": "/images/works/pickin/hero.webp"
+            "src": "/images/works/pickin/lead.webp",
+            "aspectRatio": "aspect-[16/9]"
         },
         {
             "type": "text-block",
@@ -44,34 +45,11 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/pickin/photographer.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/phone.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/couple.webp",
-                    "span": "col-span-4"
-                }
-            ]
-        },
-        {
-            "type": "text-block",
-            "label": "Mobile First",
-            "align": "left",
-            "content": "Most clients open the link on their phone, often on a weak connection. The gallery, picking flow, and plan details are designed to read and work comfortably on a small screen first."
-        },
-        {
-            "type": "gallery-grid",
-            "items": [
-                {
-                    "src": "/images/works/pickin/whatsapp.webp",
+                    "src": "/images/works/pickin/landing.webp",
                     "span": "col-span-4"
                 },
                 {
-                    "src": "/images/works/pickin/plan.webp",
+                    "src": "/images/works/pickin/feature-hero.webp",
                     "span": "col-span-2"
                 },
                 {
@@ -82,13 +60,75 @@
         },
         {
             "type": "text-block",
-            "label": "Pricing",
+            "label": "Photographer Dashboard",
+            "align": "left",
+            "content": "Inside the studio workspace, photographers track active galleries and client activity at a glance, create a new gallery in seconds by pasting a Google Drive folder link, publish an online pricelist catalog for their Instagram bio, and link their WhatsApp number for instant selection delivery."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/dashboard.webp",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/pickin/drive-auth.webp",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/pickin/dashboard-settings.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/dashboard-mobile.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/dashboard-catalog.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Mobile First",
             "align": "right",
+            "content": "Most clients open the link on their phone, often on a weak connection. The gallery, picking flow, and plan details are designed to read and work comfortably on a small screen first."
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/whatsapp.webp",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/pickin/phone.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/mobile-pair.webp",
+                    "span": "col-span-2"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Pricing",
+            "align": "left",
             "content": "No subscription. Every photographer starts free, then pays once per gallery in rupiah via QRIS, only when a gallery needs more photos, a longer active period, or no branding. All plans include revisions, a results tab, and CSV export."
         },
         {
             "type": "gallery-grid",
             "items": [
+                {
+                    "src": "/images/works/pickin/plan.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/faq.webp",
+                    "span": "col-span-2"
+                },
                 {
                     "src": "/images/works/pickin/typo.webp",
                     "span": "col-span-2"
@@ -96,6 +136,10 @@
                 {
                     "src": "/images/works/pickin/colors.webp",
                     "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/mockup.webp",
+                    "span": "col-span-4"
                 }
             ]
         }

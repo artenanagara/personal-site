@@ -70,10 +70,17 @@ const scrollTo = (id) => {
         >
           <div class="relative aspect-[4/5] overflow-hidden bg-hairline sm:aspect-[16/10]">
             <img
-              :src="work.featured.image"
+              :src="work.cover.default"
               :alt="work.title"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1800ms] ease-out-expo group-hover:scale-[1.03]"
+            />
+            <img
+              v-if="work.cover.hover || work.featured?.image"
+              :src="work.cover.hover || work.featured.image"
+              alt=""
+              loading="lazy"
+              class="absolute inset-0 h-full w-full object-cover transition-[clip-path] duration-1000 ease-out-expo [clip-path:inset(100%_0_0_0)] group-hover:[clip-path:inset(0_0_0_0)]"
             />
           </div>
 

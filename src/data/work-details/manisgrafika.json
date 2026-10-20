@@ -26,7 +26,7 @@
     "content": [
         {
             "type": "full-width-image",
-            "src": "/images/works/manisgrafika/cover.webp",
+            "src": "/images/works/manisgrafika/lead.webp",
             "aspectRatio": "aspect-[16/9]"
         },
         {
@@ -45,7 +45,7 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/manisgrafika/hero.webp",
+                    "src": "/images/works/manisgrafika/hero-section.webp",
                     "span": "col-span-2"
                 },
                 {
@@ -99,7 +99,7 @@
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/manisgrafika/color.webp",
+                    "src": "/images/works/manisgrafika/colors.webp",
                     "span": "col-span-2"
                 },
                 {
