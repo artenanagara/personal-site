@@ -23,7 +23,7 @@ const links = [
 
       <div class="mt-16 flex flex-col gap-12 md:mt-24 md:flex-row md:items-start">
         <figure v-reveal="200" class="w-[60%] md:ml-[4%] md:w-[22%]">
-          <img src="../assets/images/photo-me.webp" alt="Portrait of Artena Nagara" class="aspect-[4/5] w-full object-cover grayscale" />
+          <img src="/images/photo-me.webp" alt="Portrait of Artena Nagara" class="aspect-[4/5] w-full object-cover grayscale" />
           <figcaption class="mono-label mt-2 text-graphite">Artena Nagara, Surakarta</figcaption>
         </figure>
 
@@ -43,7 +43,7 @@ const links = [
 
     <!-- Life outside work -->
     <figure v-reveal class="overflow-hidden bg-hairline">
-      <img src="../assets/images/about-me.webp" alt="Artena outside of work" loading="lazy" class="h-[70vh] w-full object-cover md:h-[92vh]" />
+      <img src="/images/about-me.webp" alt="Artena outside of work" loading="lazy" class="h-[70vh] w-full object-cover md:h-[92vh]" />
     </figure>
 
     <section class="page-x py-24 md:py-40">

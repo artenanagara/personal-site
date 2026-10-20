@@ -26,7 +26,7 @@
     "content": [
         {
             "type": "full-width-image",
-            "src": "/images/works/fungsix/cover.webp",
+            "src": "/images/works/fungsix/lead.webp",
             "aspectRatio": "aspect-[16/9]"
         },
         {
@@ -45,11 +45,11 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/fungsix/hero.webp",
+                    "src": "/images/works/fungsix/hero-section.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/fungsix/about.webp",
+                    "src": "/images/works/fungsix/about-section.webp",
                     "span": "col-span-2"
                 },
                 {
@@ -72,7 +72,7 @@
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/fungsix/service.webp",
+                    "src": "/images/works/fungsix/service-section.webp",
                     "span": "col-span-2"
                 }
             ]
@@ -87,7 +87,7 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/fungsix/fungsix.webp",
+                    "src": "/images/works/fungsix/mockup.webp",
                     "span": "col-span-4"
                 }
             ]

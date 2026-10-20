@@ -19,14 +19,15 @@
             "value": "Students, tutors, and tutoring centres"
         },
         {
-            "label": "Exams",
-            "value": "SKD CPNS, UTBK-SNBT, TKA, PPPK, BUMN"
+            "label": "Year",
+            "value": "2026"
         }
     ],
     "content": [
         {
             "type": "full-width-image",
-            "src": "/images/works/zenkoedu/hero.webp"
+            "src": "/images/works/zenkoedu/lead.webp",
+            "aspectRatio": "aspect-[16/9]"
         },
         {
             "type": "text-block",
@@ -44,15 +45,15 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/zenkoedu/student.webp",
+                    "src": "/images/works/zenkoedu/home-hero.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/zenkoedu/card.webp",
+                    "src": "/images/works/zenkoedu/categories.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/zenkoedu/library.webp",
+                    "src": "/images/works/zenkoedu/packages.webp",
                     "span": "col-span-4"
                 }
             ]
@@ -69,6 +70,14 @@
                 {
                     "src": "/images/works/zenkoedu/flow.webp",
                     "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/zenkoedu/card.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/zenkoedu/cbt-intro.webp",
+                    "span": "col-span-2"
                 }
             ]
         },
@@ -92,6 +101,10 @@
                 {
                     "src": "/images/works/zenkoedu/result.webp",
                     "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/zenkoedu/cbt-modal.webp",
+                    "span": "col-span-4"
                 }
             ]
         },
@@ -111,6 +124,10 @@
                 {
                     "src": "/images/works/zenkoedu/colors.webp",
                     "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/zenkoedu/mockup.webp",
+                    "span": "col-span-4"
                 }
             ]
         }

@@ -1,69 +1,16 @@
 [
     {
-        "id": "fungsix",
-        "title": "Fungsix",
-        "category": "Website Design, Company Profile",
-        "type": "open",
-        "url": "https://fungsix.com",
-        "cover": {
-            "default": "/images/works/fungsix/event.webp",
-            "hover": "/images/works/fungsix/fungsix.webp"
-        }
-    },
-    {
-        "id": "theinvestor",
-        "title": "The Investor",
-        "category": "Company Profile, Stock",
-        "type": "visit",
-        "url": "https://theinvestor.id",
-        "cover": {
-            "default": "/images/works/theinvestor/building.webp",
-            "hover": "/images/works/theinvestor/mockup.webp"
-        }
-    },
-    {
-        "id": "exmood",
-        "title": "Exmood",
-        "category": "Mobile App, Mental Health",
-        "type": "open",
-        "cover": {
-            "default": "/images/works/exmood/hand.webp",
-            "hover": "/images/works/exmood/mockup.webp"
-        }
-    },
-    {
-        "id": "manisgrafika",
-        "title": "Manis Grafika",
-        "category": "Website Design, Print Service",
-        "type": "open",
-        "url": "https://manisgrafika.id",
-        "cover": {
-            "default": "/images/works/manisgrafika/yasin.webp",
-            "hover": "/images/works/manisgrafika/mockup.webp"
-        }
-    },
-    {
-        "id": "greenprobolinggo",
-        "title": "Greenprobolinggo",
-        "category": "Dashboard, Waste Bank",
-        "type": "open",
-        "cover": {
-            "default": "/images/works/greenprobolinggo/waste.webp",
-            "hover": "/images/works/greenprobolinggo/mockup.webp"
-        }
-    },
-    {
         "id": "pickin",
         "title": "Pickin",
         "category": "Web App, Photo Selection",
         "type": "open",
         "url": "https://pickin.id",
         "cover": {
-            "default": "/images/works/pickin/cover.webp",
-            "hover": "/images/works/pickin/hero.webp"
+            "default": "/images/works/pickin/thumb.webp",
+            "hover": "/images/works/pickin/mockup.webp"
         },
         "featured": {
-            "image": "/images/works/pickin/hero.webp"
+            "image": "/images/works/pickin/mockup.webp"
         }
     },
     {
@@ -73,11 +20,65 @@
         "type": "open",
         "url": "https://zenkoedu.id",
         "cover": {
-            "default": "/images/works/zenkoedu/cover.webp",
-            "hover": "/images/works/zenkoedu/hero.webp"
+            "default": "/images/works/zenkoedu/thumb.webp",
+            "hover": "/images/works/zenkoedu/mockup.webp"
         },
         "featured": {
-            "image": "/images/works/zenkoedu/hero.webp"
+            "image": "/images/works/zenkoedu/mockup.webp"
+        }
+    },
+    {
+        "id": "fungsix",
+        "title": "Fungsix",
+        "category": "Website Design, Company Profile",
+        "type": "open",
+        "url": "https://fungsix.com",
+        "cover": {
+            "default": "/images/works/fungsix/thumb.webp",
+            "hover": "/images/works/fungsix/mockup.webp"
+        }
+    },
+    {
+        "id": "greenprobolinggo",
+        "title": "Greenprobolinggo",
+        "category": "Dashboard, Waste Bank",
+        "type": "open",
+        "cover": {
+            "default": "/images/works/greenprobolinggo/thumb.webp",
+            "hover": "/images/works/greenprobolinggo/mockup.webp"
+        }
+    },
+    {
+        "id": "manisgrafika",
+        "title": "Manis Grafika",
+        "category": "Website Design, Print Service",
+        "type": "open",
+        "url": "https://manisgrafika.id",
+        "cover": {
+            "default": "/images/works/manisgrafika/thumb.webp",
+            "hover": "/images/works/manisgrafika/mockup.webp"
+        }
+    },
+    {
+        "id": "theinvestor",
+        "title": "The Investor",
+        "category": "Company Profile, Stock",
+        "type": "visit",
+        "url": "https://theinvestor.id",
+        "year": "2024",
+        "cover": {
+            "default": "/images/works/theinvestor/thumb.webp",
+            "hover": "/images/works/theinvestor/mockup.webp"
+        }
+    },
+    {
+        "id": "exmood",
+        "title": "Exmood",
+        "category": "Mobile App, Mental Health",
+        "type": "open",
+        "cover": {
+            "default": "/images/works/exmood/thumb.webp",
+            "hover": "/images/works/exmood/mockup.webp"
         }
     },
     {
@@ -86,7 +87,7 @@
         "category": "Website, Manufacturing Group",
         "type": "soon",
         "cover": {
-            "default": "/images/works/kfg/cover.webp"
+            "default": "/images/works/kfg/thumb.webp"
         }
     },
     {
@@ -97,7 +98,7 @@
         "url": "https://kasheer.id",
         "draft": true,
         "cover": {
-            "default": "/images/works/kasheer/cover.webp",
+            "default": "/images/works/kasheer/thumb.webp",
             "hover": "/images/works/kasheer/mockup.webp"
         }
     },
@@ -109,7 +110,7 @@
         "url": "https://rintisan.co.id",
         "draft": true,
         "cover": {
-            "default": "/images/works/rintisan/cover.webp",
+            "default": "/images/works/rintisan/thumb.webp",
             "hover": "/images/works/rintisan/mockup.webp"
         }
     }
