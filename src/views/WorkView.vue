@@ -8,8 +8,10 @@ import { useCursor } from '../composables/useCursor';
 const { setCursor, resetCursor } = useCursor();
 onUnmounted(() => resetCursor());
 
-const featured = works.filter((w) => w.featured);
-const archive = works.filter((w) => !w.featured);
+// Featured projects lead; the first four fill the 2×2 grid at the top, the rest go to the archive
+const ordered = [...works.filter((w) => w.featured), ...works.filter((w) => !w.featured)];
+const featured = ordered.slice(0, 4);
+const archive = ordered.slice(4);
 
 const linkFor = (work) => {
   if (work.type === 'visit') return { is: 'a', href: work.url, target: '_blank', rel: 'noopener noreferrer' };
@@ -58,47 +60,51 @@ const scrollTo = (id) => {
       </div>
     </section>
 
-    <!-- Featured: one cover-style spread per project -->
-    <section class="page-x flex flex-col gap-24 pt-20 md:gap-32 md:pt-28">
-      <article v-for="work in featured" :id="`work-${work.id}`" :key="work.id" v-reveal>
-        <component
-          :is="linkFor(work).is"
-          v-bind="{ ...linkFor(work), is: undefined }"
-          class="group block"
-          @mouseenter="setCursor({ text: cursorLabel[work.type] || 'View', variant: 'button' })"
-          @mouseleave="resetCursor()"
-        >
-          <div class="relative aspect-[4/5] overflow-hidden bg-hairline sm:aspect-[16/10]">
-            <img
-              :src="work.cover.default"
-              :alt="work.title"
-              loading="lazy"
-              class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1800ms] ease-out-expo group-hover:scale-[1.03]"
-            />
-            <img
-              v-if="work.cover.hover || work.featured?.image"
-              :src="work.cover.hover || work.featured.image"
-              alt=""
-              loading="lazy"
-              class="absolute inset-0 h-full w-full object-cover transition-[clip-path] duration-1000 ease-out-expo [clip-path:inset(100%_0_0_0)] group-hover:[clip-path:inset(0_0_0_0)]"
-            />
-          </div>
-
-          <div class="mt-5 grid gap-5 border-t border-hairline pt-4 md:grid-cols-12 md:gap-6">
-            <p class="mono-label text-graphite md:col-span-2">Featured</p>
-            <h2 class="text-[clamp(2.5rem,6vw,6rem)] leading-[0.92] tracking-[-0.05em] md:col-span-6">
-              {{ work.title }}
-            </h2>
-            <div class="flex flex-col gap-4 md:col-span-4">
-              <p class="mono-label flex justify-between text-graphite">
-                <span>{{ work.category }}</span><span>{{ work.year }}</span>
-              </p>
-              <p class="text-[17px] leading-snug">{{ work.summary }}</p>
-              <span class="u-link self-start text-[15px]">View case study →</span>
+    <!-- Featured: 2×2 grid -->
+    <section class="page-x pt-20 md:pt-28">
+      <ul class="grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2 md:gap-y-24">
+        <li v-for="(work, index) in featured" :id="`work-${work.id}`" :key="work.id" v-reveal="(index % 2) * 120">
+          <component
+            :is="linkFor(work).is"
+            v-bind="{ ...linkFor(work), is: undefined }"
+            class="group block"
+            :class="{ 'cursor-default': work.type === 'soon' }"
+            @mouseenter="setCursor({ text: cursorLabel[work.type] || 'View', variant: 'button' })"
+            @mouseleave="resetCursor()"
+          >
+            <div class="relative aspect-[4/3] overflow-hidden bg-hairline">
+              <img
+                :src="work.cover.default"
+                :alt="work.title"
+                loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1800ms] ease-out-expo group-hover:scale-[1.03]"
+              />
+              <img
+                v-if="work.cover.hover || work.featured?.image"
+                :src="work.cover.hover || work.featured.image"
+                alt=""
+                loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover transition-[clip-path] duration-1000 ease-out-expo [clip-path:inset(100%_0_0_0)] group-hover:[clip-path:inset(0_0_0_0)]"
+              />
+              <span
+                v-if="work.type === 'soon'"
+                class="absolute left-3 top-3 bg-paper px-2.5 py-1.5 text-[12px] leading-none text-ink"
+              >Coming Soon</span>
             </div>
-          </div>
-        </component>
-      </article>
+
+            <div class="mt-4 border-t border-hairline pt-3">
+              <p class="mono-label flex justify-between gap-4 text-graphite">
+                <span>{{ work.category }}</span>
+                <span>{{ work.year || (work.type === 'soon' ? 'Soon' : '') }}</span>
+              </p>
+              <h2 class="mt-3 text-[clamp(2rem,3.4vw,3.25rem)] leading-[0.95] tracking-[-0.045em]">
+                {{ work.title }}<span v-if="work.type === 'visit'" class="text-graphite"> ↗</span>
+              </h2>
+              <p class="mt-3 max-w-[48ch] text-[17px] leading-snug text-ink/80">{{ work.summary }}</p>
+            </div>
+          </component>
+        </li>
+      </ul>
     </section>
 
     <!-- Archive -->
