@@ -8,10 +8,10 @@ import { useCursor } from '../composables/useCursor';
 const { setCursor, resetCursor } = useCursor();
 onUnmounted(() => resetCursor());
 
-// Featured projects lead; the first four fill the 2×2 grid at the top, the rest go to the archive
+// Featured projects lead; the first four fill the 2×2 grid at the top, the rest follow in three columns
 const ordered = [...works.filter((w) => w.featured), ...works.filter((w) => !w.featured)];
 const featured = ordered.slice(0, 4);
-const archive = ordered.slice(4);
+const rest = ordered.slice(4);
 
 const linkFor = (work) => {
   if (work.type === 'visit') return { is: 'a', href: work.url, target: '_blank', rel: 'noopener noreferrer' };
@@ -90,15 +90,10 @@ const years = computed(() => {
       </ul>
     </section>
 
-    <!-- Archive -->
-    <section class="page-x flex-grow pb-32 pt-28 md:pb-48 md:pt-40">
-      <div class="mb-10 flex items-end justify-between border-b border-hairline pb-3 md:mb-14">
-        <h2 v-reveal class="text-[clamp(2rem,3.6vw,3.25rem)] leading-none tracking-[-0.04em]">Archive</h2>
-        <p v-reveal="100" class="mono-label text-graphite">{{ archive.length }} projects</p>
-      </div>
-
+    <!-- The rest continue the same list in three columns -->
+    <section class="page-x flex-grow pb-32 pt-16 md:pb-48 md:pt-24">
       <ul class="grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-        <li v-for="(work, index) in archive" :id="`work-${work.id}`" :key="work.id" v-reveal="(index % 3) * 90">
+        <li v-for="(work, index) in rest" :id="`work-${work.id}`" :key="work.id" v-reveal="(index % 3) * 90">
           <component
             :is="linkFor(work).is"
             v-bind="{ ...linkFor(work), is: undefined }"
