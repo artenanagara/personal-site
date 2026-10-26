@@ -16,26 +16,29 @@
       >Dribbble ↗</a>
     </div>
 
-    <div v-reveal="150" class="marquee flex w-max select-none">
-      <div v-for="set in 2" :key="set" class="marquee-track flex gap-4 pr-4" :aria-hidden="set === 2">
-        <a
-          v-for="(item, index) in items"
-          :key="`${set}-${index}`"
-          :href="item.link"
-          target="_blank"
-          rel="noopener noreferrer"
-          :tabindex="set === 2 ? -1 : null"
-          class="group relative block aspect-[4/3] h-[220px] shrink-0 overflow-hidden bg-hairline md:h-[30vw] md:max-h-[420px]"
-          @mouseenter="setCursor({ text: 'Dribbble ↗', variant: 'button' })"
-          @mouseleave="resetCursor()"
-        >
-          <img
-            :src="item.image"
-            :alt="item.title"
-            loading="lazy"
-            class="h-full w-full object-cover transition-transform duration-[1600ms] ease-out-expo group-hover:scale-[1.04]"
-          />
-        </a>
+    <!-- Reveal on a viewport-wide wrapper: the track itself is too wide to reach the reveal threshold -->
+    <div v-reveal="150">
+      <div class="marquee flex w-max select-none">
+        <div v-for="set in 2" :key="set" class="marquee-track flex gap-4 pr-4" :aria-hidden="set === 2">
+          <a
+            v-for="(item, index) in items"
+            :key="`${set}-${index}`"
+            :href="item.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            :tabindex="set === 2 ? -1 : null"
+            class="group relative block aspect-[4/3] h-[220px] shrink-0 overflow-hidden bg-hairline md:h-[30vw] md:max-h-[420px]"
+            @mouseenter="setCursor({ text: 'Dribbble ↗', variant: 'button' })"
+            @mouseleave="resetCursor()"
+          >
+            <img
+              :src="item.image"
+              :alt="item.title"
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-[1600ms] ease-out-expo group-hover:scale-[1.04]"
+            />
+          </a>
+        </div>
       </div>
     </div>
   </section>
