@@ -42,13 +42,14 @@
 </template>
 
 <script setup>
-import { onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { useCursor } from '../../composables/useCursor';
 
 const { setCursor, resetCursor } = useCursor();
 onUnmounted(() => resetCursor());
 
-const items = [
+// Shown until the latest shots load from /api/dribbble, and kept if that request fails
+const fallbackItems = [
   { title: 'Jobar, job portal app', link: 'https://dribbble.com/shots/26790239-Jobar-Smart-Job-Portal-App', image: 'https://cdn.dribbble.com/userupload/45759357/file/bfa45f83b652d083d553519c8b83e425.jpg?resize=752x&vertical=center' },
   { title: 'Bakr, POS system for bakeries', link: 'https://dribbble.com/shots/26759374-Bakr-Modern-POS-System-for-Bakeries', image: 'https://cdn.dribbble.com/userupload/45661058/file/22a9db05acb54835b1ab69f55db89a54.jpg?resize=752x&vertical=center' },
   { title: 'Kemayu, beauty clinic homepage', link: 'https://dribbble.com/shots/26051673-Kemayu-Beauty-Clinic-Homepage', image: 'https://cdn.dribbble.com/userupload/43399396/file/original-9d3525b9aab6058d2086ccffec6927db.jpg?resize=752x&vertical=center' },
@@ -57,6 +58,19 @@ const items = [
   { title: 'BuyCar, automotive landing page', link: 'https://dribbble.com/shots/24472371-BuyCar-Automotive-Landing-Page', image: 'https://cdn.dribbble.com/userupload/15454180/file/original-16cf8321ec01359363643379605a214a.png?resize=752x&vertical=center' },
   { title: 'Umah, real estate landing page', link: 'https://dribbble.com/shots/23668006--Umah-Real-Estate-Landing-Page', image: 'https://cdn.dribbble.com/userupload/13127156/file/original-701489418a9b8ff84c3dc4ac5425bdfe.jpg?resize=752x&vertical=center' },
 ];
+
+const items = ref(fallbackItems);
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/api/dribbble');
+    if (!response.ok) return;
+    const shots = await response.json();
+    if (Array.isArray(shots) && shots.length) items.value = shots;
+  } catch {
+    // Keep the fallback list
+  }
+});
 </script>
 
 <style scoped>
