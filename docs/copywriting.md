@@ -32,11 +32,11 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 ### Hero (`HeroSection.vue`)
 
 - **Top label:** Portfolio — SaaS, web & app design
-- **H1 (4 lines, photo stays inline on line 2):**
-  1. Clear
-  2. interfaces, [photo]
-  3. *built* to
-  4. ship.
+- **H1 (4 lines, photo inline on line 2; slogan lives on the About page):**
+  1. Shaping the quiet
+  2. details [photo] that make
+  3. SaaS, web & apps
+  4. feel *effortless.*
 - **Meta row:**
   - Based in — Surakarta, Indonesia
   - Available for — Freelance & contract, worldwide
@@ -81,10 +81,11 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 ## About page (`AboutView.vue`)
 
-- **H1:**
-  1. Clarity is
-  2. the
-  3. *feature.*
+- **H1 (the slogan, extended):**
+  1. Clear interfaces,
+  2. *built* to ship,
+  3. quiet enough
+  4. to *disappear.*
 - **Lead:** Users don't read interfaces, they scan them. If the next step isn't obvious, the design isn't done.
 - **Body:** I'm a product designer with 3+ years on SaaS and industrial web products: a tablet POS, billing, and loyalty apps for F&B, plus a website for a manufacturing group with 8 business units. I build design systems in Figma and write front-end code (React, Next.js, Vue, Tailwind CSS), so what I hand over is what gets built. I also make UI kits from the same component foundations I use on client work.
 - **Off screen:** unchanged

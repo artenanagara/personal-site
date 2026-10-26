@@ -6,17 +6,18 @@
     </div>
 
     <h1 v-reveal.load.lines class="hero-title mt-auto">
-      <span class="line-mask"><span style="--d: 80ms">Clear</span></span>
+      <span class="line-mask"><span style="--d: 80ms">Shaping the quiet</span></span>
       <span class="line-mask md:pl-[11vw]"><span style="--d: 180ms">
-        interfaces,
+        details
         <img
           src="/images/photo-me.webp"
           alt="Portrait of Artena Nagara"
           class="mx-[0.12em] inline-block h-[0.74em] w-[1.15em] object-cover align-[-0.04em] grayscale"
         />
+        <span class="whitespace-nowrap">that make</span>
       </span></span>
-      <span class="line-mask"><span style="--d: 280ms"><em class="serif-i">built</em> to</span></span>
-      <span class="line-mask md:pl-[6vw]"><span style="--d: 380ms">ship.</span></span>
+      <span class="line-mask"><span style="--d: 280ms">SaaS, web &amp; apps</span></span>
+      <span class="line-mask md:pl-[6vw]"><span style="--d: 380ms">feel <em class="serif-i">effortless.</em></span></span>
     </h1>
 
     <div

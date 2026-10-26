@@ -16,9 +16,10 @@ const links = [
     <!-- Intro -->
     <section class="page-x relative pb-24 pt-36 md:pb-40 md:pt-52">
       <h1 v-reveal.lines class="text-[clamp(3rem,9vw,9.5rem)] leading-[0.9] tracking-[-0.055em]">
-        <span class="line-mask"><span style="--d: 80ms">Clarity is</span></span>
-        <span class="line-mask md:pl-[14vw]"><span style="--d: 180ms">the</span></span>
-        <span class="line-mask"><span style="--d: 280ms"><em class="serif-i">feature.</em></span></span>
+        <span class="line-mask"><span style="--d: 80ms">Clear interfaces,</span></span>
+        <span class="line-mask md:pl-[14vw]"><span style="--d: 180ms"><em class="serif-i">built</em> to ship,</span></span>
+        <span class="line-mask"><span style="--d: 280ms">quiet enough</span></span>
+        <span class="line-mask md:pl-[8vw]"><span style="--d: 380ms">to <em class="serif-i">disappear.</em></span></span>
       </h1>
 
       <div class="mt-16 flex flex-col gap-12 md:mt-24 md:flex-row md:items-start">
