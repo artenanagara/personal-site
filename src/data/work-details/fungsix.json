@@ -36,6 +36,15 @@
             "content": "Most agencies stop at the idea and hand execution off to outside vendors, leaving brands to manage fragmented teams and inconsistent delivery. Fungsi X needed a digital presence that made its end-to-end, in-house model immediately clear and signaled that it could be trusted with large-scale, high-stakes projects."
         },
         {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/fungsix/run.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
             "type": "text-block",
             "label": "Challenge",
             "align": "right",
@@ -51,10 +60,6 @@
                 {
                     "src": "/images/works/fungsix/about-section.webp",
                     "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/fungsix/run.webp",
-                    "span": "col-span-4"
                 }
             ]
         },

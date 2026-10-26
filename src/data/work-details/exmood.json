@@ -36,6 +36,15 @@
             "content": "Many young adults struggle with mental health issues but lack access to trusted information, affordable counseling, and supportive tools. Existing sources often feel overwhelming, unclear, or inaccessible, making it harder for users to manage their daily emotional challenges."
         },
         {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/exmood/styleguide.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
             "type": "text-block",
             "label": "Challenge",
             "align": "right",
@@ -51,10 +60,6 @@
                 {
                     "src": "/images/works/exmood/happy.webp",
                     "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/exmood/styleguide.webp",
-                    "span": "col-span-4"
                 }
             ]
         },

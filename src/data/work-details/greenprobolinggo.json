@@ -35,6 +35,15 @@
             "content": "Existing waste bank operations relied on manual processes, resulting in slow updates, scattered data, and limited access to transaction information. Admins struggled to manage records smoothly, while Customers had no simple way to track their savings or understand their earning potential."
         },
         {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/greenprobolinggo/dashboard-half.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
             "type": "text-block",
             "label": "Challenge",
             "align": "right",
@@ -50,10 +59,6 @@
                 {
                     "src": "/images/works/greenprobolinggo/card.webp",
                     "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/greenprobolinggo/dashboard-half.webp",
-                    "span": "col-span-4"
                 }
             ]
         },

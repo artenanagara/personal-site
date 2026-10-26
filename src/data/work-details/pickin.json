@@ -36,6 +36,15 @@
             "content": "After a shoot, choosing photos usually means sending a Drive folder, waiting for screenshots or a list of file names typed by hand, then matching them up one by one. Clients get lost in folders, and photographers lose time on admin instead of editing."
         },
         {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/landing.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
             "type": "text-block",
             "label": "The Approach",
             "align": "right",
@@ -44,10 +53,6 @@
         {
             "type": "gallery-grid",
             "items": [
-                {
-                    "src": "/images/works/pickin/landing.webp",
-                    "span": "col-span-4"
-                },
                 {
                     "src": "/images/works/pickin/feature-hero.webp",
                     "span": "col-span-2"

@@ -36,6 +36,15 @@
             "content": "Manis Grafika’s high-quality products could only be appreciated in person. Customers lacked a way to explore cover materials, print details, or sample pages online, causing a disconnect between the brand’s premium craftsmanship and its digital representation."
         },
         {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/manisgrafika/yasin-open.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
             "type": "text-block",
             "label": "Challenge",
             "align": "right",
@@ -51,10 +60,6 @@
                 {
                     "src": "/images/works/manisgrafika/collection.webp",
                     "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/manisgrafika/yasin-open.webp",
-                    "span": "col-span-4"
                 }
             ]
         },

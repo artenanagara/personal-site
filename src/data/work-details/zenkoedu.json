@@ -36,6 +36,15 @@
             "content": "Exam prep is scattered across many tutors and tutoring centres, each with their own packages. Students struggle to find practice that matches their target exam, and after a tryout they often get a score without a clear sense of what to work on next."
         },
         {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/zenkoedu/packages.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
             "type": "text-block",
             "label": "The Approach",
             "align": "right",
@@ -51,10 +60,6 @@
                 {
                     "src": "/images/works/zenkoedu/categories.webp",
                     "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/zenkoedu/packages.webp",
-                    "span": "col-span-4"
                 }
             ]
         },
