@@ -72,9 +72,8 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 - **Masthead label:** Selected work
 - **H1:**
-  1. Products, sites, and apps,
-  2. designed to *ship.*
-- **Side note:** SaaS, web, and mobile work from 2021 to now. Some client projects stay private for confidentiality.
+  1. Ideas that left the canvas
+  2. and went *live.*
 - **Featured CTA:** View case study → (unchanged)
 
 ---

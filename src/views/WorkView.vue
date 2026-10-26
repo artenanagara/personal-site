@@ -25,10 +25,6 @@ const years = computed(() => {
   const ys = works.map((w) => Number(w.year)).filter(Boolean);
   return ys.length ? `${Math.min(...ys)}–${Math.max(...ys)}` : '';
 });
-
-const scrollTo = (id) => {
-  document.getElementById(`work-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-};
 </script>
 
 <template>
@@ -42,22 +38,9 @@ const scrollTo = (id) => {
       </div>
 
       <h1 v-reveal.lines class="mt-10 text-[clamp(2.75rem,7.2vw,7.5rem)] leading-[0.98] tracking-[-0.05em] md:mt-14">
-        <span class="line-mask"><span style="--d: 80ms">Products, sites, and apps,</span></span>
-        <span class="line-mask md:pl-[12vw]"><span style="--d: 180ms">designed to <em class="serif-i">ship.</em></span></span>
+        <span class="line-mask"><span style="--d: 80ms">Ideas that left <span class="whitespace-nowrap">the canvas</span></span></span>
+        <span class="line-mask md:pl-[12vw]"><span style="--d: 180ms">and went <em class="serif-i">live.</em></span></span>
       </h1>
-
-      <!-- Contents -->
-      <div class="mt-14 grid gap-6 border-t border-hairline pt-5 md:mt-20 md:grid-cols-12">
-        <p v-reveal class="mono-label text-graphite md:col-span-2">Contents</p>
-        <nav v-reveal="100" aria-label="Projects" class="text-[clamp(1.25rem,2vw,1.75rem)] leading-snug tracking-[-0.02em] md:col-span-7">
-          <template v-for="(work, i) in works" :key="work.id">
-            <button class="u-link text-left" @click="scrollTo(work.id)">{{ work.title }}</button><span v-if="i < works.length - 1" class="mx-2 text-hairline">/</span>
-          </template>
-        </nav>
-        <p v-reveal="150" class="text-[15px] leading-relaxed text-ink/70 md:col-span-3">
-          SaaS, web, and mobile work from 2021 to now. Some client projects stay private for confidentiality.
-        </p>
-      </div>
     </section>
 
     <!-- Featured: 2×2 grid -->
