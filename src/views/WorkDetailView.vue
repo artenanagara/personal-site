@@ -44,18 +44,17 @@ const nextProject = computed(() => {
   return caseStudies[(index + 1) % caseStudies.length];
 });
 
+// Galleries sit on a tight 4-column grid; quarter-width items pair up on mobile
 const galleryItemClass = (span) => {
-  if (span?.includes('col-span-4')) return 'md:w-full';
-  if (span?.includes('col-span-2')) return 'md:w-[calc(50%-1vw)]';
-  return 'md:w-[calc(25%-1.5vw)]';
+  if (span?.includes('col-span-4')) return 'col-span-2 md:col-span-4';
+  if (span?.includes('col-span-3')) return 'col-span-2 md:col-span-3';
+  if (span?.includes('col-span-2')) return 'col-span-2';
+  return 'col-span-1';
 };
 
-// Pairs in a gallery are staggered vertically so the page never reads as a rigid grid
-const galleryItemOffset = (items, idx) => {
-  const span = items[idx].span || '';
-  if (span.includes('col-span-4')) return '';
-  return idx % 2 === 1 ? 'md:mt-[7vw]' : '';
-};
+// Points can be plain strings or { title, text }
+const pointText = (point) => (typeof point === 'string' ? point : point.text);
+const pointNumber = (idx) => String(idx + 1).padStart(2, '0');
 </script>
 
 <template>
@@ -101,55 +100,54 @@ const galleryItemOffset = (items, idx) => {
       </header>
 
       <!-- Content blocks -->
-      <div class="flex flex-col gap-20 pb-32 md:gap-36 md:pb-48">
+      <!-- Content blocks: text sits in the right half of a two-column grid, images on a tight 4-column grid -->
+      <div class="flex flex-col gap-3 pb-32 md:pb-48">
         <template v-for="(section, index) in project.content" :key="index">
-          <figure v-if="section.type === 'full-width-image'" v-reveal class="w-full overflow-hidden bg-hairline">
-            <img
-              v-if="section.src && section.src.startsWith('/')"
-              :src="section.src"
-              :alt="`${project.title} visual`"
-              loading="lazy"
-              class="h-auto w-full"
-            />
+          <figure v-if="section.type === 'full-width-image'" v-reveal class="page-x">
+            <div class="overflow-hidden rounded-[4px] bg-hairline">
+              <img
+                v-if="section.src && section.src.startsWith('/')"
+                :src="section.src"
+                :alt="`${project.title} visual`"
+                loading="lazy"
+                class="h-auto w-full"
+              />
+            </div>
           </figure>
 
-          <div
+          <section
             v-else-if="section.type === 'text-block'"
             v-reveal
-            class="page-x md:flex md:gap-[4vw]"
-            :class="section.align === 'right' ? 'md:pl-[34%]' : 'md:pl-[8%]'"
+            class="page-x grid grid-cols-1 gap-3 pb-10 pt-20 md:grid-cols-2 md:pb-12 md:pt-40"
           >
-            <p class="mono-label mb-4 shrink-0 pt-2 text-graphite md:mb-0 md:w-36">{{ section.label }}</p>
-            <p class="max-w-[38ch] text-[clamp(1.3rem,2.1vw,1.9rem)] leading-[1.32] tracking-[-0.02em]">
-              {{ section.content }}
-            </p>
-          </div>
+            <p class="mono-label text-graphite">{{ section.label }}</p>
+            <div class="flex flex-col gap-8">
+              <div class="flex flex-col gap-3">
+                <h2 v-if="section.heading" class="text-[17px] leading-relaxed">{{ section.heading }}</h2>
+                <p v-if="section.content" class="max-w-[60ch] text-[17px] leading-relaxed text-ink/80">
+                  {{ section.content }}
+                </p>
+              </div>
 
-          <div
-            v-else-if="section.type === 'two-column-image'"
-            class="page-x flex flex-col gap-4 md:flex-row md:items-start md:gap-[2vw]"
-          >
-            <div
-              v-for="(item, idx) in section.items"
-              :key="idx"
-              v-reveal="idx * 120"
-              class="bg-hairline md:w-1/2"
-              :class="idx === 1 ? 'md:mt-[8vw]' : ''"
-            >
-              <img v-if="item.src && item.src.startsWith('/')" :src="item.src" :alt="`${project.title} detail`" loading="lazy" class="h-auto w-full" />
+              <ol v-if="section.points?.length" class="grid grid-cols-1 gap-x-5 gap-y-6 sm:grid-cols-2">
+                <li v-for="(point, idx) in section.points" :key="idx" class="flex gap-3">
+                  <span class="shrink-0 text-[15px] leading-relaxed text-ink/60">( {{ pointNumber(idx) }} )</span>
+                  <div class="flex flex-col gap-1">
+                    <p v-if="point.title" class="text-[15px] leading-relaxed">{{ point.title }}</p>
+                    <p class="text-[15px] leading-relaxed text-ink/80">{{ pointText(point) }}</p>
+                  </div>
+                </li>
+              </ol>
             </div>
-          </div>
+          </section>
 
-          <div
-            v-else-if="section.type === 'gallery-grid'"
-            class="page-x flex flex-col gap-4 md:flex-row md:flex-wrap md:items-start md:gap-[2vw]"
-          >
+          <div v-else-if="section.type === 'gallery-grid'" class="page-x grid grid-cols-2 gap-3 md:grid-cols-4">
             <div
               v-for="(item, idx) in section.items"
               :key="idx"
               v-reveal="(idx % 2) * 120"
-              class="w-full bg-hairline"
-              :class="[galleryItemClass(item.span), galleryItemOffset(section.items, idx)]"
+              class="overflow-hidden rounded-[4px] bg-hairline"
+              :class="galleryItemClass(item.span)"
             >
               <img v-if="item.src && item.src.startsWith('/')" :src="item.src" :alt="`${project.title} detail`" loading="lazy" class="h-auto w-full" />
             </div>
