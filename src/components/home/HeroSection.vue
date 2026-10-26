@@ -30,11 +30,11 @@
       </p>
       <p>
         <span class="mono-label block text-graphite">Available for</span>
-        <span class="text-[15px]">Freelance &amp; contract, worldwide</span>
+        <span class="text-[15px]">Freelance &amp; contract projects, worldwide</span>
       </p>
-      <p class="ml-auto hidden text-right sm:block">
-        <span class="mono-label block text-graphite">Scroll</span>
-        <span class="text-[15px]">Selected work ↓</span>
+      <p class="sm:ml-auto sm:text-right">
+        <span class="mono-label block text-graphite">Have a project?</span>
+        <a href="mailto:artenanagara22@gmail.com?subject=New%20project" class="u-link text-[15px]">Let's talk →</a>
       </p>
     </div>
   </section>

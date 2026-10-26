@@ -23,7 +23,7 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 ## Navigation (`NavigationBar.vue`)
 
-- Center label: `Product Designer — Surakarta, {time} WIB` (unchanged)
+- Center label: `Freelance Product Designer — Surakarta, {time} WIB`
 
 ---
 
@@ -39,14 +39,14 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
   4. feel *effortless.*
 - **Meta row:**
   - Based in — Surakarta, Indonesia
-  - Available for — Freelance & contract, worldwide
-  - Scroll — Selected work ↓
+  - Available for — Freelance & contract projects, worldwide
+  - Have a project? — Let's talk → (mailto, subject "New project")
 
 ### About (`AboutSection.vue`)
 
-- **Marginalia (About):** Product designer, front-end developer, and UI kit creator. 3+ years designing SaaS for F&B, manufacturing, and education.
+- **Marginalia (About):** Freelance and contract product designer for SaaS, web, and apps. Design and front-end, from one person.
 - **Statement:** A good interface doesn't need explaining. I design for the user who has to understand it and the developer who has to *build* it.
-- **Body:** I started in front-end, writing Laravel and Tailwind before moving into product design. So my Figma files come with real components, variables, and auto layout, and my designs survive the trip from handoff to production. I design SaaS dashboards, websites, and mobile apps, and write the front-end code behind them. Right now I'm designing Kasheer, a tablet POS for F&B, plus its loyalty and dashboard products.
+- **Body:** You get one person for the whole path: product thinking, interface design, a design system your developers can follow, and front-end code when you need it. Built for teams that need a product launched, not just a mockup.
 - **Link:** More about me →
 
 ### Selected work (`SelectedWorks.vue`)
@@ -64,6 +64,7 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 - **Label:** (Contact)
 - **Heading:** Got a product to ship? Let's make it *clear.*
+- **Subline:** Open for freelance and contract work. Tell me what you're building and when it needs to go live.
 - **Email:** artenanagara22@gmail.com
 
 ---
@@ -90,14 +91,27 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 - **Off screen:** unchanged
 - **Professional journey subline:** Front-end developer first, product designer now. Every role brought me closer to where design and code meet.
 - **Links:**
-  - Full CV — Experience, skills, education →
+  - Start a project — Freelance & contract ↗ (mailto)
   - Dribbble — Explorations and kit previews ↗
   - LinkedIn — Let's connect ↗
+  - Full CV — Experience, skills, education →
 
 ---
+
+## Case study subtitles
+
+Plain sentence case, one concrete line each:
+
+- Pickin — Clients tap a heart, photographers get the file names.
+- Zenko — Timed exam practice that shows students what to study next.
+- Fungsix — A bold website for an agency that runs everything in-house.
+- Greenprobolinggo — One dashboard for a city's waste bank data and finances.
+- Manis Grafika — A website as refined as the prayer books they print.
+- Exmood — A calm mobile app for tracking moods and finding support.
 
 ## Decisions
 
 1. Slogan: "Clear interfaces, built to ship."
 2. UI kits: many kits, no single link. Mentioned in copy; Dribbble carries the previews.
 3. Cicle Studio: not mentioned for now.
+4. Audience: freelance and contract clients first; every page points to contact.

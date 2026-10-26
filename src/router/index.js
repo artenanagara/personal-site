@@ -24,7 +24,7 @@ const routes = isCvSubdomain ? [
         component: Home,
         meta: {
             title: null,
-            description: 'Clear interfaces, built to ship. Artena Nagara is a product designer and UI kit creator designing SaaS products, websites, and apps. View the portfolio and recent work.'
+            description: 'Artena Nagara is a freelance and contract product designer for SaaS, web, and apps. Clear interfaces, built to ship. Available worldwide.'
         }
     },
     {

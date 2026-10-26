@@ -8,7 +8,7 @@
       >
         <p class="mono-label text-graphite">(About)</p>
         <p class="mt-3 text-[15px] leading-snug">
-          Product designer, front-end developer, and UI kit creator. 3+ years designing SaaS for F&amp;B, manufacturing, and education.
+          Freelance and contract product designer for SaaS, web, and apps. Design and front-end, from one person.
         </p>
       </aside>
 
@@ -22,10 +22,8 @@
 
       <div class="mt-16 flex flex-col gap-6 md:ml-[38%] md:mt-24 md:max-w-[34ch]">
         <p v-reveal="150" class="text-[17px] leading-relaxed text-ink/80">
-          I started in front-end, writing Laravel and Tailwind before moving into product design. So my Figma files come with real
-          components, variables, and auto layout, and my designs survive the trip from handoff to production. I design SaaS
-          dashboards, websites, and mobile apps, and write the front-end code behind them. Right now I'm designing Kasheer, a tablet POS for F&amp;B, plus
-          its loyalty and dashboard products.
+          You get one person for the whole path: product thinking, interface design, a design system your developers can
+          follow, and front-end code when you need it. Built for teams that need a product launched, not just a mockup.
         </p>
         <RouterLink v-reveal="200" to="/about" class="u-link self-start text-[15px]">More about me →</RouterLink>
       </div>

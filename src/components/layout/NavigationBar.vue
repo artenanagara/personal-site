@@ -7,7 +7,7 @@
     </RouterLink>
 
     <p class="mono-label absolute left-1/2 top-[22px] hidden -translate-x-1/2 opacity-70 lg:block md:top-[30px]">
-      Product Designer — Surakarta, {{ time }} WIB
+      Freelance Product Designer — Surakarta, {{ time }} WIB
     </p>
 
     <nav class="hidden items-start gap-8 text-[15px] md:flex" aria-label="Main">

@@ -2,7 +2,7 @@
     "id": "pickin",
     "title": "Pickin",
     "category": "Web App",
-    "subtitle": "A Photo Selection Gallery Built Around How Indonesian Photographers Already Work",
+    "subtitle": "Clients tap a heart, photographers get the file names.",
     "url": "https://pickin.id",
     "description": "Pickin is a photo selection gallery for photographers in Indonesia. Clients open a link, tap a heart on the photos they want, and send their picks; the photographer receives a clean list of file names. Photos stay in the photographer's own Google Drive, and the whole loop, from sharing the gallery to delivering edits, runs through WhatsApp.",
     "metadata": [

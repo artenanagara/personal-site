@@ -12,7 +12,7 @@ const route = useRoute();
 const { resetCursor } = useCursor();
 
 const SITE = 'https://artenanagara.my.id';
-const DEFAULT_DESCRIPTION = 'Clear interfaces, built to ship. Artena Nagara is a product designer and UI kit creator designing SaaS products, websites, and apps. View the portfolio and recent work.';
+const DEFAULT_DESCRIPTION = 'Artena Nagara is a freelance and contract product designer for SaaS, web, and apps. Clear interfaces, built to ship. Available worldwide.';
 
 const canonicalUrl = computed(() => {
   const base = window.location.hostname.startsWith('cv.') ? 'https://cv.artenanagara.my.id' : SITE;

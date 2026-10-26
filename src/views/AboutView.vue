@@ -5,9 +5,10 @@ import { journey } from '../data/cv';
 const experience = journey;
 
 const links = [
-  { label: 'Full CV', note: 'Experience, skills, education', to: '/cv' },
+  { label: 'Start a project', note: 'Freelance & contract', href: 'mailto:artenanagara22@gmail.com?subject=New%20project' },
   { label: 'Dribbble', note: 'Explorations and kit previews', href: 'https://dribbble.com/artenanagara' },
   { label: 'LinkedIn', note: "Let's connect", href: 'https://linkedin.com/in/artenanagara' },
+  { label: 'Full CV', note: 'Experience, skills, education', to: '/cv' },
 ];
 </script>
 
@@ -52,7 +53,7 @@ const links = [
         <p v-reveal class="mono-label mb-6 text-graphite md:absolute md:left-0 md:top-2 md:mb-0">(Off screen)</p>
         <p v-reveal="100" class="max-w-[30ch] text-[clamp(1.5rem,2.8vw,2.6rem)] leading-[1.15] tracking-[-0.03em]">
           Badminton, swimming, a slow bike ride, long walks with music, and hunting for the best local food.
-          Life is the balance between <span class="serif-i">perfect pixels</span> and good flavours.
+          Life is the balance between <span class="serif-i">perfect pixels</span> and good flavors.
         </p>
       </div>
     </section>
@@ -93,8 +94,8 @@ const links = [
           v-reveal="index * 80"
           :to="link.to"
           :href="link.href"
-          :target="link.href ? '_blank' : null"
-          :rel="link.href ? 'noopener noreferrer' : null"
+          :target="link.href?.startsWith('http') ? '_blank' : null"
+          :rel="link.href?.startsWith('http') ? 'noopener noreferrer' : null"
           class="group flex items-baseline justify-between border-t border-hairline py-5 last:border-b"
         >
           <span class="text-[clamp(1.75rem,3.4vw,3.25rem)] leading-none tracking-[-0.04em] transition-transform duration-700 ease-out-expo group-hover:translate-x-4">

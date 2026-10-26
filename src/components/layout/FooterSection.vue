@@ -8,9 +8,12 @@
       >
         Got a product to ship? Let's make it <span class="serif-i">clear.</span>
       </h2>
+      <p v-reveal="150" class="mt-6 max-w-[40ch] text-[17px] leading-relaxed text-paper/70">
+        Open for freelance and contract work. Tell me what you're building and when it needs to go live.
+      </p>
       <a
         v-reveal="200"
-        href="mailto:artenanagara22@gmail.com"
+        href="mailto:artenanagara22@gmail.com?subject=New%20project"
         class="u-link mt-10 inline-block break-all text-[clamp(1.25rem,2.4vw,2.25rem)] tracking-[-0.02em] md:mt-14"
       >
         artenanagara22@gmail.com
