@@ -6,7 +6,7 @@ const experience = journey;
 
 const links = [
   { label: 'Full CV', note: 'Experience, skills, education', to: '/cv' },
-  { label: 'Dribbble', note: 'Design explorations', href: 'https://dribbble.com/artenanagara' },
+  { label: 'Dribbble', note: 'Explorations and kit previews', href: 'https://dribbble.com/artenanagara' },
   { label: 'LinkedIn', note: "Let's connect", href: 'https://linkedin.com/in/artenanagara' },
 ];
 </script>
@@ -16,9 +16,9 @@ const links = [
     <!-- Intro -->
     <section class="page-x relative pb-24 pt-36 md:pb-40 md:pt-52">
       <h1 v-reveal.lines class="text-[clamp(3rem,9vw,9.5rem)] leading-[0.9] tracking-[-0.055em]">
-        <span class="line-mask"><span style="--d: 80ms">Simplicity,</span></span>
-        <span class="line-mask md:pl-[14vw]"><span style="--d: 180ms">crafted for</span></span>
-        <span class="line-mask"><span style="--d: 280ms"><em class="serif-i">modern brands.</em></span></span>
+        <span class="line-mask"><span style="--d: 80ms">Clarity is</span></span>
+        <span class="line-mask md:pl-[14vw]"><span style="--d: 180ms">the</span></span>
+        <span class="line-mask"><span style="--d: 280ms"><em class="serif-i">feature.</em></span></span>
       </h1>
 
       <div class="mt-16 flex flex-col gap-12 md:mt-24 md:flex-row md:items-start">
@@ -29,13 +29,13 @@ const links = [
 
         <div class="md:ml-[14%] md:mt-[10vw] md:max-w-[44ch]">
           <p v-reveal="300" class="text-[clamp(1.3rem,1.9vw,1.75rem)] leading-[1.3] tracking-[-0.02em]">
-            In a world full of digital noise, the clearest message wins. That's the principle at the core of my work.
+            Users don't read interfaces, they scan them. If the next step isn't obvious, the design isn't done.
           </p>
           <p v-reveal="350" class="mt-6 text-[17px] leading-relaxed text-ink/80">
-            I'm a Product Designer with 3+ years designing SaaS and industrial web products, from tablet POS, billing, and
-            loyalty apps for F&amp;B businesses to a multi-unit manufacturing group website. I build scalable design systems in
-            Figma and understand front-end implementation (React, Next.js, Tailwind CSS), so every design stays grounded in
-            what can be built, and ships pixel-accurate.
+            I'm a product designer with 3+ years on SaaS and industrial web products: a tablet POS, billing, and loyalty apps for
+            F&amp;B, plus a website for a manufacturing group with 8 business units. I build design systems in Figma and write
+            front-end code (React, Next.js, Vue, Tailwind CSS), so what I hand over is what gets built. I also make UI kits from
+            the same component foundations I use on client work.
           </p>
         </div>
       </div>
@@ -63,7 +63,7 @@ const links = [
           Professional <span class="serif-i">journey</span>
         </h2>
         <p v-reveal="100" class="max-w-[38ch] text-[15px] leading-relaxed text-ink/70 md:mr-[6%]">
-          From front-end development to product design for SaaS and manufacturing, each role meant new problems, close work with engineers, and user-centred products.
+          Front-end developer first, product designer now. Every role brought me closer to where design and code meet.
         </p>
       </div>
 

@@ -24,7 +24,7 @@ const routes = isCvSubdomain ? [
         component: Home,
         meta: {
             title: null,
-            description: 'Artena Nagara is a Product Designer (UI/UX) creating clear, buildable interfaces for SaaS and industry. View the portfolio and recent work.'
+            description: 'Clear interfaces, built to ship. Artena Nagara is a product designer and UI kit creator designing SaaS products, websites, and apps. View the portfolio and recent work.'
         }
     },
     {
@@ -33,7 +33,7 @@ const routes = isCvSubdomain ? [
         component: About,
         meta: {
             title: 'About',
-            description: 'Product Designer with 3+ years designing SaaS and industrial web products, with Figma design systems grounded in front-end implementation.'
+            description: 'Product designer and UI kit creator with 3+ years designing SaaS, web, and app products, with Figma design systems grounded in front-end code.'
         }
     },
     {
@@ -42,7 +42,7 @@ const routes = isCvSubdomain ? [
         component: () => import('../views/WorkView.vue'),
         meta: {
             title: 'Work',
-            description: 'Selected UI/UX, web, and product design work by Artena Nagara, with case studies.'
+            description: 'SaaS, web, and app design work by Artena Nagara, with case studies. Clear interfaces, built to ship.'
         }
     },
     {

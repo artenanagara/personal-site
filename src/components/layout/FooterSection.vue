@@ -6,7 +6,7 @@
         v-reveal="100"
         class="mt-4 max-w-[16ch] text-[clamp(2.25rem,5.5vw,5.5rem)] leading-[1] tracking-[-0.045em]"
       >
-        Have a project in mind? Let's keep it <span class="serif-i">simple.</span>
+        Got a product to ship? Let's make it <span class="serif-i">clear.</span>
       </h2>
       <a
         v-reveal="200"

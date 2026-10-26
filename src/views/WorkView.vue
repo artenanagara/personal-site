@@ -40,8 +40,8 @@ const scrollTo = (id) => {
       </div>
 
       <h1 v-reveal.lines class="mt-10 text-[clamp(2.75rem,7.2vw,7.5rem)] leading-[0.98] tracking-[-0.05em] md:mt-14">
-        <span class="line-mask"><span style="--d: 80ms">Concepts and projects,</span></span>
-        <span class="line-mask md:pl-[12vw]"><span style="--d: 180ms">crafted with <em class="serif-i">intent.</em></span></span>
+        <span class="line-mask"><span style="--d: 80ms">Products, sites, and apps,</span></span>
+        <span class="line-mask md:pl-[12vw]"><span style="--d: 180ms">designed to <em class="serif-i">ship.</em></span></span>
       </h1>
 
       <!-- Contents -->
@@ -53,7 +53,7 @@ const scrollTo = (id) => {
           </template>
         </nav>
         <p v-reveal="150" class="text-[15px] leading-relaxed text-ink/70 md:col-span-3">
-          Web, mobile, and dashboard work. Some projects stay private for client confidentiality.
+          SaaS, web, and mobile work from 2021 to now. Some client projects stay private for confidentiality.
         </p>
       </div>
     </section>

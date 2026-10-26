@@ -46,7 +46,7 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 - **Marginalia (About):** Product designer, front-end developer, and UI kit creator. 3+ years designing SaaS for F&B, manufacturing, and education.
 - **Statement:** A good interface doesn't need explaining. I design for the user who has to understand it and the developer who has to *build* it.
-- **Body:** I started in front-end, writing Laravel and Tailwind before moving into product design. So my Figma files come with real components, variables, and auto layout, and my designs survive the trip from handoff to production. SaaS dashboards, websites, mobile apps, and the front-end code behind them. Right now I'm designing Kasheer, a tablet POS for F&B, plus its loyalty and dashboard products.
+- **Body:** I started in front-end, writing Laravel and Tailwind before moving into product design. So my Figma files come with real components, variables, and auto layout, and my designs survive the trip from handoff to production. I design SaaS dashboards, websites, and mobile apps, and write the front-end code behind them. Right now I'm designing Kasheer, a tablet POS for F&B, plus its loyalty and dashboard products.
 - **Link:** More about me →
 
 ### Selected work (`SelectedWorks.vue`)
@@ -91,14 +91,13 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 - **Professional journey subline:** Front-end developer first, product designer now. Every role brought me closer to where design and code meet.
 - **Links:**
   - Full CV — Experience, skills, education →
-  - UI kits — Ready-to-use Figma components ↗ _(needs link)_
   - Dribbble — Explorations and kit previews ↗
   - LinkedIn — Let's connect ↗
 
 ---
 
-## Open questions
+## Decisions
 
-1. Slogan wording: "built to ship" (used above) or "build to ship"?
-2. UI kit: name(s), where they're sold (Gumroad, Figma Community, UI8, etc.), and the link.
-3. "Co-founder of Cicle Studio" was in the old copy. Still current, or drop it?
+1. Slogan: "Clear interfaces, built to ship."
+2. UI kits: many kits, no single link. Mentioned in copy; Dribbble carries the previews.
+3. Cicle Studio: not mentioned for now.

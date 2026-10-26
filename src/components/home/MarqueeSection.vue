@@ -4,7 +4,7 @@
       <div v-reveal class="md:ml-[30%]">
         <p class="mono-label text-graphite">(Explorations)</p>
         <p class="mt-3 max-w-[30ch] text-[17px] leading-snug">
-          Concepts and side studies, shared on Dribbble.
+          Concepts, side studies, and UI kit previews, shared on Dribbble. The kits come from the same component foundations I use on client work.
         </p>
       </div>
       <a

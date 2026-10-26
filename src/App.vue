@@ -12,7 +12,7 @@ const route = useRoute();
 const { resetCursor } = useCursor();
 
 const SITE = 'https://artenanagara.my.id';
-const DEFAULT_DESCRIPTION = 'Artena Nagara is a Product Designer (UI/UX) creating clear, buildable interfaces for SaaS and industry. View the portfolio and recent work.';
+const DEFAULT_DESCRIPTION = 'Clear interfaces, built to ship. Artena Nagara is a product designer and UI kit creator designing SaaS products, websites, and apps. View the portfolio and recent work.';
 
 const canonicalUrl = computed(() => {
   const base = window.location.hostname.startsWith('cv.') ? 'https://cv.artenanagara.my.id' : SITE;
@@ -23,7 +23,7 @@ const canonicalUrl = computed(() => {
 // Pages can override title/description (the case study pages do).
 useHead({
   title: computed(() => route.meta.title || null),
-  titleTemplate: (title) => (title ? `${title} — Artena Nagara` : 'Artena Nagara — Product Designer (UI/UX)'),
+  titleTemplate: (title) => (title ? `${title} — Artena Nagara` : 'Artena Nagara — Product Designer for SaaS, Web & Apps'),
   meta: [
     { name: 'description', content: computed(() => route.meta.description || DEFAULT_DESCRIPTION) },
     { name: 'robots', content: computed(() => (route.meta.noindex ? 'noindex' : 'index, follow')) },
