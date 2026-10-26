@@ -4,7 +4,7 @@ import Home from '../views/HomeView.vue'
 const About = () => import('../views/AboutView.vue')
 const CvView = () => import('../cv/CvView.vue')
 
-// cv.artenanagara.my.id serves the CV at its root; the main site keeps /cv as well.
+// cv.artenanagara.com serves the CV at its root; the main site keeps /cv as well.
 const isCvSubdomain = window.location.hostname.startsWith('cv.')
 
 const cvMeta = {

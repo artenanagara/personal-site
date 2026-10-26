@@ -11,11 +11,11 @@ import { useCursor } from './composables/useCursor';
 const route = useRoute();
 const { resetCursor } = useCursor();
 
-const SITE = 'https://artenanagara.my.id';
+const SITE = 'https://artenanagara.com';
 const DEFAULT_DESCRIPTION = 'Artena Nagara is a freelance and contract product designer for SaaS, web, and apps. Clear interfaces, built to ship. Available worldwide.';
 
 const canonicalUrl = computed(() => {
-  const base = window.location.hostname.startsWith('cv.') ? 'https://cv.artenanagara.my.id' : SITE;
+  const base = window.location.hostname.startsWith('cv.') ? 'https://cv.artenanagara.com' : SITE;
   return `${base}${route.path === '/' ? '/' : route.path}`;
 });
 

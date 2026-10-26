@@ -7,7 +7,7 @@ export const profile = {
   location: 'Klaten, Central Java, Indonesia (Open to Remote)',
   email: 'artenanagara22@gmail.com',
   linkedin: 'linkedin.com/in/artenanagara',
-  website: 'artenanagara.my.id',
+  website: 'artenanagara.com',
   summary:
     'Product Designer with 3+ years designing SaaS and industrial web products, from a tablet POS, billing, and loyalty apps for F&B businesses to a multi-unit manufacturing group website. Builds scalable design systems in Figma and understands front-end implementation (React, Next.js, TypeScript, Tailwind CSS), so designs stay grounded in what is buildable. Works with an AI-native workflow using Claude Code to move from concept to working prototype quickly. Strong at bridging design and engineering for pixel-accurate delivery.',
 };

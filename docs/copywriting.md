@@ -1,4 +1,4 @@
-# Copywriting — artenanagara.my.id
+# Copywriting — artenanagara.com
 
 Slogan: **Clear interfaces, built to ship.**
 Niche: SaaS, web design, app design, development. Also a UI kit creator.
