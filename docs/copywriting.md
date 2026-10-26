@@ -3,6 +3,8 @@
 Slogan: **Clear interfaces, built to ship.**
 Niche: SaaS, web design, app design, development. Also a UI kit creator.
 
+No new sections: all copy below fits the existing sections.
+
 Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the client (who wants a clear product) and the developer (who has to build it).
 
 `*text*` = serif italic accent (`serif-i`) in the current design.
@@ -44,37 +46,18 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 - **Marginalia (About):** Product designer, front-end developer, and UI kit creator. 3+ years designing SaaS for F&B, manufacturing, and education.
 - **Statement:** A good interface doesn't need explaining. I design for the user who has to understand it and the developer who has to *build* it.
-- **Body:** I started in front-end, writing Laravel and Tailwind before moving into product design. So my Figma files come with real components, variables, and auto layout, and my designs survive the trip from handoff to production. Right now I'm designing Kasheer, a tablet POS for F&B, plus its loyalty and dashboard products.
+- **Body:** I started in front-end, writing Laravel and Tailwind before moving into product design. So my Figma files come with real components, variables, and auto layout, and my designs survive the trip from handoff to production. SaaS dashboards, websites, mobile apps, and the front-end code behind them. Right now I'm designing Kasheer, a tablet POS for F&B, plus its loyalty and dashboard products.
 - **Link:** More about me →
-
-### Services (new section, after About)
-
-- **Label:** (What I do)
-- **Heading:** Four ways I help products *ship.*
-
-| # | Title | Copy |
-|---|-------|------|
-| 01 | SaaS product design | Dashboards, POS, billing, and admin tools. Information architecture that cuts the clicks between users and the data they need. |
-| 02 | Web design | Marketing sites and company profiles that explain the offer in one scroll and load fast. |
-| 03 | App design | Mobile and tablet apps with flows designed for real use, not just the happy path. |
-| 04 | Design to code | Design systems, handoff docs, and front-end builds in Vue, React, or Next.js. Fewer "how should this look?" messages. |
 
 ### Selected work (`SelectedWorks.vue`)
 
 - **Heading:** Selected *work* (unchanged)
 - **Subline (optional):** Shipped products, not just shots.
 
-### UI kits (new section, before Explorations)
-
-- **Label:** (UI kits)
-- **Heading:** The components I use on client work, *packaged* for yours.
-- **Body:** Figma kits built the same way I build for production: auto layout, variables, and consistent naming, ready to hand to a developer.
-- **CTA:** Browse UI kits ↗  _(needs link)_
-
 ### Explorations (`MarqueeSection.vue`)
 
 - **Label:** (Explorations)
-- **Copy:** Concepts, side studies, and UI kit previews, shared on Dribbble.
+- **Copy:** Concepts, side studies, and UI kit previews, shared on Dribbble. The kits come from the same component foundations I use on client work.
 - **Link:** Dribbble ↗
 
 ### Footer (`FooterSection.vue`)
