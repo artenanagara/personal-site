@@ -3,19 +3,19 @@
     "title": "Greenprobolinggo",
     "category": "Dashboard",
     "subtitle": "One dashboard for a city's waste bank data and finances.",
-    "description": "GreenProbolinggo is a web dashboard built to support waste bank management across Probolinggo City. The platform connects Admins and Customers in one unified system, making data tracking, waste management, and financial processes more organized, transparent, and efficient.",
+    "description": "GreenProbolinggo is a web dashboard for running waste banks across Probolinggo City. Admins and Customers work in the same system, so waste records, savings, and withdrawals stay organized and easy to check.",
     "metadata": [
         {
             "label": "Role",
             "value": "UI/UX Designer"
         },
         {
-            "label": "Client",
-            "value": "Greenprobolinggo"
+            "label": "Deliverables",
+            "value": "Dashboard design, Admin and Customer views"
         },
         {
-            "label": "Timeline",
-            "value": "1 Month"
+            "label": "Platform",
+            "value": "Web dashboard"
         },
         {
             "label": "Year",
@@ -30,9 +30,14 @@
         },
         {
             "type": "text-block",
-            "label": "The Problem",
-            "align": "left",
-            "content": "Existing waste bank operations relied on manual processes, resulting in slow updates, scattered data, and limited access to transaction information. Admins struggled to manage records smoothly, while Customers had no simple way to track their savings or understand their earning potential."
+            "label": "Problem",
+            "heading": "Waste bank records lived on paper.",
+            "content": "Records were kept by hand. Updates were slow, data was scattered, and transactions were hard to look up. Customers had no easy way to see their savings or what their waste could earn.",
+            "goals": [
+                "Replace manual records with one organized system.",
+                "Give Admins and Customers each a clear view of their own data.",
+                "Let Customers see what their waste is worth."
+            ]
         },
         {
             "type": "gallery-grid",
@@ -46,8 +51,8 @@
         {
             "type": "text-block",
             "label": "Challenge",
-            "align": "right",
-            "content": "The challenge was to design a dual-role platform that remained clean and intuitive while organizing detailed waste, customer, and financial data. The interface needed to be modern and easy to understand for users with different levels of digital experience, without overwhelming them with complexity."
+            "heading": "Two roles, very different users.",
+            "content": "Admins handle waste entries, customers, categories, and money every day. Customers just want to check their balance. Many users have little digital experience, so neither view could feel like accounting software."
         },
         {
             "type": "gallery-grid",
@@ -64,17 +69,15 @@
         },
         {
             "type": "text-block",
-            "label": "The Solution",
-            "align": "left",
-            "content": "TI designed a streamlined dashboard that presents information clearly and supports smooth workflows. Admins receive an organized space to manage customer data, waste entries, categories, withdrawals, and transaction history. Customers get a simple, modern interface to view their activity, request withdrawals, and use a clean income simulation tool. The minimalist design ensures clarity, easy navigation, and a consistent user experience across roles."
+            "style": "split",
+            "image": "/images/works/greenprobolinggo/history.webp",
+            "label": "Solution",
+            "heading": "One dashboard, a view for each role.",
+            "content": "Admins get one workspace for customers, waste entries, categories, withdrawals, and transaction history. Customers get a simpler view: their activity, withdrawal requests, and an income simulation that estimates what they can earn. Navigation works the same in both, so the system only has to be learned once."
         },
         {
             "type": "gallery-grid",
             "items": [
-                {
-                    "src": "/images/works/greenprobolinggo/history.webp",
-                    "span": "col-span-4"
-                },
                 {
                     "src": "/images/works/greenprobolinggo/form.webp",
                     "span": "col-span-2"
@@ -91,9 +94,19 @@
         },
         {
             "type": "text-block",
-            "label": "Summary",
-            "align": "right",
-            "content": "GreenProbolinggo delivers a modern digital system that improves transparency and efficiency in waste bank operations. The interface supports both Admins and Customers with a clean, structured, and user-friendly experience that simplifies daily tasks and enhances decision-making."
+            "label": "Result",
+            "heading": "Designed end to end, not yet built.",
+            "content": "The full design for both roles was finished in one month. The project stopped before development.",
+            "points": [
+                {
+                    "title": "Status",
+                    "text": "Design complete, not developed."
+                },
+                {
+                    "title": "Scope",
+                    "text": "Admin and Customer dashboards, including withdrawals and an income simulation."
+                }
+            ]
         },
         {
             "type": "gallery-grid",

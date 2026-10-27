@@ -4,19 +4,19 @@
     "category": "Website Design",
     "subtitle": "A website as refined as the prayer books they print.",
     "url": "https://manisgrafika.id",
-    "description": "Manis Grafika is a distinguished printing and publishing service specializing in premium religious books such as Yasin, Tahlil, and Majmu Syarif. Known for its refined craftsmanship, quality materials, and elegant aesthetics, the brand required a modern digital presence that could mirror the beauty and detail of their physical products.",
+    "description": "Manis Grafika is a printing and publishing house in Solo that makes premium religious books such as Yasin, Tahlil, and Majmu Syarif. Its books are known for careful craftsmanship and quality materials, and the website had to show that same care online.",
     "metadata": [
         {
             "label": "Role",
             "value": "UI Designer, Website Designer"
         },
         {
-            "label": "Client",
-            "value": "Manis Grafika Solo"
+            "label": "Deliverables",
+            "value": "Website design, product detail pages"
         },
         {
-            "label": "Timeline",
-            "value": "3 Weeks"
+            "label": "Platform",
+            "value": "Website"
         },
         {
             "label": "Year",
@@ -31,9 +31,14 @@
         },
         {
             "type": "text-block",
-            "label": "The Problem",
-            "align": "left",
-            "content": "Manis Grafika’s high-quality products could only be appreciated in person. Customers lacked a way to explore cover materials, print details, or sample pages online, causing a disconnect between the brand’s premium craftsmanship and its digital representation."
+            "label": "Problem",
+            "heading": "The books only made sense in person.",
+            "content": "Customers had no way to see cover materials, print details, or sample pages online, so the quality that sets Manis Grafika apart never came through on a screen.",
+            "goals": [
+                "Let customers see the craftsmanship online.",
+                "Show materials and print detail without clutter.",
+                "Guide visitors toward a consultation, where orders start."
+            ]
         },
         {
             "type": "gallery-grid",
@@ -47,8 +52,8 @@
         {
             "type": "text-block",
             "label": "Challenge",
-            "align": "right",
-            "content": "The main challenge was transforming tactile, material-focused products into a digital format without losing the sense of quality and elegance. The website needed to feel premium, clean, and trustworthy, while presenting detailed product information in a way that remained visually minimal."
+            "heading": "Selling something you need to touch.",
+            "content": "Premium prayer books sell on the paper, the cover, and the finish. The site had to carry that on a screen, with full product details, while staying as quiet as the books themselves."
         },
         {
             "type": "gallery-grid",
@@ -65,17 +70,15 @@
         },
         {
             "type": "text-block",
-            "label": "The Solution",
-            "align": "left",
-            "content": "The website was designed with a minimalist layout that prioritizes clarity, elegance, and focus on product photography. Clean typography, generous white space, and structured content allow each product to stand out. Each book includes its own detail page with a curated gallery, material specifications, and simple call-to-action flow guiding users toward consultation-based ordering. This digital transformation brings the brand’s premium feel into an accessible and modern online experience."
+            "style": "split",
+            "image": "/images/works/manisgrafika/detail.webp",
+            "label": "Solution",
+            "heading": "Let the photography lead.",
+            "content": "A minimal layout gives each book room. Every book has its own page with a curated gallery, material specifications, and one path forward: a consultation, which is how Manis Grafika takes orders."
         },
         {
             "type": "gallery-grid",
             "items": [
-                {
-                    "src": "/images/works/manisgrafika/detail.webp",
-                    "span": "col-span-4"
-                },
                 {
                     "src": "/images/works/manisgrafika/text.webp",
                     "span": "col-span-2"
@@ -92,9 +95,19 @@
         },
         {
             "type": "text-block",
-            "label": "Summary",
-            "align": "left",
-            "content": "The Manis Grafika website successfully bridges the gap between physical craftsmanship and digital presentation. Through a clean and modern design approach, customers can now explore product details, view high-quality visuals, and begin ordering with confidence."
+            "label": "Result",
+            "heading": "Live at manisgrafika.id.",
+            "content": "Customers can now look closely at every book before they get in touch.",
+            "points": [
+                {
+                    "title": "Status",
+                    "text": "Live since 2024."
+                },
+                {
+                    "title": "Scope",
+                    "text": "A detail page for every book, with a gallery, materials, and a consultation call to action."
+                }
+            ]
         },
         {
             "type": "gallery-grid",

@@ -7,16 +7,16 @@
     "description": "Zenko is an online tryout platform for many kinds of exams in Indonesia, including SKD CPNS, UTBK-SNBT, TKA, PPPK, and BUMN. Students find practice packages from tutors and tutoring centres, take timed CBT simulations, and review their scores and explanations to see what to study next. Tutors and tutoring centres can publish their own question banks on the platform.",
     "metadata": [
         {
-            "label": "Product",
-            "value": "Zenko"
+            "label": "Role",
+            "value": "Founder, Product Designer"
+        },
+        {
+            "label": "Deliverables",
+            "value": "UI design, built with AI"
         },
         {
             "label": "Platform",
             "value": "Website, mobile web"
-        },
-        {
-            "label": "Audience",
-            "value": "Students, tutors, and tutoring centres"
         },
         {
             "label": "Year",
@@ -31,9 +31,14 @@
         },
         {
             "type": "text-block",
-            "label": "The Problem",
-            "align": "left",
-            "content": "Exam prep is scattered across many tutors and tutoring centres, each with their own packages. Students struggle to find practice that matches their target exam, and after a tryout they often get a score without a clear sense of what to work on next."
+            "label": "Problem",
+            "heading": "Exam prep is scattered.",
+            "content": "Practice is spread across many tutors and tutoring centres, each with their own packages. Students struggle to find practice that matches their target exam, and after a tryout they often get a score without a clear sense of what to work on next.",
+            "goals": [
+                "Bring practice from many tutors and tutoring centres into one place.",
+                "Help students reach a package for their target exam quickly.",
+                "Turn every score into a clear next step."
+            ]
         },
         {
             "type": "gallery-grid",
@@ -46,9 +51,9 @@
         },
         {
             "type": "text-block",
-            "label": "The Approach",
-            "align": "right",
-            "content": "One simple loop: find the right practice, measure your ability, then focus on what's still missing. Search starts from the exam goal, with popular exams one tap away, so students reach a relevant package quickly."
+            "label": "Challenge",
+            "heading": "Many packages, one exam to pass.",
+            "content": "Packages come from many tutors and tutoring centres, each with its own format and price. Students need to find the right one quickly, and practice only helps if it feels like the real CBT exam."
         },
         {
             "type": "gallery-grid",
@@ -65,9 +70,21 @@
         },
         {
             "type": "text-block",
-            "label": "The Catalogue",
-            "align": "left",
-            "content": "Package cards put what matters for the decision up front: the tutor or tutoring centre, rating, attempts, price, and exam category. Students can try five questions for free on a package page before signing up."
+            "style": "split",
+            "label": "Solution",
+            "heading": "Find, measure, focus.",
+            "content": "One loop: find the right practice, measure your ability, then focus on what's still missing. Search starts from the exam goal, with popular exams one tap away.",
+            "points": [
+                {
+                    "title": "Catalogue",
+                    "text": "Cards show the tutor, rating, attempts, price, and exam category. Every package offers five free questions before signing up."
+                },
+                {
+                    "title": "Exam room",
+                    "text": "A timed CBT room with a question map, a 'Ragu-ragu' flag for questions to revisit, and instant scores per subtest."
+                }
+            ],
+            "image": "/images/works/zenkoedu/exam.webp"
         },
         {
             "type": "gallery-grid",
@@ -87,18 +104,8 @@
             ]
         },
         {
-            "type": "text-block",
-            "label": "The Exam Room",
-            "align": "left",
-            "content": "Practice happens in a timed CBT room that mirrors the real exam: a countdown timer, a question map that shows unanswered, flagged, and answered questions at a glance, and a 'Ragu-ragu' flag for questions to revisit. Before submitting, a confirmation calls out any flagged questions, and scores come back instantly with results per subtest."
-        },
-        {
             "type": "gallery-grid",
             "items": [
-                {
-                    "src": "/images/works/zenkoedu/exam.webp",
-                    "span": "col-span-4"
-                },
                 {
                     "src": "/images/works/zenkoedu/mobile.webp",
                     "span": "col-span-2"
@@ -115,9 +122,19 @@
         },
         {
             "type": "text-block",
-            "label": "Summary",
-            "align": "right",
-            "content": "Zenko brings scattered exam prep into one place with a single loop: find the right practice, measure your ability with a timed simulation, then focus on what still needs work. A calm blue palette and a clear type pairing keep the experience trustworthy and easy to scan on any screen."
+            "label": "Result",
+            "heading": "Live for students and tutors.",
+            "content": "Zenko is live at zenkoedu.id, from finding a package to reviewing scores per subtest.",
+            "points": [
+                {
+                    "title": "Exams",
+                    "text": "SKD CPNS, UTBK-SNBT, TKA, PPPK, and BUMN."
+                },
+                {
+                    "title": "For tutors",
+                    "text": "Tutors and tutoring centres publish their own question banks."
+                }
+            ]
         },
         {
             "type": "gallery-grid",

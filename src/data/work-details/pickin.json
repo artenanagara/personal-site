@@ -7,16 +7,16 @@
     "description": "Pickin is a photo selection gallery for photographers in Indonesia. Clients open a link, tap a heart on the photos they want, and send their picks; the photographer receives a clean list of file names. Photos stay in the photographer's own Google Drive, and the whole loop, from sharing the gallery to delivering edits, runs through WhatsApp.",
     "metadata": [
         {
-            "label": "Product",
-            "value": "Pickin"
+            "label": "Role",
+            "value": "Founder, Product Designer"
+        },
+        {
+            "label": "Deliverables",
+            "value": "UI design, built with AI"
         },
         {
             "label": "Platform",
             "value": "Web app, mobile web"
-        },
-        {
-            "label": "Audience",
-            "value": "Photographers in Indonesia"
         },
         {
             "label": "Year",
@@ -31,9 +31,14 @@
         },
         {
             "type": "text-block",
-            "label": "The Problem",
-            "align": "left",
-            "content": "After a shoot, choosing photos usually means sending a Drive folder, waiting for screenshots or a list of file names typed by hand, then matching them up one by one. Clients get lost in folders, and photographers lose time on admin instead of editing."
+            "label": "Problem",
+            "heading": "Photo selection was all admin.",
+            "content": "After a shoot, choosing photos usually means sending a Drive folder, waiting for screenshots or a list of file names typed by hand, then matching them up one by one. Clients get lost in folders, and photographers lose time on admin instead of editing.",
+            "goals": [
+                "Cut photo selection down to open, tap, send.",
+                "Keep photos in the photographer's own Google Drive, with no re-uploading.",
+                "Deliver picks where the conversation already lives: WhatsApp."
+            ]
         },
         {
             "type": "gallery-grid",
@@ -46,59 +51,9 @@
         },
         {
             "type": "text-block",
-            "label": "The Approach",
-            "align": "right",
-            "content": "Remove every step that isn't choosing. Clients don't log in or install anything: they open a link, tap a heart, and send. Photographers don't upload again, because the gallery reads straight from Google Drive, and the hand-off happens in WhatsApp, where the conversation already lives."
-        },
-        {
-            "type": "gallery-grid",
-            "items": [
-                {
-                    "src": "/images/works/pickin/feature-hero.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/price.webp",
-                    "span": "col-span-2"
-                }
-            ]
-        },
-        {
-            "type": "text-block",
-            "label": "Photographer Dashboard",
-            "align": "left",
-            "content": "Inside the studio workspace, photographers track active galleries and client activity at a glance, create a new gallery in seconds by pasting a Google Drive folder link, publish an online pricelist catalog for their Instagram bio, and link their WhatsApp number for instant selection delivery."
-        },
-        {
-            "type": "gallery-grid",
-            "items": [
-                {
-                    "src": "/images/works/pickin/dashboard.webp",
-                    "span": "col-span-4"
-                },
-                {
-                    "src": "/images/works/pickin/drive-auth.webp",
-                    "span": "col-span-4"
-                },
-                {
-                    "src": "/images/works/pickin/dashboard-settings.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/dashboard-mobile.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/dashboard-catalog.webp",
-                    "span": "col-span-4"
-                }
-            ]
-        },
-        {
-            "type": "text-block",
-            "label": "Mobile First",
-            "align": "right",
-            "content": "Most clients open the link on their phone, often on a weak connection. The gallery, picking flow, and plan details are designed to read and work comfortably on a small screen first."
+            "label": "Challenge",
+            "heading": "Most clients pick on a phone.",
+            "content": "Clients open the gallery link on their phone, often on a weak connection. Asking them to log in, install an app, or dig through Drive folders would lose them. The whole flow had to work in a few taps, on a small screen first."
         },
         {
             "type": "gallery-grid",
@@ -119,9 +74,55 @@
         },
         {
             "type": "text-block",
-            "label": "Pricing",
-            "align": "left",
-            "content": "No subscription. Every photographer starts free, then pays once per gallery in rupiah via QRIS, only when a gallery needs more photos, a longer active period, or no branding. All plans include revisions, a results tab, and CSV export."
+            "style": "split",
+            "label": "Solution",
+            "heading": "Remove every step that isn't choosing.",
+            "content": "Clients open a link, tap a heart, and send. Photographers don't upload again, because the gallery reads straight from Google Drive, and picks arrive in WhatsApp, where the conversation already lives.",
+            "points": [
+                {
+                    "title": "Dashboard",
+                    "text": "Paste a Drive folder link to create a gallery, track client activity, publish a pricelist catalog, and link WhatsApp for instant delivery."
+                },
+                {
+                    "title": "Pricing",
+                    "text": "No subscription. Start free, then pay once per gallery via QRIS when a gallery needs more photos, more time, or no branding."
+                }
+            ],
+            "image": "/images/works/pickin/dashboard.webp"
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/feature-hero.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/price.webp",
+                    "span": "col-span-2"
+                }
+            ]
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/drive-auth.webp",
+                    "span": "col-span-4"
+                },
+                {
+                    "src": "/images/works/pickin/dashboard-settings.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/dashboard-mobile.webp",
+                    "span": "col-span-2"
+                },
+                {
+                    "src": "/images/works/pickin/dashboard-catalog.webp",
+                    "span": "col-span-4"
+                }
+            ]
         },
         {
             "type": "gallery-grid",
@@ -145,6 +146,22 @@
                 {
                     "src": "/images/works/pickin/mockup.webp",
                     "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "text-block",
+            "label": "Result",
+            "heading": "Live for photographers in Indonesia.",
+            "content": "The full loop works end to end: share a link, collect picks, deliver in WhatsApp.",
+            "points": [
+                {
+                    "title": "Status",
+                    "text": "Live at pickin.id since 2026."
+                },
+                {
+                    "title": "Scope",
+                    "text": "Client gallery, photographer dashboard, pricelist catalog, and per-gallery payments via QRIS."
                 }
             ]
         }

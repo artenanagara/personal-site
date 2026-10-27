@@ -31,7 +31,8 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 ### Hero (`HeroSection.vue`)
 
-- **H1 (4 lines, photo inline on line 2; slogan lives on the About page):**
+- **Top label:** Clear interfaces, built to ship. (coordinates on the right, desktop only)
+- **H1 (4 lines, photo inline on line 2):**
   1. Shaping the quiet
   2. details [photo] that make
   3. SaaS, web & apps
@@ -70,10 +71,11 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 ## Work page (`WorkView.vue`)
 
-- **Masthead label:** Selected work
+- **Masthead label:** (Selected work)
 - **H1:**
   1. Ideas that left the canvas
   2. and went *live.*
+- **Index (below the H1, right of centre):** Years — {first}–{last} · Projects — {count, two digits}
 - **Featured CTA:** View case study → (unchanged)
 
 ---
@@ -107,6 +109,17 @@ Plain sentence case, one concrete line each:
 - Greenprobolinggo — One dashboard for a city's waste bank data and finances.
 - Manis Grafika — A website as refined as the prayer books they print.
 - Exmood — A calm mobile app for tracking moods and finding support.
+
+## Case study template (`src/data/work-details/*.json`)
+
+- **Metadata (same four for every project):** Role · Deliverables · Platform · Year
+- **Text sections:** eyebrow (`label`: Problem, Challenge, Solution, Result) · title (`heading`, one specific sentence) · body (`content`, 2–3 sentences)
+  - Problem: adds 3 goals, numbered (1) (2) (3)
+  - Challenge: the real constraint (time, data, users), not a restatement of the goals
+  - Solution: key decisions and why, with one image beside the text (`"style": "split"`)
+  - Result: one line, then a numbered list. Facts only: awards, status, scope. Add numbers when there are real ones.
+- Eyebrows never change: every case study has exactly Problem → Challenge → Solution → Result. Features go in the Solution's numbered list, not in sections of their own.
+- Every text section is followed by images; text never stacks on text.
 
 ## Decisions
 

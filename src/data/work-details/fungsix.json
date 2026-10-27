@@ -4,19 +4,19 @@
     "category": "Website",
     "subtitle": "A bold website for an agency that runs everything in-house.",
     "url": "https://fungsix.com",
-    "description": "Fungsi X is an integrated creative and production agency based in Jakarta that handles everything in-house, from the first strategic brief to final on-site execution. The website was built to communicate the agency's bold, high-impact positioning across its three capabilities (event and brand activation, digital campaign and video production, and construction and production) while reflecting the precision and accountability that define its work.",
+    "description": "Fungsi X is a creative and production agency in Jakarta that does everything in-house, from the first brief to on-site execution. The website explains that model across its three capabilities: event and brand activation, digital campaigns and video production, and construction and production.",
     "metadata": [
         {
             "label": "Role",
             "value": "UI Designer, Web Animation (GSAP)"
         },
         {
-            "label": "Client",
-            "value": "Fungsi X"
+            "label": "Deliverables",
+            "value": "Website design, GSAP animation"
         },
         {
-            "label": "Timeline",
-            "value": "4 Weeks"
+            "label": "Platform",
+            "value": "Website"
         },
         {
             "label": "Year",
@@ -31,9 +31,14 @@
         },
         {
             "type": "text-block",
-            "label": "The Problem",
-            "align": "left",
-            "content": "Most agencies stop at the idea and hand execution off to outside vendors, leaving brands to manage fragmented teams and inconsistent delivery. Fungsi X needed a digital presence that made its end-to-end, in-house model immediately clear and signaled that it could be trusted with large-scale, high-stakes projects."
+            "label": "Problem",
+            "heading": "Brands juggle too many vendors.",
+            "content": "Most agencies stop at the idea and hand execution to outside vendors, so brands end up managing several teams with uneven results. Fungsi X does everything in-house, and its site had to say so.",
+            "goals": [
+                "Make the in-house, end-to-end model clear at first glance.",
+                "Show it can handle large, high-stakes projects.",
+                "Feel as polished as the agency's own productions."
+            ]
         },
         {
             "type": "gallery-grid",
@@ -47,8 +52,8 @@
         {
             "type": "text-block",
             "label": "Challenge",
-            "align": "right",
-            "content": "Translating a broad, multi-capability agency into a single focused narrative. The site had to present event activation, digital production, and construction under one identity without feeling cluttered, while conveying scale, credibility, and momentum through layout, pacing, and motion."
+            "heading": "Three capabilities, one agency.",
+            "content": "Event activation, digital production, and construction are very different services. Listed side by side, they'd read like three companies. The site had to tie them into one story, in four weeks."
         },
         {
             "type": "gallery-grid",
@@ -65,28 +70,36 @@
         },
         {
             "type": "text-block",
-            "label": "The Solution",
-            "align": "left",
-            "content": "I designed a bold, high-contrast landing experience built around a clear three-capability structure and strong typographic hierarchy. A dark, cinematic palette and generous spacing keep the work front and center, while GSAP-driven motion such as scroll reveals, smooth transitions, and subtle parallax adds rhythm and a sense of polish that mirrors the agency's own execution standard."
+            "style": "split",
+            "image": "/images/works/fungsix/motion.webp",
+            "label": "Solution",
+            "heading": "Structure first, then motion.",
+            "content": "I designed a dark, high-contrast landing page organized around the three capabilities, with one type hierarchy holding them together. I also helped build the GSAP motion: scroll reveals, transitions, and light parallax that give the page rhythm without getting in the way."
         },
         {
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/fungsix/motion.webp",
-                    "span": "col-span-2"
-                },
-                {
                     "src": "/images/works/fungsix/service-section.webp",
-                    "span": "col-span-2"
+                    "span": "col-span-4"
                 }
             ]
         },
         {
             "type": "text-block",
-            "label": "Summary",
-            "align": "left",
-            "content": "The Fungsi X site presents an integrated creative and production agency with clarity and confidence. A structured layout, bold visual language, and smooth GSAP animations work together to deliver one promise: one accountable team, full execution control, and real, measurable impact."
+            "label": "Result",
+            "heading": "Live since 2025.",
+            "content": "The site now carries the agency's pitch: one accountable team, from brief to build.",
+            "points": [
+                {
+                    "title": "Status",
+                    "text": "Live at fungsix.com."
+                },
+                {
+                    "title": "My part",
+                    "text": "Website design, and helping build the GSAP animations."
+                }
+            ]
         },
         {
             "type": "gallery-grid",

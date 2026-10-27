@@ -25,7 +25,6 @@ const galleryItemClass = (span) => {
 
 // Points can be plain strings or { title, text }
 const pointText = (point) => (typeof point === 'string' ? point : point.text);
-const pointNumber = (idx) => String(idx + 1).padStart(2, '0');
 </script>
 
 <template>
@@ -67,8 +66,7 @@ const pointNumber = (idx) => String(idx + 1).padStart(2, '0');
       </div>
     </header>
 
-    <!-- Content blocks -->
-    <!-- Content blocks: text sits in the right half of a two-column grid, images on a tight 4-column grid -->
+    <!-- Content blocks: text sits in a two-column grid, images on a tight 4-column grid -->
     <div class="flex flex-col gap-3 pb-32 md:pb-48">
       <template v-for="(section, index) in project.content" :key="index">
         <figure v-if="section.type === 'full-width-image'" data-reveal class="page-x">
@@ -83,30 +81,45 @@ const pointNumber = (idx) => String(idx + 1).padStart(2, '0');
           </div>
         </figure>
 
+        <!--
+          Every text section follows one template: eyebrow (label), title (heading), body (content),
+          then goals, a numbered list (points), or one image beside the text (style "split").
+        -->
         <section
           v-else-if="section.type === 'text-block'"
-          data-reveal
           class="page-x grid grid-cols-1 gap-3 pb-10 pt-20 md:grid-cols-2 md:pb-12 md:pt-40"
         >
-          <p class="mono-label text-graphite">{{ section.label }}</p>
-          <div class="flex flex-col gap-8">
-            <div class="flex flex-col gap-3">
-              <h2 v-if="section.heading" class="text-[17px] leading-relaxed">{{ section.heading }}</h2>
-              <p v-if="section.content" class="max-w-[60ch] text-[17px] leading-relaxed text-ink/80">
-                {{ section.content }}
-              </p>
+          <p v-if="section.style !== 'split'" data-reveal class="mono-label text-graphite">{{ section.label }}</p>
+
+          <div data-reveal class="flex flex-col" :class="{ 'pb-8 md:pb-0 md:pr-[4vw]': section.style === 'split' }">
+            <p v-if="section.style === 'split'" class="mono-label mb-6 text-graphite">{{ section.label }}</p>
+            <h2 class="max-w-[24ch] text-[clamp(1.4rem,2.2vw,2rem)] leading-[1.2] tracking-[-0.02em]">{{ section.heading }}</h2>
+            <p v-if="section.content" class="mt-4 max-w-[60ch] text-[17px] leading-relaxed text-ink/80">{{ section.content }}</p>
+
+            <div v-if="section.goals?.length" class="mt-10">
+              <p class="mono-label text-graphite">Goals</p>
+              <ol class="mt-4 grid grid-cols-1 gap-x-5 gap-y-4 sm:grid-cols-2">
+                <li v-for="(goal, idx) in section.goals" :key="idx" class="flex gap-3 text-[15px] leading-relaxed">
+                  <span class="shrink-0 text-ink/60">({{ idx + 1 }})</span>
+                  <span class="text-ink/80">{{ pointText(goal) }}</span>
+                </li>
+              </ol>
             </div>
 
-            <ol v-if="section.points?.length" class="grid grid-cols-1 gap-x-5 gap-y-6 sm:grid-cols-2">
-              <li v-for="(point, idx) in section.points" :key="idx" class="flex gap-3">
-                <span class="shrink-0 text-[15px] leading-relaxed text-ink/60">( {{ pointNumber(idx) }} )</span>
+            <ol v-if="section.points?.length" class="mt-10 grid grid-cols-1 gap-x-5 gap-y-6 sm:grid-cols-2">
+              <li v-for="(point, idx) in section.points" :key="idx" class="flex gap-3 text-[15px] leading-relaxed">
+                <span class="shrink-0 text-ink/60">({{ idx + 1 }})</span>
                 <div class="flex flex-col gap-1">
-                  <p v-if="point.title" class="text-[15px] leading-relaxed">{{ point.title }}</p>
-                  <p class="text-[15px] leading-relaxed text-ink/80">{{ pointText(point) }}</p>
+                  <p v-if="point.title">{{ point.title }}</p>
+                  <p class="text-ink/80">{{ pointText(point) }}</p>
                 </div>
               </li>
             </ol>
           </div>
+
+          <figure v-if="section.style === 'split'" data-reveal="120" class="aspect-[4/3] overflow-hidden rounded-[4px] bg-hairline">
+            <img :src="section.image" :alt="`${project.title} visual`" loading="lazy" class="h-full w-full object-cover" />
+          </figure>
         </section>
 
         <div v-else-if="section.type === 'gallery-grid'" class="page-x grid grid-cols-2 gap-3 md:grid-cols-4">

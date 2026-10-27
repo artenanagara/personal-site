@@ -25,17 +25,25 @@ const years = computed(() => {
 <template>
   <div class="flex flex-grow flex-col">
     <!-- Masthead -->
-    <section class="page-x pt-32 md:pt-40">
-      <div data-reveal class="mono-label flex justify-between border-b border-hairline pb-3 text-graphite">
-        <span>Selected work</span>
-        <span class="hidden sm:inline">{{ years }}</span>
-        <span>{{ works.length }} projects</span>
-      </div>
+    <!-- Marginal label, the headline, then a small index set off to the right, no rules -->
+    <section class="page-x pt-32 md:pt-44">
+      <p data-reveal class="mono-label text-graphite">(Selected work)</p>
 
-      <h1 data-reveal data-reveal-lines class="mt-10 text-[clamp(2.75rem,7.2vw,7.5rem)] leading-[0.98] tracking-[-0.05em] md:mt-14">
+      <h1 data-reveal data-reveal-lines class="mt-6 text-[clamp(2.75rem,7.2vw,7.5rem)] leading-[0.98] tracking-[-0.05em] md:mt-8">
         <span class="line-mask"><span style="--d: 80ms">Ideas that left <span class="whitespace-nowrap">the canvas</span></span></span>
         <span class="line-mask md:pl-[12vw]"><span style="--d: 180ms">and went <em class="serif-i">live.</em></span></span>
       </h1>
+
+      <dl data-reveal="300" class="mt-12 flex gap-x-[7vw] md:ml-[42%] md:mt-16">
+        <div>
+          <dt class="mono-label text-graphite">Years</dt>
+          <dd class="mt-1 text-[15px]">{{ years }}</dd>
+        </div>
+        <div>
+          <dt class="mono-label text-graphite">Projects</dt>
+          <dd class="mt-1 text-[15px]">{{ String(works.length).padStart(2, '0') }}</dd>
+        </div>
+      </dl>
     </section>
 
     <!-- Featured: 2×2 grid -->

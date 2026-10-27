@@ -1,6 +1,7 @@
 <template>
   <section class="page-x relative flex min-h-[100svh] flex-col pb-5 pt-24 md:pt-28">
-    <div data-reveal="600" data-reveal-load class="mono-label flex justify-end text-graphite">
+    <div data-reveal="600" data-reveal-load class="mono-label flex justify-between text-graphite">
+      <span>Clear interfaces, built to ship.</span>
       <span class="hidden md:block">07°34′S, 110°49′E</span>
     </div>
 

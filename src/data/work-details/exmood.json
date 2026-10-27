@@ -4,19 +4,19 @@
     "category": "Mobile App",
     "subtitle": "A calm mobile app for tracking moods and finding support.",
     "url": "https://www.figma.com/proto/z2XzbdilW9fje2vu39FrVx/Exmood-App?page-id=446%3A10362&node-id=805-24665&viewport=898%2C454%2C0.16&t=hMTQDkzYSYA4sq3C-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=476%3A10201&show-proto-sidebar=1",
-    "description": "EXMOOD is a mobile application designed to help users manage and improve their mental well-being. It offers mood tracking, meditation guidance, professional counseling, and a personal journey feature that supports emotional regulation. The app focuses on delivering a calm, intuitive experience that can be used by teens and adults facing mental health challenges.",
+    "description": "EXMOOD is a mobile app for looking after your mental health, designed as a team for the DIMAS-TI AMLI 2022 UI/UX competition. It brings mood detection, guided meditation, counseling with psychologists, a space to vent, and a personal journey into one app.",
     "metadata": [
         {
             "label": "Role",
             "value": "UI Designer, Interaction Designer"
         },
         {
-            "label": "Client",
-            "value": "UI/UX Competition"
+            "label": "Deliverables",
+            "value": "UI design, clickable prototype"
         },
         {
-            "label": "Timeline",
-            "value": "3 Weeks"
+            "label": "Platform",
+            "value": "Mobile app"
         },
         {
             "label": "Year",
@@ -31,9 +31,14 @@
         },
         {
             "type": "text-block",
-            "label": "The Problem",
-            "align": "left",
-            "content": "Many young adults struggle with mental health issues but lack access to trusted information, affordable counseling, and supportive tools. Existing sources often feel overwhelming, unclear, or inaccessible, making it harder for users to manage their daily emotional challenges."
+            "label": "Problem",
+            "heading": "Help is hard to find, and hard to afford.",
+            "content": "Our research (a survey of 26 people and interviews with two people aged 15 to 25) kept surfacing the same problems: mental-health information online felt ambiguous, consultations were expensive, and many had no one they trusted to talk to.",
+            "goals": [
+                "Put trustworthy mental-health information in one place.",
+                "Make professional counseling easier to choose and afford.",
+                "Offer a safe space to talk, even without a counselor."
+            ]
         },
         {
             "type": "gallery-grid",
@@ -47,8 +52,8 @@
         {
             "type": "text-block",
             "label": "Challenge",
-            "align": "right",
-            "content": "Designing a mobile experience that simplifies complex mental-health content into something warm, clear, and easy to use. Creating emotional safety, intuitive navigation, and efficient task flows—while balancing multiple features like mood tracking, counseling, meditation, and personal activities."
+            "heading": "Five features, one calm app.",
+            "content": "Mood detection, meditation, counseling, venting, and a personal journey all compete for attention. With research and design packed into three weeks, the app had to hold all five without feeling busy, on a topic where every screen needs to feel safe."
         },
         {
             "type": "gallery-grid",
@@ -65,17 +70,15 @@
         },
         {
             "type": "text-block",
-            "label": "The Solution",
-            "align": "left",
-            "content": "I designed a calm, structured interface centered around clarity and emotional comfort. The experience guides users effortlessly through mood detection, meditation sessions, and professional counseling. Clean layouts, soft color palettes, and consistent interaction patterns help users focus on healing, learning, and self-reflection."
+            "style": "split",
+            "image": "/images/works/exmood/motivation.webp",
+            "label": "Solution",
+            "heading": "Fewer choices on every screen.",
+            "content": "We designed around Hick's Law: the more choices on a screen, the longer a decision takes, so each screen asks for one thing. Counselors come with ratings, reviews, and prices, so users can pick one they can afford. Mood detection reads facial expressions to suggest a next step, and a vent space lets users share and read each other's stories."
         },
         {
             "type": "gallery-grid",
             "items": [
-                {
-                    "src": "/images/works/exmood/motivation.webp",
-                    "span": "col-span-4"
-                },
                 {
                     "src": "/images/works/exmood/home.webp",
                     "span": "col-span-2"
@@ -92,9 +95,23 @@
         },
         {
             "type": "text-block",
-            "label": "Summary",
-            "align": "left",
-            "content": "EXMOOD delivers a modern, user-friendly approach to mental-health support. With clear flows, soft visuals, and accessible tools, the app empowers users to understand their emotions, access help, and build healthier daily habits."
+            "label": "Result",
+            "heading": "1st place, and 14.2 out of 15 in testing.",
+            "content": "EXMOOD won first place at DIMAS-TI AMLI 2022. In guerrilla usability testing, five participants gave it an average of 14.2 out of 15.",
+            "points": [
+                {
+                    "title": "Award",
+                    "text": "1st place, UI/UX Designer Competition, DIMAS-TI AMLI 2022."
+                },
+                {
+                    "title": "Usability",
+                    "text": "14.2 / 15 average across 5 participants, scoring each task from 1 to 3."
+                },
+                {
+                    "title": "Team",
+                    "text": "A team project. I focused on UI and interaction design."
+                }
+            ]
         },
         {
             "type": "gallery-grid",
