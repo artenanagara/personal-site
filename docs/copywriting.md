@@ -21,6 +21,12 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 ---
 
+## Navigation (`NavigationBar.vue`)
+
+- Center label: `Product Designer — Surakarta, {time} WIB`
+
+---
+
 ## Home
 
 ### Hero (`HeroSection.vue`)
