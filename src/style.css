@@ -72,15 +72,15 @@ body {
   background-size: 100% 1px;
 }
 
-/* Scroll reveal (driven by v-reveal) */
-.reveal {
+/* Scroll reveal (driven by data-reveal in BaseLayout). Gated on .js so content stays visible without JavaScript. */
+.js [data-reveal]:not([data-reveal-lines]) {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 1s var(--ease-out-expo), transform 1.2s var(--ease-out-expo);
   transition-delay: var(--d, 0ms);
 }
 
-.reveal.is-in {
+.js [data-reveal].is-in {
   opacity: 1;
   transform: none;
 }
@@ -92,23 +92,42 @@ body {
   margin-bottom: -0.1em;
 }
 
-.line-mask > span {
+.js .line-mask > span {
   display: block;
   transform: translateY(110%);
   transition: transform 1.4s var(--ease-out-expo);
   transition-delay: var(--d, 0ms);
 }
 
+.line-mask > span {
+  display: block;
+}
+
 .is-in .line-mask > span {
   transform: none;
 }
 
+/* Cross-fade between pages (native cross-document view transitions) */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.6s;
+  animation-timing-function: var(--ease-out-expo);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .line-mask > span {
+  .js [data-reveal],
+  .js .line-mask > span {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+
+  @view-transition {
+    navigation: none;
   }
 }
 

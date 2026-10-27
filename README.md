@@ -1,5 +1,17 @@
-# Vue 3 + Vite
+# artenanagara.com
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Personal site, built with [Astro](https://astro.build) and Vue components, styled with Tailwind CSS v4, deployed on Vercel.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+```sh
+npm run dev      # local dev server
+npm run build    # static build to dist/
+npm run preview  # serve the build
+```
+
+- `src/pages/` — one file per route; `work/[id].astro` builds a page per JSON file in `src/data/work-details/`
+- `src/layouts/BaseLayout.astro` — head tags (title, description, canonical, Open Graph, JSON-LD), nav, footer, cursor, scroll reveal, Lenis
+- `src/components/`, `src/views/` — Vue components; most render to static HTML, only the nav, footer clock, cursor, and Dribbble marquee hydrate
+- `api/dribbble.js` — Vercel function behind the home page marquee (needs `DRIBBBLE_TOKEN`)
+- `vercel.json` — clean URLs, and `cv.artenanagara.com/` rewritten to `/cv`
+
+Scroll reveal: add `data-reveal` (optionally `data-reveal="200"` for a delay in ms, `data-reveal-lines` for `.line-mask` headings, `data-reveal-load` for above-the-fold content). Cursor label on hover: `data-cursor="View"`.

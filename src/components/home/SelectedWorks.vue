@@ -1,12 +1,12 @@
 <template>
   <section class="page-x pb-24 md:pb-40">
     <div class="mb-12 flex items-end justify-between border-b border-hairline pb-4 md:mb-20">
-      <h2 v-reveal class="text-[clamp(2.25rem,5vw,4.5rem)] leading-none tracking-[-0.045em]">
+      <h2 data-reveal class="text-[clamp(2.25rem,5vw,4.5rem)] leading-none tracking-[-0.045em]">
         Selected <span class="serif-i">work</span>
       </h2>
-      <RouterLink v-reveal="100" to="/work" class="u-link text-[15px]">
+      <a data-reveal="100" href="/work" class="u-link text-[15px]">
         All work <sup class="font-mono text-[9px]">{{ total }}</sup> →
-      </RouterLink>
+      </a>
     </div>
 
     <!-- Staggered, off-grid composition on desktop; a simple stack on mobile -->
@@ -14,7 +14,7 @@
       <div
         v-for="(project, index) in works"
         :key="project.id"
-        v-reveal="(index % 2) * 120"
+        :data-reveal="(index % 2) * 120"
         class="w-full"
         :class="layout[index].wrap"
       >

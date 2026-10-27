@@ -1,8 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue';
-import { useCursor } from '../../composables/useCursor';
 
-const { text, variant } = useCursor();
+// Hovered elements set the label with data-cursor="View"; anything else shows the plain dot
+const text = ref('');
+const variant = ref('default');
 
 const x = ref(0);
 const y = ref(0);
@@ -15,7 +16,18 @@ let frame;
 const updateCursor = (e) => {
   targetX.value = e.clientX;
   targetY.value = e.clientY;
-  if (!isVisible.value) isVisible.value = true;
+  if (!isVisible.value) {
+    // Every page load starts a fresh cursor, so jump to the pointer instead of easing in from the corner
+    x.value = targetX.value;
+    y.value = targetY.value;
+    isVisible.value = true;
+  }
+};
+
+const updateLabel = (e) => {
+  const el = e.target.closest?.('[data-cursor]');
+  text.value = el?.dataset.cursor || '';
+  variant.value = el ? 'button' : 'default';
 };
 
 const handleMouseEnter = () => { isVisible.value = true };
@@ -34,6 +46,7 @@ onMounted(() => {
 
   document.documentElement.classList.add('has-cursor');
   window.addEventListener('mousemove', updateCursor);
+  document.addEventListener('mouseover', updateLabel);
   document.body.addEventListener('mouseenter', handleMouseEnter);
   document.body.addEventListener('mouseleave', handleMouseLeave);
   animate();
@@ -42,6 +55,7 @@ onMounted(() => {
 onUnmounted(() => {
   document.documentElement.classList.remove('has-cursor');
   window.removeEventListener('mousemove', updateCursor);
+  document.removeEventListener('mouseover', updateLabel);
   document.body.removeEventListener('mouseenter', handleMouseEnter);
   document.body.removeEventListener('mouseleave', handleMouseLeave);
   cancelAnimationFrame(frame);

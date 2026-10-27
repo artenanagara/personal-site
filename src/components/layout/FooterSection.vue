@@ -1,18 +1,18 @@
 <template>
   <footer class="page-x bg-ink pb-6 pt-24 text-paper md:pt-36">
     <div class="md:pl-[30%]">
-      <p v-reveal class="mono-label text-paper/50">(Contact)</p>
+      <p data-reveal class="mono-label text-paper/50">(Contact)</p>
       <h2
-        v-reveal="100"
+        data-reveal="100"
         class="mt-4 max-w-[16ch] text-[clamp(2.25rem,5.5vw,5.5rem)] leading-[1] tracking-[-0.045em]"
       >
         Got a product to ship? Let's make it <span class="serif-i">clear.</span>
       </h2>
-      <p v-reveal="150" class="mt-6 max-w-[40ch] text-[17px] leading-relaxed text-paper/70">
+      <p data-reveal="150" class="mt-6 max-w-[40ch] text-[17px] leading-relaxed text-paper/70">
         Open for freelance and contract work. Tell me what you're building and when it needs to go live.
       </p>
       <a
-        v-reveal="200"
+        data-reveal="200"
         href="mailto:artenanagara22@gmail.com?subject=New%20project"
         class="u-link mt-10 inline-block break-all text-[clamp(1.25rem,2.4vw,2.25rem)] tracking-[-0.02em] md:mt-14"
       >
@@ -23,9 +23,9 @@
     <div class="mt-28 flex flex-wrap items-end gap-x-[6vw] gap-y-8 border-t border-paper/15 pt-5 md:mt-40">
       <nav aria-label="Footer" class="flex flex-col gap-1 text-[15px]">
         <span class="mono-label mb-1 text-paper/50">Pages</span>
-        <RouterLink to="/" class="u-link self-start">Home</RouterLink>
-        <RouterLink to="/work" class="u-link self-start">Work</RouterLink>
-        <RouterLink to="/about" class="u-link self-start">About</RouterLink>
+        <a href="/" class="u-link self-start">Home</a>
+        <a href="/work" class="u-link self-start">Work</a>
+        <a href="/about" class="u-link self-start">About</a>
       </nav>
 
       <div class="flex flex-col gap-1 text-[15px]">

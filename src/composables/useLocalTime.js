@@ -9,10 +9,12 @@ const formatter = new Intl.DateTimeFormat('en-GB', {
 
 // Current time in Surakarta (WIB), refreshed every 20 seconds.
 export function useLocalTime() {
-  const time = ref(formatter.format(new Date()));
+  // Same placeholder on the server and on hydration, so the static HTML never shows the build time
+  const time = ref('--:--');
   let timer;
 
   onMounted(() => {
+    time.value = formatter.format(new Date());
     timer = setInterval(() => {
       time.value = formatter.format(new Date());
     }, 20000);

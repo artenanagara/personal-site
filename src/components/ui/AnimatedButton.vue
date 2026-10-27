@@ -1,6 +1,5 @@
 <script setup>
 import { computed } from 'vue';
-import { RouterLink } from 'vue-router';
 
 const props = defineProps({
   text: {
@@ -18,14 +17,13 @@ const props = defineProps({
 });
 
 const isExternal = computed(() => !!props.href);
-const tag = computed(() => (isExternal.value ? 'a' : props.to ? RouterLink : 'button'));
+const tag = computed(() => (isExternal.value || props.to ? 'a' : 'button'));
 </script>
 
 <template>
   <component
     :is="tag"
-    :href="href"
-    :to="to"
+    :href="href || to"
     :target="isExternal ? '_blank' : null"
     :rel="isExternal ? 'noopener noreferrer' : null"
     class="group inline-flex items-center gap-3 rounded-full border border-ink px-6 py-3 text-[15px] transition-colors duration-500 ease-out-expo hover:bg-ink hover:text-paper"

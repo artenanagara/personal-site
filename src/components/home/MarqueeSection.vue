@@ -1,14 +1,14 @@
 <template>
   <section class="overflow-hidden pb-28 md:pb-40">
     <div class="page-x mb-8 flex items-end justify-between gap-6 md:mb-12">
-      <div v-reveal class="md:ml-[30%]">
+      <div data-reveal class="md:ml-[30%]">
         <p class="mono-label text-graphite">(Explorations)</p>
         <p class="mt-3 max-w-[30ch] text-[17px] leading-snug">
           Concepts, side studies, and UI kit previews, shared on Dribbble. The kits come from the same component foundations I use on client work.
         </p>
       </div>
       <a
-        v-reveal="100"
+        data-reveal="100"
         href="https://dribbble.com/artenanagara"
         target="_blank"
         rel="noopener noreferrer"
@@ -17,7 +17,7 @@
     </div>
 
     <!-- Reveal on a viewport-wide wrapper: the track itself is too wide to reach the reveal threshold -->
-    <div v-reveal="150">
+    <div data-reveal="150">
       <div class="marquee flex w-max select-none">
         <div v-for="set in 2" :key="set" class="marquee-track flex gap-4 pr-4" :aria-hidden="set === 2">
           <a
@@ -28,8 +28,7 @@
             rel="noopener noreferrer"
             :tabindex="set === 2 ? -1 : null"
             class="group relative block aspect-[4/3] h-[220px] shrink-0 overflow-hidden bg-hairline md:h-[30vw] md:max-h-[420px]"
-            @mouseenter="setCursor({ text: 'Dribbble ↗', variant: 'button' })"
-            @mouseleave="resetCursor()"
+            data-cursor="Dribbble ↗"
           >
             <img
               :src="item.image"
@@ -45,11 +44,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
-import { useCursor } from '../../composables/useCursor';
-
-const { setCursor, resetCursor } = useCursor();
-onUnmounted(() => resetCursor());
+import { onMounted, ref } from 'vue';
 
 // Shown until the latest shots load from /api/dribbble, and kept if that request fails
 const fallbackItems = [

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WorkDetailView from '../../views/WorkDetailView.vue';
+
+// One page per case study file in src/data/work-details
+export function getStaticPaths() {
+  const details = import.meta.glob('../../data/work-details/*.json', { eager: true, import: 'default' });
+  return Object.values(details).map((project: any) => ({ params: { id: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout title={project.title} description={project.description}>
+  <WorkDetailView project={project} />
+</BaseLayout>

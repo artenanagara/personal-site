@@ -1,11 +1,10 @@
 <template>
   <section class="page-x relative flex min-h-[100svh] flex-col pb-5 pt-24 md:pt-28">
-    <div v-reveal.load="600" class="mono-label flex justify-between text-graphite">
-      <span>Portfolio — SaaS, web &amp; app design</span>
+    <div data-reveal="600" data-reveal-load class="mono-label flex justify-end text-graphite">
       <span class="hidden md:block">07°34′S, 110°49′E</span>
     </div>
 
-    <h1 v-reveal.load.lines class="hero-title mt-auto">
+    <h1 data-reveal data-reveal-lines data-reveal-load class="hero-title mt-auto">
       <span class="line-mask"><span style="--d: 80ms">Shaping the quiet</span></span>
       <span class="line-mask md:pl-[11vw]"><span style="--d: 180ms">
         details
@@ -21,7 +20,7 @@
     </h1>
 
     <div
-      v-reveal.load="700"
+      data-reveal="700" data-reveal-load
       class="mt-10 flex flex-wrap items-end gap-x-[7vw] gap-y-4 border-t border-hairline pt-4 md:mt-14"
     >
       <p>

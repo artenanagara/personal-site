@@ -11,7 +11,7 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 ---
 
-## Meta / SEO (`index.html`, per-page head)
+## Meta / SEO (`src/layouts/BaseLayout.astro`, per-page props in `src/pages`)
 
 - **Title:** Artena Nagara — Product Designer for SaaS, Web & Apps
 - **Description:** Clear interfaces, built to ship. Product designer and UI kit creator designing SaaS products, websites, and apps that developers can build without guessing.
@@ -21,17 +21,10 @@ Tone: short sentences, concrete, no buzzwords. Talk to two readers at once: the 
 
 ---
 
-## Navigation (`NavigationBar.vue`)
-
-- Center label: `Freelance Product Designer — Surakarta, {time} WIB`
-
----
-
 ## Home
 
 ### Hero (`HeroSection.vue`)
 
-- **Top label:** Portfolio — SaaS, web & app design
 - **H1 (4 lines, photo inline on line 2; slogan lives on the About page):**
   1. Shaping the quiet
   2. details [photo] that make

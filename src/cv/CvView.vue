@@ -1,19 +1,13 @@
 <script setup>
-import { RouterLink } from 'vue-router';
 import { profile, experience, skills, education, organizations } from '../data/cv';
-
-// On cv.artenanagara.com the rest of the site lives on the main domain
-const onCvSubdomain = window.location.hostname.startsWith('cv.');
-
-const print = () => window.print();
 </script>
 
 <template>
   <div class="cv-page min-h-screen bg-[#F4F4F5] px-4 py-6 text-ink md:py-12">
     <nav class="mx-auto mb-6 flex max-w-[52rem] items-center justify-between text-[15px] print:hidden">
-      <a v-if="onCvSubdomain" href="https://artenanagara.com/about" class="u-link">← Back to site</a>
-      <RouterLink v-else to="/about" class="u-link">← Back to site</RouterLink>
-      <button class="u-link" @click="print">Save as PDF</button>
+      <!-- cv.astro wires these up: the back link points at the main domain on the CV subdomain -->
+      <a href="/about" class="u-link" data-back-link>← Back to site</a>
+      <button class="u-link" data-print>Save as PDF</button>
     </nav>
 
     <article class="cv-sheet mx-auto max-w-[52rem] bg-white px-6 py-10 md:px-16 md:py-16">

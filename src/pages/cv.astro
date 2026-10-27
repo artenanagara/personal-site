@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CvView from '../cv/CvView.vue';
+---
+
+<BaseLayout
+  title="CV"
+  description="Curriculum vitae of Arttenna Dhyttya Nagara, Product Designer (UI/UX) for SaaS and manufacturing."
+  hideNavigation
+  hideFooter
+>
+  <CvView />
+</BaseLayout>
+
+<script>
+  // cv.artenanagara.com serves this page at its root (see vercel.json); the rest of the site lives on the main domain
+  if (location.hostname.startsWith('cv.')) {
+    document.querySelector<HTMLAnchorElement>('[data-back-link]')!.href = 'https://artenanagara.com/about';
+  }
+  document.querySelector('[data-print]')!.addEventListener('click', () => window.print());
+</script>

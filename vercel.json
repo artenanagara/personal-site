@@ -1,5 +1,7 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/", "has": [{ "type": "host", "value": "cv.artenanagara.com" }], "destination": "/cv" }
   ]
 }

@@ -1,0 +1,151 @@
+---
+import '../style.css';
+import NavigationBar from '../components/layout/NavigationBar.vue';
+import FooterSection from '../components/layout/FooterSection.vue';
+import CustomCursor from '../components/ui/CustomCursor.vue';
+import SpeedInsights from '@vercel/speed-insights/astro';
+import works from '../data/works';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogDescription?: string;
+  noindex?: boolean;
+  hideNavigation?: boolean;
+  hideFooter?: boolean;
+}
+
+const SITE = 'https://artenanagara.com';
+const DEFAULT_TITLE = 'Artena Nagara — Product Designer for SaaS, Web & Apps';
+const DEFAULT_DESCRIPTION =
+  'Artena Nagara is a freelance and contract product designer for SaaS, web, and apps. Clear interfaces, built to ship. Available worldwide.';
+
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  ogDescription = description,
+  noindex = false,
+  hideNavigation = false,
+  hideFooter = false,
+} = Astro.props;
+
+const fullTitle = title ? `${title} — Artena Nagara` : DEFAULT_TITLE;
+// Pages build as about.html / index.html; Vercel serves them without the extension
+const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), SITE).href;
+const ogImage = `${SITE}/og-image.jpg`;
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Artena Nagara',
+  alternateName: 'Arttenna Dhyttya Nagara',
+  jobTitle: 'Product Designer (UI/UX)',
+  description: 'Product designer and UI kit creator. Clear interfaces for SaaS, web, and apps, built to ship.',
+  url: `${SITE}/`,
+  image: ogImage,
+  knowsAbout: ['Product Design', 'SaaS Design', 'Web Design', 'App Design', 'UI Design', 'UX Design', 'Design Systems', 'UI Kits', 'Figma', 'Front-end Development'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Klaten',
+    addressRegion: 'Central Java',
+    addressCountry: 'ID',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/artenanagara',
+    'https://dribbble.com/artenanagara',
+    'https://instagram.com/artenanagara',
+    'https://x.com/artenanagara',
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFFFFF" />
+
+    <!-- Reveal styles only hide content once we know the script will show it again -->
+    <script is:inline>document.documentElement.classList.add('js');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Artena Nagara" />
+    <meta name="robots" content={noindex ? 'noindex' : 'index, follow'} />
+    {!noindex && <link rel="canonical" href={canonical} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Artena Nagara" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+  </head>
+
+  <body>
+    <div class="flex min-h-screen flex-col">
+      <main class="flex flex-grow flex-col">
+        <slot />
+      </main>
+      {!hideFooter && <FooterSection client:visible />}
+    </div>
+    {!hideNavigation && <NavigationBar client:load workCount={works.length} />}
+    <CustomCursor client:only="vue" />
+    <SpeedInsights />
+  </body>
+</html>
+
+<script>
+  import Lenis from 'lenis';
+
+  // data-reveal: adds .is-in when the element enters the viewport.
+  // data-reveal="200" sets a delay in ms; data-reveal-lines animates child .line-mask spans only;
+  // data-reveal-load plays on page load instead of waiting for scroll (for above-the-fold content).
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+  );
+
+  document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
+    if (el.dataset.reveal) el.style.setProperty('--d', `${el.dataset.reveal}ms`);
+    if ('revealLoad' in el.dataset) {
+      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('is-in')));
+      return;
+    }
+    observer.observe(el);
+  });
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const lenis = new Lenis({ lerp: 0.09 });
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+  }
+</script>

@@ -1,7 +1,5 @@
 <script setup>
-import { computed, onUnmounted } from 'vue';
-import { RouterLink } from 'vue-router';
-import { useCursor } from '../../composables/useCursor';
+import { computed } from 'vue';
 
 const props = defineProps({
   project: Object,
@@ -11,7 +9,6 @@ const props = defineProps({
   },
 });
 
-const { setCursor, resetCursor } = useCursor();
 
 const projectType = computed(() => props.project.type?.toLowerCase() || 'open');
 const isVisit = computed(() => projectType.value === 'visit');
@@ -24,7 +21,7 @@ const isClickable = computed(() => {
 const linkComponent = computed(() => {
   if (isVisit.value) return 'a';
   if (!isClickable.value) return 'div';
-  return RouterLink;
+  return 'a';
 });
 
 const linkBindings = computed(() => {
@@ -32,7 +29,7 @@ const linkBindings = computed(() => {
     return { href: props.project.url, target: '_blank', rel: 'noopener noreferrer' };
   }
   if (!isClickable.value) return {};
-  return { to: `/work/${props.project.id}` };
+  return { href: `/work/${props.project.id}` };
 });
 
 const cursorText = computed(() => {
@@ -43,7 +40,6 @@ const cursorText = computed(() => {
   return 'View';
 });
 
-onUnmounted(() => resetCursor());
 </script>
 
 <template>
@@ -52,8 +48,7 @@ onUnmounted(() => resetCursor());
     v-bind="linkBindings"
     class="group block"
     :class="{ 'opacity-50': !isClickable }"
-    @mouseenter="setCursor({ text: cursorText, variant: 'button' })"
-    @mouseleave="resetCursor()"
+    :data-cursor="cursorText"
   >
     <div class="relative overflow-hidden bg-hairline" :class="aspect">
       <img

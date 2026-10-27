@@ -2,23 +2,19 @@
   <header
     class="page-x fixed inset-x-0 top-0 z-[900] flex items-start justify-between py-5 text-white mix-blend-difference md:py-7"
   >
-    <RouterLink to="/" class="text-[15px] font-medium tracking-[-0.01em]" @click="isMenuOpen = false">
+    <a href="/" class="text-[15px] font-medium tracking-[-0.01em]" @click="isMenuOpen = false">
       Artena Nagara
-    </RouterLink>
-
-    <p class="mono-label absolute left-1/2 top-[22px] hidden -translate-x-1/2 opacity-70 lg:block md:top-[30px]">
-      Freelance Product Designer — Surakarta, {{ time }} WIB
-    </p>
+    </a>
 
     <nav class="hidden items-start gap-8 text-[15px] md:flex" aria-label="Main">
-      <RouterLink
+      <a
         v-for="link in links"
         :key="link.name"
-        :to="link.href"
+        :href="link.href"
         class="u-link"
       >
         {{ link.name }}<sup v-if="link.count" class="ml-0.5 font-mono text-[9px]">{{ link.count }}</sup>
-      </RouterLink>
+      </a>
       <a href="mailto:artenanagara22@gmail.com" class="u-link">Contact</a>
     </nav>
 
@@ -46,15 +42,15 @@
       class="page-x fixed inset-0 z-[800] flex flex-col justify-end bg-paper pb-10 text-ink md:hidden"
     >
       <nav class="flex flex-col" aria-label="Mobile">
-        <RouterLink
+        <a
           v-for="link in [{ name: 'Home', href: '/' }, ...links]"
           :key="link.name"
-          :to="link.href"
+          :href="link.href"
           class="border-t border-hairline py-3 text-[13vw] leading-none tracking-[-0.04em]"
           @click="isMenuOpen = false"
         >
           {{ link.name }}
-        </RouterLink>
+        </a>
         <a
           href="mailto:artenanagara22@gmail.com"
           class="border-y border-hairline py-3 text-[13vw] leading-none tracking-[-0.04em]"
@@ -70,13 +66,16 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { useLocalTime } from '../../composables/useLocalTime';
-import worksData from '../../data/works';
+
+const props = defineProps({
+  workCount: { type: Number, default: 0 },
+});
 
 const isMenuOpen = ref(false);
 const { time } = useLocalTime();
 
 const links = [
-  { name: 'Work', href: '/work', count: worksData.length },
+  { name: 'Work', href: '/work', count: props.workCount },
   { name: 'About', href: '/about' },
 ];
 

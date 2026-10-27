@@ -1,12 +1,7 @@
 <script setup>
-import { computed, onUnmounted } from 'vue';
-import { RouterLink } from 'vue-router';
-import FooterSection from '../components/layout/FooterSection.vue';
+import { computed } from 'vue';
 import works from '../data/works';
-import { useCursor } from '../composables/useCursor';
 
-const { setCursor, resetCursor } = useCursor();
-onUnmounted(() => resetCursor());
 
 // Featured projects lead; the first four fill the 2×2 grid at the top, the rest follow in three columns
 const ordered = [...works.filter((w) => w.featured), ...works.filter((w) => !w.featured)];
@@ -16,7 +11,7 @@ const rest = ordered.slice(4);
 const linkFor = (work) => {
   if (work.type === 'visit') return { is: 'a', href: work.url, target: '_blank', rel: 'noopener noreferrer' };
   if (work.type === 'soon') return { is: 'div' };
-  return { is: RouterLink, to: `/work/${work.id}` };
+  return { is: 'a', href: `/work/${work.id}` };
 };
 
 const cursorLabel = { visit: 'Visit ↗', soon: 'Soon' };
@@ -28,16 +23,16 @@ const years = computed(() => {
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col">
+  <div class="flex flex-grow flex-col">
     <!-- Masthead -->
     <section class="page-x pt-32 md:pt-40">
-      <div v-reveal class="mono-label flex justify-between border-b border-hairline pb-3 text-graphite">
+      <div data-reveal class="mono-label flex justify-between border-b border-hairline pb-3 text-graphite">
         <span>Selected work</span>
         <span class="hidden sm:inline">{{ years }}</span>
         <span>{{ works.length }} projects</span>
       </div>
 
-      <h1 v-reveal.lines class="mt-10 text-[clamp(2.75rem,7.2vw,7.5rem)] leading-[0.98] tracking-[-0.05em] md:mt-14">
+      <h1 data-reveal data-reveal-lines class="mt-10 text-[clamp(2.75rem,7.2vw,7.5rem)] leading-[0.98] tracking-[-0.05em] md:mt-14">
         <span class="line-mask"><span style="--d: 80ms">Ideas that left <span class="whitespace-nowrap">the canvas</span></span></span>
         <span class="line-mask md:pl-[12vw]"><span style="--d: 180ms">and went <em class="serif-i">live.</em></span></span>
       </h1>
@@ -46,14 +41,13 @@ const years = computed(() => {
     <!-- Featured: 2×2 grid -->
     <section class="page-x pt-20 md:pt-28">
       <ul class="grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2 md:gap-y-24">
-        <li v-for="(work, index) in featured" :id="`work-${work.id}`" :key="work.id" v-reveal="(index % 2) * 120">
+        <li v-for="(work, index) in featured" :id="`work-${work.id}`" :key="work.id" :data-reveal="(index % 2) * 120">
           <component
             :is="linkFor(work).is"
             v-bind="{ ...linkFor(work), is: undefined }"
             class="group block"
             :class="{ 'cursor-default': work.type === 'soon' }"
-            @mouseenter="setCursor({ text: cursorLabel[work.type] || 'View', variant: 'button' })"
-            @mouseleave="resetCursor()"
+            :data-cursor="cursorLabel[work.type] || 'View'"
           >
             <div class="relative aspect-[4/3] overflow-hidden bg-hairline">
               <img
@@ -93,14 +87,13 @@ const years = computed(() => {
     <!-- The rest continue the same list in three columns -->
     <section class="page-x flex-grow pb-32 pt-16 md:pb-48 md:pt-24">
       <ul class="grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-        <li v-for="(work, index) in rest" :id="`work-${work.id}`" :key="work.id" v-reveal="(index % 3) * 90">
+        <li v-for="(work, index) in rest" :id="`work-${work.id}`" :key="work.id" :data-reveal="(index % 3) * 90">
           <component
             :is="linkFor(work).is"
             v-bind="{ ...linkFor(work), is: undefined }"
             class="group block"
             :class="{ 'cursor-default': work.type === 'soon' }"
-            @mouseenter="setCursor({ text: cursorLabel[work.type] || 'View', variant: 'button' })"
-            @mouseleave="resetCursor()"
+            :data-cursor="cursorLabel[work.type] || 'View'"
           >
             <div class="relative aspect-[4/5] overflow-hidden bg-hairline">
               <img
@@ -136,7 +129,5 @@ const years = computed(() => {
         </li>
       </ul>
     </section>
-
-    <FooterSection />
   </div>
 </template>
