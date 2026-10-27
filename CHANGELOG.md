@@ -5,20 +5,19 @@ Format dan aturan: `~/Documents/AGENTS.md` bagian Changelog. Terbaru di atas.
 > Riwayat sebelum 2026-10-27 **direkonstruksi** dari git log, README, dan tanggal file. Detail per commit tetap ada di `git log`.
 
 ## [Belum dirilis]
-### Ditambah
-- `AGENTS.md` (+ `CLAUDE.md`, `GEMINI.md`): aturan update works dari project lain
-- CV: pengalaman Zenko dan Pickin, skill Back-End & Mobile, AI Workflow diperluas
-### Diubah
-- Folder portfolio lama dipindah ke `~/Documents/Project/_archive/portfolio`
 
 ## 2026-10-28
 ### Ditambah
+- `AGENTS.md` (+ `CLAUDE.md`, `GEMINI.md`): aturan update works dari project lain
+- CV: pengalaman Zenko dan Pickin, skill Back-End & Mobile, AI Workflow diperluas
 - Case study: Goals bernomor di Problem, section Result (ringkasan + daftar hasil) menggantikan Summary
 - Exmood: juara 1 DIMAS-TI AMLI 2022, riset dan skor usability 14.2/15
 ### Diubah
 - Template section teks case study: eyebrow tetap (Problem, Challenge, Solution, Result), title, body; Solution dengan satu gambar di samping
 - Copy semua case study ditulis ulang mengikuti `docs/copywriting.md`; Pickin dan Zenko disusun ulang ke empat section
 - Metadata case study seragam: Role, Deliverables, Platform, Year
+- Pickin dan Zenko: Role disamakan dengan CV (Product Designer & Full-Stack Developer)
+- Folder portfolio lama dipindah ke `~/Documents/Project/_archive/portfolio`
 - Halaman Work: masthead tanpa divider, label (Selected work), indeks Years dan Projects
 - Hero: slogan "Clear interfaces, built to ship." menggantikan label Portfolio
 

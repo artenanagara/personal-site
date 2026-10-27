@@ -46,6 +46,29 @@ export const experience = [
     ],
   },
   {
+    role: 'Product Designer & Full-Stack Developer',
+    company: 'Zenko (EdTech, own product)',
+    location: 'Remote',
+    period: 'August 2026 - Present',
+    points: [
+      'Designed and built Zenko (zenkoedu.id), an online practice and tryout marketplace, across a Go (Fiber) API, a Nuxt 4 web app, and a Flutter mobile app.',
+      'Built a shared design system for Nuxt and Flutter so both platforms use the same components, typography, and tokens, with API contracts kept in sync across platforms.',
+      'Set up versioned releases (release-please, GitHub Actions), staged deployments for staging, demo, and production, and Playwright end-to-end tests.',
+      'Built Zencrew, an internal AI agent crew controlled from a Telegram bot that runs Claude Code sessions to plan, build, review, and test features as pull requests, and drafts SEO articles for approval.',
+      'Runs multi-agent development with Codex specialist agents (architect, API, web, Flutter, QA, reviewer) under shared parity and deployment rules.',
+    ],
+  },
+  {
+    role: 'Product Designer & Full-Stack Developer',
+    company: 'Pickin (Photo selection web app, own product)',
+    location: 'Remote',
+    period: 'September 2026 - Present',
+    points: [
+      'Designed and built Pickin (pickin.id), a photo selection gallery for photographers in Indonesia: clients tap a heart on the photos they want and send their picks through WhatsApp, while photos stay in the photographer\'s Google Drive.',
+      'Built the backend in Go (chi, sqlc, goose, MySQL 8) and the frontend in Svelte 5 and TypeScript, with Google sign-in, Google Drive API, online payments, and an admin dashboard.',
+    ],
+  },
+  {
     role: 'UI/UX Designer (Apprenticeship)',
     company: 'Kembar Futagroup',
     location: 'Klaten, Central Java',
@@ -132,8 +155,9 @@ export const journey = experience
 export const skills = [
   { label: 'Product Design', value: 'User Research, Information Architecture, Wireframing, Prototyping, Usability Testing, Design Systems, Design Handoff' },
   { label: 'Design Tools', value: 'Figma (Components, Variables, Auto Layout), FigJam, Maze, Photoshop, Illustrator' },
-  { label: 'Front-End', value: 'React, Next.js, TypeScript, JavaScript, Vue, Tailwind CSS, HTML, CSS' },
-  { label: 'AI Workflow', value: 'Claude Code (AI-assisted design-to-code and rapid prototyping)' },
+  { label: 'Front-End', value: 'React, Next.js, Vue, Nuxt, Svelte, TypeScript, JavaScript, Tailwind CSS, HTML, CSS' },
+  { label: 'Back-End & Mobile', value: 'Go (Fiber, chi, sqlc), MySQL, REST APIs, Flutter' },
+  { label: 'AI Workflow', value: 'Claude Code, Codex, multi-agent workflows, MCP, LLM APIs (Claude, DeepSeek), AI-assisted design-to-code and rapid prototyping' },
   { label: 'CMS & No-code', value: 'WordPress, Elementor, Framer' },
   { label: 'Workflow', value: 'GitHub, Notion, Trello' },
 ];
