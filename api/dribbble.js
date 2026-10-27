@@ -4,6 +4,21 @@
 
 const LIMIT = 12;
 
+// The Dribbble API doesn't return the video for motion shots, so their videos are kept in
+// public/videos/dribbble and matched here by shot id (compressed to 1024px, no audio).
+const LOCAL_VIDEOS = {
+  27843696: '/videos/dribbble/fluora-roleplay-calls.mp4', // Fluora: AI Roleplay Calls with Whisper Hints
+};
+
+// Dribbble hands out 3200px images (1–2 MB each); the marquee cards are at most ~430px wide,
+// so ask the CDN for 1024px instead. Keeps any crop Dribbble set.
+const sized = (url) => {
+  if (!url) return url;
+  const u = new URL(url);
+  u.searchParams.set('resize', '1024x768');
+  return u.toString();
+};
+
 export default async function handler(req, res) {
   const token = process.env.DRIBBBLE_TOKEN;
   if (!token) {
@@ -22,9 +37,9 @@ export default async function handler(req, res) {
       .map((shot) => ({
         title: shot.title,
         link: shot.html_url,
-        image: shot.images?.hidpi || shot.images?.normal,
+        image: sized(shot.images?.hidpi || shot.images?.normal),
         // Video shots: images hold only the first frame, the motion lives here
-        video: shot.video?.large_preview_url || shot.video?.url || null,
+        video: LOCAL_VIDEOS[shot.id] || shot.video?.large_preview_url || shot.video?.url || null,
       }))
       .filter((item) => item.link && item.image);
 

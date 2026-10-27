@@ -11,7 +11,7 @@ npm run preview  # serve the build
 - `src/pages/` — one file per route; `work/[id].astro` builds a page per JSON file in `src/data/work-details/`
 - `src/layouts/BaseLayout.astro` — head tags (title, description, canonical, Open Graph, JSON-LD), nav, footer, cursor, scroll reveal, Lenis
 - `src/components/`, `src/views/` — Vue components; most render to static HTML, only the nav, footer clock, cursor, and Dribbble marquee hydrate
-- `api/dribbble.js` — Vercel function behind the home page marquee (needs `DRIBBBLE_TOKEN`)
+- `api/dribbble.js` — Vercel function behind the home page marquee (needs `DRIBBBLE_TOKEN`). The API doesn't return videos for motion shots: put a compressed mp4 in `public/videos/dribbble/` and add the shot id to `LOCAL_VIDEOS`
 - `vercel.json` — clean URLs; `middleware.js` serves `/cv` at the root of `cv.artenanagara.com`
 
 Scroll reveal: add `data-reveal` (optionally `data-reveal="200"` for a delay in ms, `data-reveal-lines` for `.line-mask` headings, `data-reveal-load` for above-the-fold content). Cursor label on hover: `data-cursor="View"`.

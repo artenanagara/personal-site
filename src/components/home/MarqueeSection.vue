@@ -60,6 +60,7 @@
               :src="item.image"
               :alt="item.title"
               loading="lazy"
+              decoding="async"
               class="h-full w-full object-cover transition-transform duration-[1600ms] ease-out-expo group-hover:scale-[1.04]"
             />
           </a>

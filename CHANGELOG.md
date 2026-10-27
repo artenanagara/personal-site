@@ -6,6 +6,12 @@ Format dan aturan: `~/Documents/AGENTS.md` bagian Changelog. Terbaru di atas.
 
 ## [Belum dirilis]
 
+## 2026-10-28 (4)
+### Ditambah
+- Marquee: video shot Fluora (AI Roleplay Calls) dari bahan UI8, dikompres ke 1024px tanpa audio (2.8 MB → 0.7 MB), disimpan di `public/videos/dribbble/`
+### Diperbaiki
+- Gambar terlalu berat (hover kartu tersendat): semua gambar di `public/images` dikecilkan ke maks. 2000px, WebP q80 (31.4 MB → 7.9 MB); gambar marquee Dribbble diminta 1024px (±1.5 MB → ±350 KB per gambar); decoding async di kartu
+
 ## 2026-10-28 (3)
 ### Ditambah
 - Marquee Explorations: shot video Dribbble diputar (muted, loop), gambar diam jadi poster

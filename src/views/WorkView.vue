@@ -64,6 +64,7 @@ const years = computed(() => {
                 :src="work.cover.default"
                 :alt="work.title"
                 loading="lazy"
+                decoding="async"
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1800ms] ease-out-expo group-hover:scale-[1.03]"
               />
               <img
@@ -71,6 +72,7 @@ const years = computed(() => {
                 :src="work.cover.hover || work.featured.image"
                 alt=""
                 loading="lazy"
+                decoding="async"
                 class="absolute inset-0 h-full w-full object-cover transition-[clip-path] duration-1000 ease-out-expo [clip-path:inset(100%_0_0_0)] group-hover:[clip-path:inset(0_0_0_0)]"
               />
               <span
@@ -110,6 +112,7 @@ const years = computed(() => {
                 :src="work.cover.default"
                 :alt="work.title"
                 loading="lazy"
+                decoding="async"
                 class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1600ms] ease-out-expo group-hover:scale-[1.04]"
               />
               <img
@@ -117,6 +120,7 @@ const years = computed(() => {
                 :src="work.cover.hover"
                 alt=""
                 loading="lazy"
+                decoding="async"
                 class="absolute inset-0 h-full w-full object-cover transition-[clip-path] duration-1000 ease-out-expo [clip-path:inset(100%_0_0_0)] group-hover:[clip-path:inset(0_0_0_0)]"
               />
               <span
