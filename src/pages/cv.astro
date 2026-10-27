@@ -13,7 +13,7 @@ import CvView from '../cv/CvView.vue';
 </BaseLayout>
 
 <script>
-  // cv.artenanagara.com serves this page at its root (see vercel.json); the rest of the site lives on the main domain
+  // cv.artenanagara.com serves this page at its root (see middleware.js); the rest of the site lives on the main domain
   if (location.hostname.startsWith('cv.')) {
     document.querySelector<HTMLAnchorElement>('[data-back-link]')!.href = 'https://artenanagara.com/about';
   }
