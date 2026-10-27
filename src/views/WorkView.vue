@@ -11,7 +11,7 @@ const rest = ordered.slice(4);
 const linkFor = (work) => {
   if (work.type === 'visit') return { is: 'a', href: work.url, target: '_blank', rel: 'noopener noreferrer' };
   if (work.type === 'soon') return { is: 'div' };
-  return { is: 'a', href: `/work/${work.id}` };
+  return { is: 'a', href: `/work/${work.id}`, 'data-transition-label': work.title };
 };
 
 const cursorLabel = { visit: 'Visit ↗', soon: 'Soon' };
@@ -25,7 +25,7 @@ const years = computed(() => {
 <template>
   <div class="flex flex-grow flex-col">
     <!-- Masthead -->
-    <!-- Marginal label, the headline, then a small index set off to the right, no rules -->
+    <!-- Marginal label, the headline, a small index set off to the right, then one rule before the work -->
     <section class="page-x pt-32 md:pt-44">
       <p data-reveal class="mono-label text-graphite">(Selected work)</p>
 
@@ -44,6 +44,8 @@ const years = computed(() => {
           <dd class="mt-1 text-[15px]">{{ String(works.length).padStart(2, '0') }}</dd>
         </div>
       </dl>
+
+      <hr data-reveal="350" class="mt-16 border-hairline md:mt-24" />
     </section>
 
     <!-- Featured: 2×2 grid -->

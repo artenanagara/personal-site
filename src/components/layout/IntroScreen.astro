@@ -1,0 +1,160 @@
+---
+// First page of a visit: a black screen greets in five languages, ending in Indonesian,
+// then lifts away to reveal the page underneath. Shown once per session (see BaseLayout).
+const greetings = [
+  { lang: 'English', text: "Hello, I'm" },
+  { lang: 'Español', text: 'Hola, soy' },
+  { lang: 'Français', text: 'Bonjour, je suis' },
+  { lang: 'Italiano', text: 'Ciao, sono' },
+  { lang: 'Bahasa Indonesia', text: 'Halo, saya' },
+];
+---
+
+<div id="intro" class="intro page-x bg-ink text-paper" aria-hidden="true">
+  <div class="flex flex-col items-center gap-5">
+    <p class="mono-label text-paper/50" data-intro-lang>{greetings[0].lang}</p>
+    <p class="intro-line text-[clamp(2.25rem,7vw,6rem)] leading-[1.05] tracking-[-0.045em]">
+      {
+        greetings.map((g) => (
+          <span class="intro-greeting" data-greeting data-lang={g.lang}>
+            {g.text} <em class="serif-i">Artena.</em>
+          </span>
+        ))
+      }
+    </p>
+  </div>
+  <p class="mono-label absolute bottom-6 left-1/2 -translate-x-1/2 text-paper/50 md:bottom-8" data-intro-count>
+    01 / {String(greetings.length).padStart(2, '0')}
+  </p>
+</div>
+
+<style is:global>
+  .intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Only on screen while it plays, or while it lifts away */
+  html:not(.intro-on) .intro:not(.is-lifting) {
+    display: none;
+  }
+
+  html.intro-on {
+    overflow: hidden;
+  }
+
+  /* Curved trailing edge, flattening as the screen lifts (same motion as the page curtain) */
+  .intro::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -10%;
+    right: -10%;
+    height: 16vh;
+    background: inherit;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  /* The screen lifts up and off, so the page opens from the bottom */
+  .intro.is-lifting {
+    animation: curtain-out 1.05s var(--ease-in-out-quart) forwards;
+  }
+
+  .intro.is-lifting::after {
+    animation: curtain-edge 1.05s var(--ease-in-out-quart) forwards;
+  }
+
+  html.intro-on #page {
+    transform: translateY(10vh);
+  }
+
+  /* All greetings share one grid cell, so the line is as wide as the longest one */
+  .intro-line {
+    display: grid;
+    overflow: hidden;
+    padding-bottom: 0.12em;
+    text-align: center;
+  }
+
+  .intro-greeting {
+    grid-area: 1 / 1;
+    white-space: nowrap;
+    transform: translateY(110%);
+    transition: transform 0.7s var(--ease-out-expo);
+  }
+
+  .intro-greeting.is-active {
+    transform: none;
+  }
+
+  .intro-greeting.is-past {
+    transform: translateY(-110%);
+  }
+</style>
+
+<script>
+  const root = document.documentElement;
+  const intro = document.getElementById('intro');
+
+  if (intro && root.classList.contains('intro-on')) {
+    const greetings = [...intro.querySelectorAll<HTMLElement>('[data-greeting]')];
+    const lang = intro.querySelector<HTMLElement>('[data-intro-lang]')!;
+    const count = intro.querySelector<HTMLElement>('[data-intro-count]')!;
+    const total = String(greetings.length).padStart(2, '0');
+
+    const STEP = 520; // each greeting
+    const HOLD = 1100; // the last one, in Indonesian, stays a little longer
+
+    const show = (n: number) => {
+      greetings.forEach((el, k) => {
+        el.classList.toggle('is-active', k === n);
+        el.classList.toggle('is-past', k < n);
+      });
+      lang.textContent = greetings[n].dataset.lang ?? '';
+      count.textContent = `${String(n + 1).padStart(2, '0')} / ${total}`;
+    };
+
+    const lift = () => {
+      try {
+        sessionStorage.setItem('intro-seen', '1');
+      } catch {}
+      // The last greeting slides out, then the screen lifts and the page settles into place
+      greetings[greetings.length - 1].classList.add('is-past');
+      setTimeout(() => {
+        intro.classList.add('is-lifting');
+        root.classList.add('page-opening');
+        root.classList.remove('intro-on');
+        document.dispatchEvent(new CustomEvent('page:open'));
+        intro.addEventListener(
+          'animationend',
+          () => {
+            intro.remove();
+            root.classList.remove('page-opening');
+          },
+          { once: true }
+        );
+      }, 300);
+    };
+
+    let current = 0;
+    const next = () => {
+      current += 1;
+      if (current >= greetings.length) return lift();
+      show(current);
+      setTimeout(next, current === greetings.length - 1 ? HOLD : STEP);
+    };
+
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        show(0);
+        setTimeout(next, STEP + 150);
+      })
+    );
+  }
+</script>

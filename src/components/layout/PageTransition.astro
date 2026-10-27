@@ -1,0 +1,200 @@
+---
+// Moving between pages: a black curtain rises over the old page (its leading edge curved, flattening
+// as it lands) while the old content drifts up and dims. The browser navigates, the destination's
+// name slides out, and the curtain lifts away with a curved trailing edge as the new page settles in.
+// The name rides along in sessionStorage so both halves show the same label.
+---
+
+<div id="curtain" class="curtain bg-ink text-paper" aria-hidden="true">
+  <span class="curtain-mask">
+    <span class="curtain-label serif-i text-[clamp(2.5rem,8vw,7rem)] leading-none" data-curtain-label></span>
+  </span>
+</div>
+
+<style is:global>
+  .curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transform: translateY(100%);
+  }
+
+  /* Curved leading (top) and trailing (bottom) edges; each flattens as the curtain moves */
+  .curtain::before,
+  .curtain::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    height: 16vh;
+    background: inherit;
+    transform: scaleY(0);
+  }
+
+  .curtain::before {
+    bottom: 100%;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    transform-origin: bottom;
+  }
+
+  .curtain::after {
+    top: 100%;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    transform-origin: top;
+  }
+
+  .curtain-mask {
+    display: block;
+    overflow: hidden;
+    padding: 0.05em 0.1em 0.15em;
+  }
+
+  .curtain-label {
+    display: block;
+    transform: translateY(115%);
+  }
+
+  /* Leaving a page */
+  .curtain.is-covering {
+    animation: curtain-in 0.85s var(--ease-in-out-quart) forwards;
+  }
+
+  .curtain.is-covering::before {
+    animation: curtain-edge 0.85s var(--ease-in-out-quart) forwards;
+  }
+
+  .curtain.is-covering .curtain-label {
+    animation: curtain-label-in 0.9s var(--ease-out-expo) 0.3s forwards;
+  }
+
+  html.is-departing #page {
+    transform: translateY(-6vh);
+    opacity: 0.4;
+    transition:
+      transform 0.85s var(--ease-in-out-quart),
+      opacity 0.85s var(--ease-in-out-quart);
+  }
+
+  /* Arriving on a page: start covered, with the name in place and the content set a little low */
+  html.page-enter .curtain {
+    transform: none;
+  }
+
+  html.page-enter .curtain-label {
+    transform: none;
+  }
+
+  html.page-enter #page {
+    transform: translateY(10vh);
+  }
+
+  html.page-opening #page {
+    transition: transform 1.3s var(--ease-out-expo);
+  }
+
+  .curtain.is-label-out .curtain-label {
+    animation: curtain-label-out 0.55s var(--ease-in-out-quart) forwards;
+  }
+
+  html .curtain.is-leaving {
+    animation: curtain-out 1.05s var(--ease-in-out-quart) forwards;
+  }
+
+  .curtain.is-leaving::after {
+    animation: curtain-edge 1.05s var(--ease-in-out-quart) forwards;
+  }
+
+  @keyframes curtain-in {
+    from { transform: translateY(100%); }
+    to { transform: none; }
+  }
+
+  @keyframes curtain-out {
+    from { transform: none; }
+    to { transform: translateY(-100%); }
+  }
+
+  @keyframes curtain-edge {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0); }
+  }
+
+  @keyframes curtain-label-in {
+    from { transform: translateY(115%); }
+    to { transform: none; }
+  }
+
+  @keyframes curtain-label-out {
+    from { transform: none; }
+    to { transform: translateY(-115%); }
+  }
+</style>
+
+<script>
+  const KEY = 'page-transition';
+  const root = document.documentElement;
+  const curtain = document.getElementById('curtain')!;
+  const label = curtain.querySelector<HTMLElement>('[data-curtain-label]')!;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const COVER_MS = 850;
+  const NAMES: Record<string, string> = { '/': 'Home', '/work': 'Work', '/about': 'About', '/cv': 'CV' };
+  const nameFor = (link: HTMLAnchorElement, url: URL) =>
+    link.dataset.transitionLabel || NAMES[url.pathname.replace(/\/$/, '') || '/'] || 'Artena Nagara';
+
+  // Arrival: the name slides out, then the curtain lifts and the page settles into place
+  if (root.classList.contains('page-enter')) {
+    try {
+      label.textContent = sessionStorage.getItem(KEY) || '';
+      sessionStorage.removeItem(KEY);
+    } catch {}
+
+    setTimeout(() => curtain.classList.add('is-label-out'), 150);
+    setTimeout(() => {
+      curtain.classList.add('is-leaving');
+      root.classList.add('page-opening');
+      root.classList.remove('page-enter');
+      document.dispatchEvent(new CustomEvent('page:open'));
+      curtain.addEventListener(
+        'animationend',
+        () => {
+          curtain.classList.remove('is-leaving', 'is-label-out');
+          root.classList.remove('page-opening');
+        },
+        { once: true }
+      );
+    }, 450);
+  }
+
+  // Departure: cover the page, then navigate
+  document.addEventListener('click', (e) => {
+    if (reduced || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const link = (e.target as HTMLElement).closest?.('a[href]') as HTMLAnchorElement | null;
+    if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+
+    const url = new URL(link.href, location.href);
+    if (url.origin !== location.origin || url.pathname.startsWith('/api/')) return;
+    if (url.pathname === location.pathname && url.search === location.search) return; // same page or #hash
+
+    e.preventDefault();
+    const name = nameFor(link, url);
+    label.textContent = name;
+    try {
+      sessionStorage.setItem(KEY, name);
+    } catch {}
+    curtain.classList.add('is-covering');
+    root.classList.add('is-departing');
+    setTimeout(() => (location.href = url.href), COVER_MS);
+  });
+
+  // Back/forward can restore this page from the cache with the curtain still down
+  window.addEventListener('pageshow', (e) => {
+    if (!e.persisted) return;
+    curtain.classList.remove('is-covering', 'is-leaving', 'is-label-out');
+    root.classList.remove('is-departing', 'page-enter', 'page-opening');
+  });
+</script>

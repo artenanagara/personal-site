@@ -29,7 +29,7 @@ const linkBindings = computed(() => {
     return { href: props.project.url, target: '_blank', rel: 'noopener noreferrer' };
   }
   if (!isClickable.value) return {};
-  return { href: `/work/${props.project.id}` };
+  return { href: `/work/${props.project.id}`, 'data-transition-label': props.project.title };
 });
 
 const cursorText = computed(() => {

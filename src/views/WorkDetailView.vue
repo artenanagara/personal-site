@@ -140,6 +140,7 @@ const pointText = (point) => (typeof point === 'string' ? point : point.text);
     <a
       v-if="nextProject"
       :href="`/work/${nextProject.id}`"
+      :data-transition-label="nextProject.title"
       class="page-x group block border-t border-hairline pb-24 pt-8 md:pb-32"
       data-cursor="Next"
     >

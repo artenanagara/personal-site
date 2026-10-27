@@ -3,6 +3,8 @@ import '../style.css';
 import NavigationBar from '../components/layout/NavigationBar.vue';
 import FooterSection from '../components/layout/FooterSection.vue';
 import CustomCursor from '../components/ui/CustomCursor.vue';
+import IntroScreen from '../components/layout/IntroScreen.astro';
+import PageTransition from '../components/layout/PageTransition.astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
 import works from '../data/works';
 
@@ -13,6 +15,7 @@ interface Props {
   noindex?: boolean;
   hideNavigation?: boolean;
   hideFooter?: boolean;
+  intro?: boolean;
 }
 
 const SITE = 'https://artenanagara.com';
@@ -27,6 +30,7 @@ const {
   noindex = false,
   hideNavigation = false,
   hideFooter = false,
+  intro = true,
 } = Astro.props;
 
 const fullTitle = title ? `${title} — Artena Nagara` : DEFAULT_TITLE;
@@ -64,11 +68,36 @@ const person = {
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FFFFFF" />
 
     <!-- Reveal styles only hide content once we know the script will show it again -->
     <script is:inline>document.documentElement.classList.add('js');</script>
+    {
+      intro && (
+        <script is:inline>
+          // The greeting screen plays once per session, and never for reduced motion
+          try {
+            if (!sessionStorage.getItem('intro-seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+              document.documentElement.classList.add('intro-on');
+            }
+          } catch (e) {}
+        </script>
+      )
+    }
+    <script is:inline>
+      // Arriving through a page transition: start behind the curtain (see PageTransition)
+      try {
+        if (sessionStorage.getItem('page-transition') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('page-enter');
+        }
+      } catch (e) {}
+      // Never leave the page covered if the transition scripts fail to load
+      setTimeout(function () {
+        document.documentElement.classList.remove('page-enter', 'intro-on');
+      }, 8000);
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -101,7 +130,9 @@ const person = {
   </head>
 
   <body>
-    <div class="flex min-h-screen flex-col">
+    {intro && <IntroScreen />}
+    <PageTransition />
+    <div id="page" class="flex min-h-screen flex-col">
       <main class="flex flex-grow flex-col">
         <slot />
       </main>
@@ -131,21 +162,31 @@ const person = {
     { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
   );
 
-  document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
-    if (el.dataset.reveal) el.style.setProperty('--d', `${el.dataset.reveal}ms`);
-    if ('revealLoad' in el.dataset) {
-      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('is-in')));
-      return;
-    }
-    observer.observe(el);
-  });
+  const start = () => {
+    document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
+      if (el.dataset.reveal) el.style.setProperty('--d', `${el.dataset.reveal}ms`);
+      if ('revealLoad' in el.dataset) {
+        requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('is-in')));
+        return;
+      }
+      observer.observe(el);
+    });
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const lenis = new Lenis({ lerp: 0.09 });
-    const raf = (time: number) => {
-      lenis.raf(time);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const lenis = new Lenis({ lerp: 0.09 });
+      const raf = (time: number) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
       requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
+    }
+  };
+
+  // While the greeting screen or the page curtain is down, hold reveals and smooth scroll until it lifts
+  const covered = ['intro-on', 'page-enter'].some((c) => document.documentElement.classList.contains(c));
+  if (covered) {
+    document.addEventListener('page:open', start, { once: true });
+  } else {
+    start();
   }
 </script>

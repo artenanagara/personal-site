@@ -12,6 +12,9 @@ Format dan aturan: `~/Documents/AGENTS.md` bagian Changelog. Terbaru di atas.
 - CV: pengalaman Zenko dan Pickin, skill Back-End & Mobile, AI Workflow diperluas
 - Case study: Goals bernomor di Problem, section Result (ringkasan + daftar hasil) menggantikan Summary
 - Exmood: juara 1 DIMAS-TI AMLI 2022, riset dan skor usability 14.2/15
+- Intro: sapaan 5 bahasa (terakhir Bahasa Indonesia) di layar hitam yang terangkat ke atas, sekali per sesi
+- Transisi pindah halaman: tirai hitam bertepi lengkung, nama halaman tujuan, konten masuk dengan parallax; prefetch saat hover
+- Halaman Work: divider di bawah indeks Years dan Projects
 ### Diubah
 - Template section teks case study: eyebrow tetap (Problem, Challenge, Solution, Result), title, body; Solution dengan satu gambar di samping
 - Copy semua case study ditulis ulang mengikuti `docs/copywriting.md`; Pickin dan Zenko disusun ulang ke empat section
@@ -20,6 +23,9 @@ Format dan aturan: `~/Documents/AGENTS.md` bagian Changelog. Terbaru di atas.
 - Folder portfolio lama dipindah ke `~/Documents/Project/_archive/portfolio`
 - Halaman Work: masthead tanpa divider, label (Selected work), indeks Years dan Projects
 - Hero: slogan "Clear interfaces, built to ship." menggantikan label Portfolio
+### Diperbaiki
+- Zenko: Platform kembali ke "Website, mobile web" karena aplikasi Flutter masih dikembangkan
+- Favicon 404 di production: file tercatat di git sebagai `icon.PNG`, server Vercel membedakan huruf besar
 
 ## 2026-10-27
 ### Diubah
