@@ -42,7 +42,21 @@
             class="group relative block h-[160px] w-[213px] shrink-0 overflow-hidden bg-hairline md:h-[22vw] md:max-h-[320px] md:w-[29.33vw] md:max-w-[427px]"
             data-cursor="Dribbble ↗"
           >
+            <!-- Video shots play silently on loop; the still frame shows while the video loads -->
+            <video
+              v-if="item.video"
+              :src="item.video"
+              :poster="item.image"
+              :aria-label="item.title"
+              muted
+              autoplay
+              loop
+              playsinline
+              class="h-full w-full object-cover transition-transform duration-[1600ms] ease-out-expo group-hover:scale-[1.04]"
+              @canplay="playMuted"
+            ></video>
             <img
+              v-else
               :src="item.image"
               :alt="item.title"
               loading="lazy"
@@ -71,6 +85,22 @@ const fallbackItems = [
 
 const items = ref(fallbackItems);
 
+// Autoplay needs the muted property set on the element itself, which Vue's attribute alone doesn't guarantee
+const playMuted = (e) => {
+  e.target.muted = true;
+  e.target.play().catch(() => {});
+};
+
+// A new order on every visit. Shuffled after mount so the static HTML and hydration still match.
+const shuffle = (list) => {
+  const out = [...list];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+};
+
 // Shots alternate between the two rows. A short row repeats its shots so it's always wider
 // than the screen and loops without a gap.
 const MIN_PER_ROW = 6;
@@ -96,12 +126,13 @@ onMounted(async () => {
     });
   });
   tracks.forEach((el) => el && resizeObserver.observe(el));
+  items.value = shuffle(items.value);
 
   try {
     const response = await fetch('/api/dribbble');
     if (!response.ok) return;
     const shots = await response.json();
-    if (Array.isArray(shots) && shots.length) items.value = shots;
+    if (Array.isArray(shots) && shots.length) items.value = shuffle(shots);
   } catch {
     // Keep the fallback list
   }

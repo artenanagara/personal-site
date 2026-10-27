@@ -6,6 +6,12 @@ Format dan aturan: `~/Documents/AGENTS.md` bagian Changelog. Terbaru di atas.
 
 ## [Belum dirilis]
 
+## 2026-10-28 (3)
+### Ditambah
+- Marquee Explorations: shot video Dribbble diputar (muted, loop), gambar diam jadi poster
+### Diubah
+- Marquee Explorations: urutan shot diacak setiap kunjungan
+
 ## 2026-10-28 (2)
 ### Diubah
 - Marquee Explorations jadi dua baris berlawanan arah, kartu sedikit lebih kecil

@@ -23,6 +23,8 @@ export default async function handler(req, res) {
         title: shot.title,
         link: shot.html_url,
         image: shot.images?.hidpi || shot.images?.normal,
+        // Video shots: images hold only the first frame, the motion lives here
+        video: shot.video?.large_preview_url || shot.video?.url || null,
       }))
       .filter((item) => item.link && item.image);
 
