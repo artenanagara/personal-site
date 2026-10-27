@@ -16,18 +16,30 @@
       >Dribbble ↗</a>
     </div>
 
-    <!-- Reveal on a viewport-wide wrapper: the track itself is too wide to reach the reveal threshold -->
-    <div data-reveal="150">
-      <div class="marquee flex w-max select-none">
-        <div v-for="set in 2" :key="set" class="marquee-track flex gap-4 pr-4" :aria-hidden="set === 2">
+    <!-- Two rows moving in opposite directions. Reveal on a viewport-wide wrapper: the tracks are too wide to reach the reveal threshold -->
+    <div data-reveal="150" class="flex flex-col gap-4">
+      <div
+        v-for="(row, r) in rows"
+        :key="r"
+        class="marquee flex w-max select-none"
+        :class="{ 'marquee-reverse': r === 1 }"
+        :style="{ '--marquee-duration': durations[r] }"
+      >
+        <div
+          v-for="set in 2"
+          :key="set"
+          :ref="(el) => set === 1 && (tracks[r] = el)"
+          class="marquee-track flex gap-4 pr-4"
+          :aria-hidden="set === 2"
+        >
           <a
-            v-for="(item, index) in items"
+            v-for="(item, index) in row"
             :key="`${set}-${index}`"
             :href="item.link"
             target="_blank"
             rel="noopener noreferrer"
             :tabindex="set === 2 ? -1 : null"
-            class="group relative block aspect-[4/3] h-[220px] shrink-0 overflow-hidden bg-hairline md:h-[30vw] md:max-h-[420px]"
+            class="group relative block h-[160px] w-[213px] shrink-0 overflow-hidden bg-hairline md:h-[22vw] md:max-h-[320px] md:w-[29.33vw] md:max-w-[427px]"
             data-cursor="Dribbble ↗"
           >
             <img
@@ -44,7 +56,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 
 // Shown until the latest shots load from /api/dribbble, and kept if that request fails
 const fallbackItems = [
@@ -59,7 +71,32 @@ const fallbackItems = [
 
 const items = ref(fallbackItems);
 
+// Shots alternate between the two rows. A short row repeats its shots so it's always wider
+// than the screen and loops without a gap.
+const MIN_PER_ROW = 6;
+const fill = (list) => {
+  let out = [...list];
+  while (list.length && out.length < MIN_PER_ROW) out = out.concat(list);
+  return out;
+};
+const rows = computed(() => [0, 1].map((r) => fill(items.value.filter((_, i) => i % 2 === r))));
+
+// Constant speed in pixels per second, so both rows move the same in every browser
+// and don't speed up when more shots arrive from Dribbble.
+const SPEED = 70;
+const tracks = [];
+const durations = ref(['80s', '80s']);
+let resizeObserver;
+
 onMounted(async () => {
+  resizeObserver = new ResizeObserver((entries) => {
+    entries.forEach((entry) => {
+      const r = tracks.indexOf(entry.target);
+      if (r !== -1 && entry.contentRect.width) durations.value[r] = `${Math.round(entry.contentRect.width / SPEED)}s`;
+    });
+  });
+  tracks.forEach((el) => el && resizeObserver.observe(el));
+
   try {
     const response = await fetch('/api/dribbble');
     if (!response.ok) return;
@@ -69,15 +106,21 @@ onMounted(async () => {
     // Keep the fallback list
   }
 });
+
+onUnmounted(() => resizeObserver?.disconnect());
 </script>
 
 <style scoped>
 .marquee-track {
-  animation: marquee 80s linear infinite;
+  animation: marquee var(--marquee-duration, 80s) linear infinite;
 }
 
 .marquee:hover .marquee-track {
   animation-play-state: paused;
+}
+
+.marquee-reverse .marquee-track {
+  animation-direction: reverse;
 }
 
 @keyframes marquee {

@@ -6,6 +6,12 @@ Format dan aturan: `~/Documents/AGENTS.md` bagian Changelog. Terbaru di atas.
 
 ## [Belum dirilis]
 
+## 2026-10-28 (2)
+### Diubah
+- Marquee Explorations jadi dua baris berlawanan arah, kartu sedikit lebih kecil
+### Diperbaiki
+- Marquee Explorations terlalu cepat di Safari: ukuran kartu eksplisit dan kecepatan tetap 70 px/detik
+
 ## 2026-10-28
 ### Ditambah
 - `AGENTS.md` (+ `CLAUDE.md`, `GEMINI.md`): aturan update works dari project lain
