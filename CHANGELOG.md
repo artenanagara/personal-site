@@ -5,6 +5,12 @@ Format dan aturan: `~/Documents/AGENTS.md` bagian Changelog. Terbaru di atas.
 > Riwayat sebelum 2026-10-27 **direkonstruksi** dari git log, README, dan tanggal file. Detail per commit tetap ada di `git log`.
 
 ## [Belum dirilis]
+### Ditambah
+- Banner profil Behance 3200 × 410, gaya sama dengan banner LinkedIn
+### Diubah
+- Banner LinkedIn, banner Behance, dan cover Dribbble: "UI Kit Maker" diganti "UI Kit Creator", PNG dirender ulang
+### Dihapus
+- Folder `exports/` (banner LinkedIn, banner Behance, cover Dribbble) dipindah ke `~/Documents/Personal/social/{linkedin,behance,dribbble}/`, karena isinya aset profil sosial, bukan bagian situs
 
 ## 2026-10-28 (4)
 ### Ditambah
