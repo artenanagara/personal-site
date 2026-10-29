@@ -16,7 +16,9 @@ const nextProject = computed(() => {
 });
 
 // Galleries sit on a tight 4-column grid; quarter-width items pair up on mobile
-const galleryItemClass = (span) => {
+// A gallery-grid has 4 columns by default; "columns": 3 switches the row to thirds (items then ignore span).
+const galleryItemClass = (span, columns) => {
+  if (columns === 3) return 'col-span-1';
   if (span?.includes('col-span-4')) return 'col-span-2 md:col-span-4';
   if (span?.includes('col-span-3')) return 'col-span-2 md:col-span-3';
   if (span?.includes('col-span-2')) return 'col-span-2';
@@ -75,7 +77,9 @@ const pointText = (point) => (typeof point === 'string' ? point : point.text);
               v-if="section.src && section.src.startsWith('/')"
               :src="section.src"
               :alt="`${project.title} visual`"
-              loading="lazy"
+              :loading="index === 0 ? 'eager' : 'lazy'"
+              :fetchpriority="index === 0 ? 'high' : undefined"
+              decoding="async"
               class="h-auto w-full"
             />
           </div>
@@ -122,13 +126,17 @@ const pointText = (point) => (typeof point === 'string' ? point : point.text);
           </figure>
         </section>
 
-        <div v-else-if="section.type === 'gallery-grid'" class="page-x grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div
+          v-else-if="section.type === 'gallery-grid'"
+          class="page-x grid gap-3"
+          :class="section.columns === 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-2 md:grid-cols-4'"
+        >
           <div
             v-for="(item, idx) in section.items"
             :key="idx"
             :data-reveal="(idx % 2) * 120"
             class="overflow-hidden rounded-[4px] bg-hairline"
-            :class="galleryItemClass(item.span)"
+            :class="galleryItemClass(item.span, section.columns)"
           >
             <img v-if="item.src && item.src.startsWith('/')" :src="item.src" :alt="`${project.title} detail`" loading="lazy" class="h-auto w-full" />
           </div>

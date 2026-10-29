@@ -26,7 +26,7 @@
     "content": [
         {
             "type": "full-width-image",
-            "src": "/images/works/pickin/lead.webp",
+            "src": "/images/works/pickin/p3-duo-laptop.webp",
             "aspectRatio": "aspect-[16/9]"
         },
         {
@@ -44,7 +44,25 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/pickin/landing.webp",
+                    "src": "/images/works/pickin/people-photographer.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/people-client.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/people-cap.webp",
+                    "span": "col-span-1"
+                }
+            ],
+            "columns": 3
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/people-grad.webp",
                     "span": "col-span-4"
                 }
             ]
@@ -59,15 +77,38 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/pickin/whatsapp.webp",
-                    "span": "col-span-4"
+                    "src": "/images/works/pickin/p5-cafe-phone.webp",
+                    "span": "col-span-1"
                 },
                 {
-                    "src": "/images/works/pickin/phone.webp",
+                    "src": "/images/works/pickin/ui-gallery.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/people-friends.webp",
+                    "span": "col-span-1"
+                }
+            ],
+            "columns": 3
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/people-shoot.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/d6-cafe-laptop.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/pickin/mobile-pair.webp",
+                    "src": "/images/works/pickin/d4-tripod-camera.webp",
                     "span": "col-span-2"
                 }
             ]
@@ -88,38 +129,13 @@
                     "text": "No subscription. Start free, then pay once per gallery via QRIS when a gallery needs more photos, more time, or no branding."
                 }
             ],
-            "image": "/images/works/pickin/dashboard.webp"
+            "image": "/images/works/pickin/desk.webp"
         },
         {
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/pickin/feature-hero.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/price.webp",
-                    "span": "col-span-2"
-                }
-            ]
-        },
-        {
-            "type": "gallery-grid",
-            "items": [
-                {
-                    "src": "/images/works/pickin/drive-auth.webp",
-                    "span": "col-span-4"
-                },
-                {
-                    "src": "/images/works/pickin/dashboard-settings.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/dashboard-mobile.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/dashboard-catalog.webp",
+                    "src": "/images/works/pickin/ui-dashboard.webp",
                     "span": "col-span-4"
                 }
             ]
@@ -128,23 +144,81 @@
             "type": "gallery-grid",
             "items": [
                 {
-                    "src": "/images/works/pickin/plan.webp",
+                    "src": "/images/works/pickin/ui-sent.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/p2-photographer-phone.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/d5-flatlay-camera.webp",
+                    "span": "col-span-1"
+                }
+            ],
+            "columns": 3
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/d2-podium-landing.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/pickin/faq.webp",
+                    "src": "/images/works/pickin/p4-grad-phone.webp",
+                    "span": "col-span-2"
+                }
+            ]
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/d3-laptop-price.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/ui-files.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/d1-wall-phone.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/ui-price.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/p7-sofa-phone.webp",
+                    "span": "col-span-1"
+                }
+            ]
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/d8-laptop-plant.webp",
                     "span": "col-span-2"
                 },
                 {
-                    "src": "/images/works/pickin/typo.webp",
+                    "src": "/images/works/pickin/stand.webp",
                     "span": "col-span-2"
-                },
+                }
+            ]
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
                 {
-                    "src": "/images/works/pickin/colors.webp",
-                    "span": "col-span-2"
-                },
-                {
-                    "src": "/images/works/pickin/mockup.webp",
+                    "src": "/images/works/pickin/p6-steps-laptop.webp",
                     "span": "col-span-4"
                 }
             ]
@@ -162,6 +236,42 @@
                 {
                     "title": "Scope",
                     "text": "Client gallery, photographer dashboard, pricelist catalog, and per-gallery payments via QRIS."
+                }
+            ]
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/stack.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/p8-pink-phone.webp",
+                    "span": "col-span-1"
+                },
+                {
+                    "src": "/images/works/pickin/table.webp",
+                    "span": "col-span-1"
+                }
+            ],
+            "columns": 3
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/p1-laptop-woman.webp",
+                    "span": "col-span-4"
+                }
+            ]
+        },
+        {
+            "type": "gallery-grid",
+            "items": [
+                {
+                    "src": "/images/works/pickin/float.webp",
+                    "span": "col-span-4"
                 }
             ]
         }

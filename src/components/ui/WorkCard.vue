@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 
 const props = defineProps({
   project: Object,
@@ -7,6 +7,20 @@ const props = defineProps({
     type: String,
     default: 'aspect-[4/3]',
   },
+});
+
+// The hover image is lazy, so it can still be missing the first time the card is hovered.
+// Fetch it once the browser is idle, after the visible images have loaded.
+onMounted(() => {
+  const hover = props.project.cover?.hover;
+  if (!hover) return;
+  const prefetch = () => {
+    const img = new Image();
+    img.decoding = 'async';
+    img.src = hover;
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(prefetch, { timeout: 4000 });
+  else setTimeout(prefetch, 2000);
 });
 
 
