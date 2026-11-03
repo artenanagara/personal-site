@@ -6,7 +6,7 @@
         "type": "open",
         "url": "https://pickin.id",
         "cover": {
-            "default": "/images/works/pickin/thumb.webp",
+            "default": "/images/works/pickin/people-cap.webp",
             "hover": "/images/works/pickin/mockup.webp"
         },
         "featured": {
